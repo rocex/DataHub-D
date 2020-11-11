@@ -1,0 +1,21 @@
+{
+  "name": "datahub",
+  "authors": ["rocex<rocexwang@gmail.com>"],
+
+  "copyright": "Copyright © 2019, rocex",
+  "license": "MIT",
+
+  "targetPath": ".dub",
+  "targetName": "DataHub",
+  "targetType": "executable",
+
+  "dependencies": {
+    "dwt": "~>1.0.0"
+  },
+
+  "dflags": ["-J./resource"],
+
+  "sourceFiles": ["-J./resource"],
+
+  "sourcePaths": ["./src-common", "./src-common-ui"]
+}
