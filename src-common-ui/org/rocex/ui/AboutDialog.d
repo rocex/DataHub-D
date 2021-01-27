@@ -16,13 +16,13 @@ import org.rocex.utils.ResHelper;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-23 22:21:09
+ * @since 2019-5-23 22:21:09
  ***************************************************************************/
 public class AboutDialog : Dialog
 {
     /****************************************************************************
      * @author Rocex Wang
-     * @version 2020-6-1 22:02:07
+     * @since 2020-6-1 22:02:07
      ****************************************************************************/
     public this(Shell parent, int iStyle)
     {
@@ -37,7 +37,7 @@ public class AboutDialog : Dialog
      * {@inheritDoc}<br>
      * @see org.rocex.ui.widgets.Dialog#createButtonArea(org.eclipse.swt.widgets.Composite)
      * @author Rocex Wang
-     * @version 2020-6-1 22:02:07
+     * @since 2020-6-1 22:02:07
      ****************************************************************************/
     override protected void createButtonArea(Composite parent)
     {
@@ -61,7 +61,7 @@ public class AboutDialog : Dialog
      * {@inheritDoc}<br>
      * @see org.rocex.ui.widgets.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
      * @author Rocex Wang
-     * @version 2019-5-24 22:34:22
+     * @since 2019-5-24 22:34:22
      ****************************************************************************/
     override protected void createDialogArea(Composite parent)
     {

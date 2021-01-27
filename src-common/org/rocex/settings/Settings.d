@@ -16,7 +16,7 @@ import std.string;
 /***************************************************************************
  * 系统参数设置中心，只保存有变化的参数值<br>
  * @author Rocex Wang
- * @version 2019-5-13 21:30:23
+ * @since 2019-5-13 21:30:23
  ***************************************************************************/
 public class Settings
 {
@@ -33,7 +33,7 @@ public class Settings
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2020-7-7 21:30:06
+     * @since 2020-7-7 21:30:06
      ***************************************************************************/
     public static void dispose()
     {
@@ -46,7 +46,7 @@ public class Settings
      * @param blDefaultValue
      * @return boolean
      * @author Rocex Wang
-     * @version 2019-5-13 21:57:56
+     * @since 2019-5-13 21:57:56
      ***************************************************************************/
     public static bool getBoolean(String strKey, bool blDefaultValue = false)
     {
@@ -67,7 +67,7 @@ public class Settings
      * @param dblDefaultValue
      * @return double
      * @author Rocex Wang
-     * @version 2019-5-21 21:36:06
+     * @since 2019-5-21 21:36:06
      ***************************************************************************/
     public static double getDouble(String strKey, double dblDefaultValue)
     {
@@ -80,7 +80,7 @@ public class Settings
      * @param strKey
      * @return Font
      * @author Rocex Wang
-     * @version 2019-7-18 21:38:26
+     * @since 2019-7-18 21:38:26
      ***************************************************************************/
     public static Font getFont(String strKey)
     {
@@ -92,7 +92,7 @@ public class Settings
      * @param defaultFont
      * @return Font
      * @author Rocex Wang
-     * @version 2019-7-18 21:27:53
+     * @since 2019-7-18 21:27:53
      ***************************************************************************/
     public static Font getFont(String strKey, Font defaultFont)
     {
@@ -123,7 +123,7 @@ public class Settings
      * @param iDefaultValue
      * @return int
      * @author Rocex Wang
-     * @version 2019-5-21 21:34:29
+     * @since 2019-5-21 21:34:29
      ***************************************************************************/
     public static int getInt(String strKey, int iDefaultValue)
     {
@@ -137,7 +137,7 @@ public class Settings
      * @param strDefaultValue
      * @return String
      * @author Rocex Wang
-     * @version 2019-5-13 21:44:44
+     * @since 2019-5-13 21:44:44
      ***************************************************************************/
     public static String getValue(String strKey, String strDefaultValue)
     {
@@ -158,7 +158,7 @@ public class Settings
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-21 21:09:32
+     * @since 2019-5-21 21:09:32
      ***************************************************************************/
     protected static void load()
     {
@@ -169,7 +169,7 @@ public class Settings
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-13 21:44:47
+     * @since 2019-5-13 21:44:47
      ***************************************************************************/
     public static void save()
     {
@@ -218,7 +218,7 @@ public class Settings
      * @param strKey
      * @param objValue
      * @author Rocex Wang
-     * @version 2019-5-13 21:57:50
+     * @since 2019-5-13 21:57:50
      ***************************************************************************/
     public static void setValue(String strKey, Object objValue)
     {
@@ -243,7 +243,7 @@ public class Settings
      * @param strKey
      * @param blValue
      * @author Rocex Wang
-     * @version 2020-08-06 21:15:28
+     * @since 2020-08-06 21:15:28
      ***************************************************************************/
     public static void setValue(String strKey, bool blValue)
     {
@@ -254,7 +254,7 @@ public class Settings
      * @param strKey
      * @param iValue
      * @author Rocex Wang
-     * @version 2020-08-06 21:15:34
+     * @since 2020-08-06 21:15:34
      ***************************************************************************/
     public static void setValue(String strKey, int iValue)
     {

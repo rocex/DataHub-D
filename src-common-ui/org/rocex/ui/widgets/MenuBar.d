@@ -20,7 +20,7 @@ import org.rocex.utils.UIHelper;
 /***************************************************************************
  * 菜单栏<br>
  * @author Rocex Wang
- * @version 2019-5-13 22:09:27
+ * @since 2019-5-13 22:09:27
  ***************************************************************************/
 public class MenuBar : Menu
 {
@@ -29,7 +29,7 @@ public class MenuBar : Menu
     /***************************************************************************
      * @param parent
      * @author Rocex Wang
-     * @version 2019-6-3 22:55:59
+     * @since 2019-6-3 22:55:59
      ***************************************************************************/
     public this(Control parent)
     {
@@ -42,7 +42,7 @@ public class MenuBar : Menu
      * @param parent
      * @param iStyle
      * @author Rocex Wang
-     * @version 2019-5-13 22:34:24
+     * @since 2019-5-13 22:34:24
      ***************************************************************************/
     public this(Decorations parent, int iStyle)
     {
@@ -54,7 +54,7 @@ public class MenuBar : Menu
     /***************************************************************************
      * @param actions
      * @author Rocex Wang
-     * @version 2019-5-13 22:20:26
+     * @since 2019-5-13 22:20:26
      ***************************************************************************/
     public void addAction(Menu menu, IAction[] actions...)
     {
@@ -110,7 +110,7 @@ public class MenuBar : Menu
      * @param menu
      * @param strActionIds
      * @author Rocex Wang
-     * @version 2019-5-13 22:20:26
+     * @since 2019-5-13 22:20:26
      ***************************************************************************/
     public void addAction(Menu menu, String[] strActionIds...)
     {
@@ -134,7 +134,7 @@ public class MenuBar : Menu
      * @param strText
      * @return Menu
      * @author Rocex Wang
-     * @version 2019-5-14 22:45:53
+     * @since 2019-5-14 22:45:53
      ***************************************************************************/
     public Menu addCascadeMenu(Menu menu, String strText)
     {
@@ -153,7 +153,7 @@ public class MenuBar : Menu
      * @param strActionIds
      * @return Menu
      * @author Rocex Wang
-     * @version 2019-5-14 22:45:53
+     * @since 2019-5-14 22:45:53
      ***************************************************************************/
     public Menu addCascadeMenu(Menu menu, String strText, String[] strActionIds...)
     {
@@ -167,7 +167,7 @@ public class MenuBar : Menu
     /***************************************************************************
      * @param menu
      * @author Rocex Wang
-     * @version 2019-5-14 22:46:00
+     * @since 2019-5-14 22:46:00
      ***************************************************************************/
     public void addSeparator(Menu menu)
     {
@@ -182,7 +182,7 @@ public class MenuBar : Menu
      * {@inheritDoc}<br>
      * @see org.eclipse.swt.widgets.Widget#dispose()
      * @author Rocex Wang
-     * @version 2020-7-4 22:49:22
+     * @since 2020-7-4 22:49:22
      ****************************************************************************/
     override public void dispose()
     {
@@ -219,7 +219,7 @@ public class MenuBar : Menu
     /***************************************************************************
      * @return the context
      * @author Rocex Wang
-     * @version 2020-6-1 22:57:01
+     * @since 2020-6-1 22:57:01
      ***************************************************************************/
     public Context getContext()
     {
@@ -229,7 +229,7 @@ public class MenuBar : Menu
     /***************************************************************************
      * @param context the context to set
      * @author Rocex Wang
-     * @version 2020-6-1 22:57:01
+     * @since 2020-6-1 22:57:01
      ***************************************************************************/
     public void setContext(Context context)
     {

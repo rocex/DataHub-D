@@ -14,7 +14,7 @@ import std.range;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-13 22:54:06
+ * @since 2019-5-13 22:54:06
  ***************************************************************************/
 public class ActionManager
 {
@@ -26,7 +26,7 @@ public class ActionManager
      * 检查并打印快捷键冲突的action
      * @param action
      * @author Rocex Wang
-     * @version 2019-6-3 22:36:42
+     * @since 2019-6-3 22:36:42
      ***************************************************************************/
     protected void checkAcceleratorConflict(IAction action)
     {
@@ -48,7 +48,7 @@ public class ActionManager
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2020-7-6 22:11:57
+     * @since 2020-7-6 22:11:57
      ***************************************************************************/
     public void dispose()
     {
@@ -62,7 +62,7 @@ public class ActionManager
      * @param strActionId
      * @return IAction
      * @author Rocex Wang
-     * @version 2019-5-14 22:18:05
+     * @since 2019-5-14 22:18:05
      ***************************************************************************/
     public IAction getAction(String strActionId)
     {
@@ -74,7 +74,7 @@ public class ActionManager
     /***************************************************************************
      * @return the context
      * @author Rocex Wang
-     * @version 2020-6-1 22:47:23
+     * @since 2020-6-1 22:47:23
      ***************************************************************************/
     public Context getContext()
     {
@@ -83,7 +83,7 @@ public class ActionManager
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-7-9 22:20:08
+     * @since 2019-7-9 22:20:08
      ***************************************************************************/
     public void refreshActionState()
     {
@@ -96,7 +96,7 @@ public class ActionManager
     /***************************************************************************
      * @param actions
      * @author Rocex Wang
-     * @version 2019-7-23 22:54:34
+     * @since 2019-7-23 22:54:34
      ***************************************************************************/
     public void registerAction(IAction[] actions...)
     {
@@ -128,7 +128,7 @@ public class ActionManager
      * @param strActionId
      * @param actionClass
      * @author Rocex Wang
-     * @version 2019-8-23 22:10:06
+     * @since 2019-8-23 22:10:06
      ***************************************************************************/
     public void registerAction(String strActionId, ClassInfo actionClass)
     {
@@ -153,7 +153,7 @@ public class ActionManager
      * @param evt
      * @param strActionId
      * @author Rocex Wang
-     * @version 2020-6-3 22:38:27
+     * @since 2020-6-3 22:38:27
      ***************************************************************************/
     public void runAction(Event evt, String[] strActionIds...)
     {
@@ -188,7 +188,7 @@ public class ActionManager
      * 设置所有Action状态
      * @param blEnable
      * @author Rocex Wang
-     * @version 2019-7-9 22:17:14
+     * @since 2019-7-9 22:17:14
      ***************************************************************************/
     public void setActionEnable(bool blEnable)
     {
@@ -203,7 +203,7 @@ public class ActionManager
      * @param blEnable
      * @param strActionIds
      * @author Rocex Wang
-     * @version 2019-6-9 22:40:25
+     * @since 2019-6-9 22:40:25
      ***************************************************************************/
     public void setActionEnable(bool blEnable, String[] strActionIds...)
     {
@@ -223,7 +223,7 @@ public class ActionManager
     /***************************************************************************
      * @param context the context to set
      * @author Rocex Wang
-     * @version 2020-6-1 22:47:23
+     * @since 2020-6-1 22:47:23
      ***************************************************************************/
     public void setContext(Context context)
     {
@@ -233,7 +233,7 @@ public class ActionManager
     /***************************************************************************
      * @param actions
      * @author Rocex Wang
-     * @version 2020-7-4 22:15:10
+     * @since 2020-7-4 22:15:10
      ***************************************************************************/
     public void unregister(IAction[] actions...)
     {
@@ -254,7 +254,7 @@ public class ActionManager
      * 注销action
      * @param strActionIds
      * @author Rocex Wang
-     * @version 2020-6-24 22:38:44
+     * @since 2020-6-24 22:38:44
      ***************************************************************************/
     public void unregister(String[] strActionIds...)
     {

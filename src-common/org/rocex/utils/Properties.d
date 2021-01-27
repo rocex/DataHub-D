@@ -10,7 +10,7 @@ import std.string;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2020-08-11 21:20:41
+ * @since 2020-08-11 21:20:41
  ***************************************************************************/
 public class Properties
 {
@@ -47,7 +47,7 @@ public class Properties
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2020-8-11 21:20:49
+     * @since 2020-8-11 21:20:49
      ***************************************************************************/
     public void clear()
     {
@@ -58,7 +58,7 @@ public class Properties
      * @param strKey
      * @return string
      * @author Rocex Wang
-     * @version 2020-8-11 21:20:49
+     * @since 2020-8-11 21:20:49
      ***************************************************************************/
     public string get(string strKey)
     {
@@ -76,7 +76,7 @@ public class Properties
      * @param strKey
      * @return string
      * @author Rocex Wang
-     * @version 2020-8-11 21:20:49
+     * @since 2020-8-11 21:20:49
      ***************************************************************************/
     public string getComment(string strKey)
     {
@@ -91,7 +91,7 @@ public class Properties
     /***************************************************************************
      * @return bool
      * @author Rocex Wang
-     * @version 2020-8-11 21:20:49
+     * @since 2020-8-11 21:20:49
      ***************************************************************************/
     public bool isEmpty()
     {
@@ -101,7 +101,7 @@ public class Properties
     /***************************************************************************
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-08-12 21:11:01
+     * @since 2020-08-12 21:11:01
      ***************************************************************************/
     public auto keys()
     {
@@ -111,7 +111,7 @@ public class Properties
     /***************************************************************************
      * @param strFilePath
      * @author Rocex Wang
-     * @version 2020-8-11 21:52:02
+     * @since 2020-8-11 21:52:02
      ***************************************************************************/
     public void load(string strFilePath)
     {
@@ -174,7 +174,7 @@ public class Properties
      * @param strComment
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-8-11 21:17:41
+     * @since 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties put(string strKey, string strValue, string strComment = null)
     {
@@ -201,7 +201,7 @@ public class Properties
      * @param properties
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-08-12 21:19:59
+     * @since 2020-08-12 21:19:59
      ***************************************************************************/
     public Properties putAll(Properties properties)
     {
@@ -220,7 +220,7 @@ public class Properties
      * @param strComment
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-8-11 21:17:41
+     * @since 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties putComment(string strComment)
     {
@@ -239,7 +239,7 @@ public class Properties
      * @param strComment
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-8-11 21:17:41
+     * @since 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties putComment(string strKey, string strComment)
     {
@@ -257,7 +257,7 @@ public class Properties
      * @param strKeys
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-8-11 21:17:41
+     * @since 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties remove(string[] strKeys...)
     {
@@ -273,7 +273,7 @@ public class Properties
      * @param strKeys
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-8-11 21:17:41
+     * @since 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties removeComment(string[] strKeys...)
     {
@@ -292,7 +292,7 @@ public class Properties
      * @param strFilePath
      * @param strComment
      * @author Rocex Wang
-     * @version 2020-8-11 21:53:05
+     * @since 2020-8-11 21:53:05
      ***************************************************************************/
     public void store(string strFilePath, string strComment = null)
     {
@@ -334,7 +334,7 @@ public class Properties
     /***************************************************************************
      * @return Properties
      * @author Rocex Wang
-     * @version 2020-08-12 21:12:02
+     * @since 2020-08-12 21:12:02
      ***************************************************************************/
     public auto values()
     {

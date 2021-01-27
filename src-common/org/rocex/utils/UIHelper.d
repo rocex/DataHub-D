@@ -20,7 +20,7 @@ import org.rocex.ui.Context;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-21 21:21:25
+ * @since 2019-5-21 21:21:25
  ***************************************************************************/
 public class UIHelper
 {
@@ -34,7 +34,7 @@ public class UIHelper
      * 鼠标进入时，控件自动获得焦点，鼠标离开时，让控件所在的shell获得焦点
      * @param control
      * @author Rocex Wang
-     * @version 2019-5-28 21:35:12
+     * @since 2019-5-28 21:35:12
      ***************************************************************************/
     public static void addMouseTrackListener(Control control)
     {
@@ -51,7 +51,7 @@ public class UIHelper
      * @param parent
      * @return
      * @author Rocex Wang
-     * @version 2019-5-9 21:22:07
+     * @since 2019-5-9 21:22:07
      ***************************************************************************/
     public static Label createBarSeparator(Composite parent)
     {
@@ -63,7 +63,7 @@ public class UIHelper
      * @param heightHint
      * @return
      * @author Rocex Wang
-     * @version 2019-5-8 21:04:11
+     * @since 2019-5-8 21:04:11
      ***************************************************************************/
     public static Label createBarSeparator(Composite parent, int heightHint)
     {
@@ -82,7 +82,7 @@ public class UIHelper
      * @param control
      * @return Context
      * @author Rocex Wang
-     * @version 2020-7-25 21:28:01
+     * @since 2020-7-25 21:28:01
      ***************************************************************************/
     public static Context getContext(Control control)
     {
@@ -104,7 +104,7 @@ public class UIHelper
      * @param blMakeColumnsEqualWidth
      * @return GridLayout
      * @author Rocex Wang
-     * @version 2019-5-8 21:04:15
+     * @since 2019-5-8 21:04:15
      ***************************************************************************/
     public static GridLayout getFillGridLayout(int iNumColumns, bool blMakeColumnsEqualWidth)
     {
@@ -123,7 +123,7 @@ public class UIHelper
      * @param shell
      * @return Point 打开shell的位置
      * @author Rocex Wang
-     * @version 2019-5-23 21:03:43
+     * @since 2019-5-23 21:03:43
      ***************************************************************************/
     public static Point getLocation(Shell shell)
     {
@@ -153,7 +153,7 @@ public class UIHelper
      * 把shell显示在屏幕中心，shell中心和屏幕中心位置重合
      * @return Point 打开shell的位置
      * @author Rocex Wang
-     * @version 2019-5-28 21:09:01
+     * @since 2019-5-28 21:09:01
      ***************************************************************************/
     public static Point getScreenCenterLocation(Shell shell)
     {
@@ -173,7 +173,7 @@ public class UIHelper
      * @param strTitle
      * @return strTitle 占用的像素
      * @author Rocex Wang
-     * @version 2019-5-30 21:45:01
+     * @since 2019-5-30 21:45:01
      ***************************************************************************/
     public static int getTitleWidth(String strTitle)
     {

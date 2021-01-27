@@ -7,7 +7,7 @@ import org.rocex.ui.Application;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-14 22:21:07
+ * @since 2019-5-14 22:21:07
  ***************************************************************************/
 public class Context
 {
@@ -18,7 +18,7 @@ public class Context
     /***************************************************************************
      * @param evt
      * @author Rocex Wang
-     * @version 2019-7-9 22:56:17
+     * @since 2019-7-9 22:56:17
      ***************************************************************************/
     public void fireEvent(Event evt)
     {
@@ -35,7 +35,7 @@ public class Context
     /***************************************************************************
      * @return the actionManager
      * @author Rocex Wang
-     * @version 2019-5-14 22:38:39
+     * @since 2019-5-14 22:38:39
      ***************************************************************************/
     public ActionManager getActionManager()
     {
@@ -45,7 +45,7 @@ public class Context
     /***************************************************************************
      * @return the application
      * @author Rocex Wang
-     * @version 2019-5-14 22:38:39
+     * @since 2019-5-14 22:38:39
      ***************************************************************************/
     public Application getApplication()
     {
@@ -55,7 +55,7 @@ public class Context
     /***************************************************************************
      * @param actionManager the actionManager to set
      * @author Rocex Wang
-     * @version 2019-5-14 22:38:39
+     * @since 2019-5-14 22:38:39
      ***************************************************************************/
     public void setActionManager(ActionManager actionManager)
     {
@@ -65,7 +65,7 @@ public class Context
     /***************************************************************************
      * @param application the application to set
      * @author Rocex Wang
-     * @version 2019-5-14 22:38:39
+     * @since 2019-5-14 22:38:39
      ***************************************************************************/
     public void setApplication(Application application)
     {

@@ -14,7 +14,7 @@ import std.conv;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-21 22:01:16
+ * @since 2019-5-21 22:01:16
  ***************************************************************************/
 public class LeftControl : CompositeControl
 {
@@ -24,7 +24,7 @@ public class LeftControl : CompositeControl
      * @param parent
      * @param iStyle
      * @author Rocex Wang
-     * @version 2020-6-3 22:50:47
+     * @since 2020-6-3 22:50:47
      ***************************************************************************/
     public this(Composite parent, int iStyle)
     {
@@ -37,7 +37,7 @@ public class LeftControl : CompositeControl
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-28 22:51:47
+     * @since 2019-5-28 22:51:47
      ***************************************************************************/
     protected void createControl()
     {
@@ -71,7 +71,7 @@ public class LeftControl : CompositeControl
     /***************************************************************************
      * @return
      * @author Rocex Wang
-     * @version 2019-5-28 22:52:46
+     * @since 2019-5-28 22:52:46
      ***************************************************************************/
     override public Control getControl()
     {

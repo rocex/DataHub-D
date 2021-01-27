@@ -10,7 +10,7 @@ import std.string;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2020-4-28 21:19:15
+ * @since 2020-4-28 21:19:15
  ***************************************************************************/
 public class FileHelper
 {
@@ -19,7 +19,7 @@ public class FileHelper
      * @param pathFrom
      * @param pathTo
      * @author Rocex Wang
-     * @version 2020-4-28 21:36:51
+     * @since 2020-4-28 21:36:51
      ***************************************************************************/
     public static void copyFolder(String pathFrom, String pathTo)
     {
@@ -47,7 +47,7 @@ public class FileHelper
      * @param pathTo
      * @param options
      * @author Rocex Wang
-     * @version 2020-5-11 21:36:23
+     * @since 2020-5-11 21:36:23
      ***************************************************************************/
     public static void copyFolderThread(String pathFrom, String pathTo)
     {
@@ -73,7 +73,7 @@ public class FileHelper
     /***************************************************************************
      * @param strFilePath
      * @author Rocex Wang
-     * @version 2019-8-9 21:03:57
+     * @since 2019-8-9 21:03:57
      ***************************************************************************/
     public static void deleteFile(String strFilePath)
     {
@@ -91,7 +91,7 @@ public class FileHelper
      * @param pathTo
      * @param options
      * @author Rocex Wang
-     * @version 2020-4-28 21:36:51
+     * @since 2020-4-28 21:36:51
      ***************************************************************************/
     public static void deleteFolder(string path)
     {
@@ -108,7 +108,7 @@ public class FileHelper
      * @param strFilePath
      * @param strContent
      * @author Rocex Wang
-     * @version 2020-4-26 21:24:35
+     * @since 2020-4-26 21:24:35
      ***************************************************************************/
     public static void writeFile(String strFilePath, String strContent)
     {
@@ -134,7 +134,7 @@ public class FileHelper
      * @param strFilePath
      * @param strContent
      * @author Rocex Wang
-     * @version 2020-5-11 21:36:58
+     * @since 2020-5-11 21:36:58
      ***************************************************************************/
     public static void writeFileThread(String strFilePath, String strContent)
     {

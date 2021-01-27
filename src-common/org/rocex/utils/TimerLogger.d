@@ -7,7 +7,7 @@ import org.rocex.utils.Logger;
 /***************************************************************************
  * 计算耗时<br>
  * @author Rocex Wang
- * @version 2020-5-8 21:43:26
+ * @since 2020-5-8 21:43:26
  ***************************************************************************/
 public class TimerLogger
 {
@@ -18,7 +18,7 @@ public class TimerLogger
     /***************************************************************************
      * @return TimerLogger
      * @author Rocex Wang
-     * @version 2020-5-8 21:54:34
+     * @since 2020-5-8 21:54:34
      ***************************************************************************/
     public static TimerLogger getLogger()
     {
@@ -33,7 +33,7 @@ public class TimerLogger
     /***************************************************************************
      * @param strMessage 必须和 end(String) 的参数值相同
      * @author Rocex Wang
-     * @version 2020-5-8 21:54:39
+     * @since 2020-5-8 21:54:39
      ***************************************************************************/
     public void begin(String strMessage)
     {
@@ -45,7 +45,7 @@ public class TimerLogger
     /***************************************************************************
      * @param strMessage 必须和 start(String) 的参数值相同
      * @author Rocex Wang
-     * @version 2020-5-8 21:54:37
+     * @since 2020-5-8 21:54:37
      ***************************************************************************/
     public void end(String strMessage)
     {

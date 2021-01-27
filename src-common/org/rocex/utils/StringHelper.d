@@ -8,7 +8,7 @@ import std.conv;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-6-4 21:24:28
+ * @since 2019-6-4 21:24:28
  ***************************************************************************/
 public class StringHelper
 {
@@ -20,7 +20,7 @@ public class StringHelper
      * @param strValue
      * @return 驼峰转下划线，例如：userName -> user_name
      * @author Rocex Wang
-     * @version 2019-10-25 21:59:29
+     * @since 2019-10-25 21:59:29
      ***************************************************************************/
     public static String camelToUnderline(String strValue)
     {
@@ -45,7 +45,7 @@ public class StringHelper
      * @param objValue
      * @return String
      * @author Rocex Wang
-     * @version 2019-6-25 21:10:26
+     * @since 2019-6-25 21:10:26
      ***************************************************************************/
     public static String defaultString(Object objValue)
     {
@@ -56,7 +56,7 @@ public class StringHelper
      * @param strValue
      * @return String
      * @author Rocex Wang
-     * @version 2019-6-4 21:37:12
+     * @since 2019-6-4 21:37:12
      ***************************************************************************/
     public static String defaultString(String strValue)
     {
@@ -68,7 +68,7 @@ public class StringHelper
      * @param strDefault
      * @return String
      * @author Rocex Wang
-     * @version 2019-6-4 21:37:09
+     * @since 2019-6-4 21:37:09
      ***************************************************************************/
     public static String defaultString(String strValue, String strDefault)
     {
@@ -80,7 +80,7 @@ public class StringHelper
      * @param object2
      * @return boolean
      * @author Rocex Wang
-     * @version 2019-5-13 21:10:22
+     * @since 2019-5-13 21:10:22
      ***************************************************************************/
     public static bool equals(Object object1, Object object2)
     {
@@ -101,7 +101,7 @@ public class StringHelper
      * @param strValue
      * @return 首字母变小写
      * @author Rocex Wang
-     * @version 2019-6-11 21:59:38
+     * @since 2019-6-11 21:59:38
      * @see com.jfinal.kit.StrKit
      ***************************************************************************/
     public static String firstCharToLowerCase(String strValue)
@@ -123,7 +123,7 @@ public class StringHelper
      * @param strValue
      * @return 首字母变大写
      * @author Rocex Wang
-     * @version 2019-6-11 21:59:51
+     * @since 2019-6-11 21:59:51
      * @see com.jfinal.kit.StrKit
      ***************************************************************************/
     public static String firstCharToUpperCase(String strValue)
@@ -144,7 +144,7 @@ public class StringHelper
     /*********************************************************************************************************
      * @param strSource
      * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
-     * @version 2004-7-7 21:21:57
+     * @since 2004-7-7 21:21:57
      ********************************************************************************************************/
     public static int getLength(String strSource)
     {
@@ -155,7 +155,7 @@ public class StringHelper
      * @param strSource
      * @param blTrim
      * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
-     * @version 2004-7-7 21:21:57
+     * @since 2004-7-7 21:21:57
      ********************************************************************************************************/
     public static int getLength(String strSource, bool blTrim)
     {
@@ -184,7 +184,7 @@ public class StringHelper
     /***************************************************************************
      * @return UUID.toString()
      * @author Rocex Wang
-     * @version 2019-8-6 21:19:55
+     * @since 2019-8-6 21:19:55
      ***************************************************************************/
     public static String getUUID()
     {
@@ -196,7 +196,7 @@ public class StringHelper
      * @param strSource
      * @return boolean
      * @author Rocex Wang
-     * @version 2020-6-4 21:43:56
+     * @since 2020-6-4 21:43:56
      ***************************************************************************/
     public static bool isBlank(String strSource)
     {
@@ -208,7 +208,7 @@ public class StringHelper
      * @param strSource
      * @return boolean
      * @author Rocex Wang
-     * @version 2019-7-13 21:50:00
+     * @since 2019-7-13 21:50:00
      ***************************************************************************/
     public static bool isEmpty(String strSource)
     {
@@ -220,7 +220,7 @@ public class StringHelper
      * @param strSource
      * @return boolean
      * @author Rocex Wang
-     * @version 2020-6-22 21:00:14
+     * @since 2020-6-22 21:00:14
      ***************************************************************************/
     public static bool isNumber(String strSource)
     {
@@ -241,7 +241,7 @@ public class StringHelper
      * @param strValue
      * @return 下划线转驼峰，例如：user_name -> userName
      * @author Rocex Wang
-     * @version 2019-10-25 21:44:16
+     * @since 2019-10-25 21:44:16
      ***************************************************************************/
     public static String underlineToCamel(String strValue)
     {

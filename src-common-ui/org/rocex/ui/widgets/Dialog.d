@@ -19,7 +19,7 @@ import org.rocex.utils.UIHelper;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-23 22:21:09
+ * @since 2019-5-23 22:21:09
  ***************************************************************************/
 public class Dialog : IWidget
 {
@@ -31,7 +31,7 @@ public class Dialog : IWidget
      * @param parent
      * @param iStyle
      * @author Rocex Wang
-     * @version 2019-5-24 22:42:00
+     * @since 2019-5-24 22:42:00
      ***************************************************************************/
     public this(Shell parent, int iStyle)
     {
@@ -64,7 +64,7 @@ public class Dialog : IWidget
     /***************************************************************************
      * @return
      * @author Rocex Wang
-     * @version 2019-5-24 22:16:55
+     * @since 2019-5-24 22:16:55
      ***************************************************************************/
     protected bool checkBeforeOpen()
     {
@@ -73,7 +73,7 @@ public class Dialog : IWidget
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-24 22:00:54
+     * @since 2019-5-24 22:00:54
      ***************************************************************************/
     public void close()
     {
@@ -88,7 +88,7 @@ public class Dialog : IWidget
     /***************************************************************************
      * @return
      * @author Rocex Wang
-     * @version 2019-5-24 22:20:36
+     * @since 2019-5-24 22:20:36
      * @param evt
      ***************************************************************************/
     protected void closeCancel(Event evt)
@@ -101,7 +101,7 @@ public class Dialog : IWidget
     /***************************************************************************
      * @return
      * @author Rocex Wang
-     * @version 2019-5-24 22:20:34
+     * @since 2019-5-24 22:20:34
      * @param evt
      ***************************************************************************/
     protected void closeOk(Event evt)
@@ -127,7 +127,7 @@ public class Dialog : IWidget
     /***************************************************************************
      * 关闭对话框之前先收集对话框里面的数据，以备后续使用
      * @author Rocex Wang
-     * @version 2019-5-24 22:36:08
+     * @since 2019-5-24 22:36:08
      ***************************************************************************/
     protected void collectionReturnData()
     {
@@ -135,7 +135,7 @@ public class Dialog : IWidget
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-24 22:29:52
+     * @since 2019-5-24 22:29:52
      * @param parent
      ***************************************************************************/
     protected void createButtonArea(Composite parent)
@@ -171,7 +171,7 @@ public class Dialog : IWidget
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-24 22:07:54
+     * @since 2019-5-24 22:07:54
      ***************************************************************************/
     protected void createContents()
     {
@@ -199,7 +199,7 @@ public class Dialog : IWidget
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-24 22:30:09
+     * @since 2019-5-24 22:30:09
      * @param parent
      ***************************************************************************/
     protected void createDialogArea(Composite parent)
@@ -210,7 +210,7 @@ public class Dialog : IWidget
      * {@inheritDoc}<br>
      * @see org.rocex.ui.widgets.IWidget#getValue()
      * @author Rocex Wang
-     * @version 2019-6-13 22:16:15
+     * @since 2019-6-13 22:16:15
      ****************************************************************************/
     override public Object getValue()
     {
@@ -220,7 +220,7 @@ public class Dialog : IWidget
     /****************************************************************************
      * {@inheritDoc}<br>
      * @author Rocex Wang
-     * @version 2019-5-23 22:22:30
+     * @since 2019-5-23 22:22:30
      ****************************************************************************/
     public int open()
     {
@@ -240,7 +240,7 @@ public class Dialog : IWidget
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-6-13 22:16:42
+     * @since 2019-6-13 22:16:42
      ***************************************************************************/
     private void runEventLoop()
     {
@@ -270,7 +270,7 @@ public class Dialog : IWidget
      * @param iWidth
      * @param iHeight
      * @author Rocex Wang
-     * @version 2019-5-25 22:06:04
+     * @since 2019-5-25 22:06:04
      ***************************************************************************/
     public void setSize(int iWidth, int iHeight)
     {
@@ -285,7 +285,7 @@ public class Dialog : IWidget
     /***************************************************************************
      * @param strTitle
      * @author Rocex Wang
-     * @version 2019-5-24 22:43:30
+     * @since 2019-5-24 22:43:30
      ***************************************************************************/
     public void setTitle(string strTitle)
     {
@@ -301,7 +301,7 @@ public class Dialog : IWidget
      * {@inheritDoc}<br>
      * @see org.rocex.ui.widgets.IWidget#setValue(java.lang.Object)
      * @author Rocex Wang
-     * @version 2019-5-25 22:06:02
+     * @since 2019-5-25 22:06:02
      ****************************************************************************/
     override public void setValue(Object obj)
     {

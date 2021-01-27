@@ -6,7 +6,7 @@ import std.string;
 /***************************************************************************
  * all < trace < info < warn < error < critical < fatal <br>
  * @author Rocex Wang
- * @version 2019-5-21 21:13:04
+ * @since 2019-5-21 21:13:04
  ***************************************************************************/
 public class Logger
 {
@@ -14,7 +14,7 @@ public class Logger
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2020-08-15 21:32:21
+     * @since 2020-08-15 21:32:21
      ***************************************************************************/
     private static this()
     {
@@ -36,7 +36,7 @@ public class Logger
     /***************************************************************************
      * @return std.experimental.logger.Logger
      * @author Rocex Wang
-     * @version 2020-08-15 21:31:53
+     * @since 2020-08-15 21:31:53
      ***************************************************************************/
     public static std.experimental.logger.Logger getLogger()
     {
@@ -45,7 +45,7 @@ public class Logger
     /***************************************************************************
      * @param strLogLevel
      * @author Rocex Wang
-     * @version 2020-08-15 21:31:53
+     * @since 2020-08-15 21:31:53
      ***************************************************************************/
     public static void setEnableLevel(string strEnableLogLevel)
     {

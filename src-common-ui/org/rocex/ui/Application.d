@@ -37,7 +37,7 @@ import org.rocex.utils.UIHelper;
 /***************************************************************************
  * 应用启动入口类<br> 
  * @author Rocex Wang
- * @version 2019-5-21 22:56:52
+ * @since 2019-5-21 22:56:52
  ***************************************************************************/
 public class Application : Shell
 {
@@ -59,7 +59,7 @@ public class Application : Shell
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-21 22:56:52
+     * @since 2019-5-21 22:56:52
      ***************************************************************************/
     public this()
     {
@@ -102,7 +102,7 @@ public class Application : Shell
     /***************************************************************************
      * @return
      * @author Rocex Wang
-     * @version 2019-5-21 22:53:25
+     * @since 2019-5-21 22:53:25
      ***************************************************************************/
     protected ActionManager createActionManager()
     {
@@ -112,7 +112,7 @@ public class Application : Shell
     /***************************************************************************
      * @return
      * @author Rocex Wang
-     * @version 2019-5-8 22:05:04
+     * @since 2019-5-8 22:05:04
      * @param shell
      ***************************************************************************/
     protected void createContents()
@@ -152,7 +152,7 @@ public class Application : Shell
     /***************************************************************************
      * @return Context
      * @author Rocex Wang
-     * @version 2020-6-1 22:44:07
+     * @since 2020-6-1 22:44:07
      ***************************************************************************/
     protected Context createContext()
     {
@@ -162,7 +162,7 @@ public class Application : Shell
     /***************************************************************************
      * @param sashForm
      * @author Rocex Wang
-     * @version 2019-5-6 22:49:51
+     * @since 2019-5-6 22:49:51
      ***************************************************************************/
     protected LeftControl createLeftControl(Composite parent)
     {
@@ -175,7 +175,7 @@ public class Application : Shell
      * @param shell
      * @return SashForm
      * @author Rocex Wang
-     * @version 2019-5-7 22:21:11
+     * @since 2019-5-7 22:21:11
      ***************************************************************************/
     protected SashForm createMainBaseControl(Composite parent)
     {
@@ -189,7 +189,7 @@ public class Application : Shell
     /***************************************************************************
      * @param sashForm
      * @author Rocex Wang
-     * @version 2019-5-6 22:59:50
+     * @since 2019-5-6 22:59:50
      ***************************************************************************/
     protected Composite createMainControl(Composite parent)
     {
@@ -221,7 +221,7 @@ public class Application : Shell
     /***************************************************************************
      * @param menuBar
      * @author Rocex Wang
-     * @version 2019-6-3 22:15:43
+     * @since 2019-6-3 22:15:43
      ***************************************************************************/
     protected void createMenuBar(MenuBar menuBar)
     {
@@ -238,7 +238,7 @@ public class Application : Shell
      * @param shell
      * @return
      * @author Rocex Wang
-     * @version 2019-5-8 22:05:17
+     * @since 2019-5-8 22:05:17
      ***************************************************************************/
     protected MenuBar createMenuBar(Shell shell)
     {
@@ -256,7 +256,7 @@ public class Application : Shell
     /***************************************************************************
      * @param shell
      * @author Rocex Wang
-     * @version 2019-5-8 22:38:26
+     * @since 2019-5-8 22:38:26
      ***************************************************************************/
     protected StatusBar createStatusBar(Composite parent)
     {
@@ -270,7 +270,7 @@ public class Application : Shell
      * @param shell
      * @return ToolBar
      * @author Rocex Wang
-     * @version 2019-5-5 22:03:44
+     * @since 2019-5-5 22:03:44
      ***************************************************************************/
     protected Toolbar createToolBar(Shell shell)
     {
@@ -287,7 +287,7 @@ public class Application : Shell
     /***************************************************************************
      * @param toolbar
      * @author Rocex Wang
-     * @version 2019-6-3 22:16:19
+     * @since 2019-6-3 22:16:19
      ***************************************************************************/
     protected void createToolBar(Toolbar toolbar)
     {
@@ -298,7 +298,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the actionManager
      * @author Rocex Wang
-     * @version 2019-5-21 22:58:02
+     * @since 2019-5-21 22:58:02
      ***************************************************************************/
     public ActionManager getActionManager()
     {
@@ -308,7 +308,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the context
      * @author Rocex Wang
-     * @version 2020-6-1 22:52:59
+     * @since 2020-6-1 22:52:59
      ***************************************************************************/
     public Context getContext()
     {
@@ -318,7 +318,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the leftControl
      * @author Rocex Wang
-     * @version 2019-5-21 22:58:02
+     * @since 2019-5-21 22:58:02
      ***************************************************************************/
     public LeftControl getLeftControl()
     {
@@ -328,7 +328,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the sashMainBaseControl
      * @author Rocex Wang
-     * @version 2019-5-21 22:58:02
+     * @since 2019-5-21 22:58:02
      ***************************************************************************/
     public SashForm getMainBaseControl()
     {
@@ -338,7 +338,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the mainControl
      * @author Rocex Wang
-     * @version 2019-5-21 22:58:02
+     * @since 2019-5-21 22:58:02
      ***************************************************************************/
     public Composite getMainControl()
     {
@@ -348,7 +348,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the menuBar
      * @author Rocex Wang
-     * @version 2019-5-21 22:58:02
+     * @since 2019-5-21 22:58:02
      ***************************************************************************/
     override public MenuBar getMenuBar()
     {
@@ -358,7 +358,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the statusBar
      * @author Rocex Wang
-     * @version 2019-5-21 22:58:02
+     * @since 2019-5-21 22:58:02
      ***************************************************************************/
     public StatusBar getStatusBar()
     {
@@ -368,7 +368,7 @@ public class Application : Shell
     /***************************************************************************
      * @return the toolbar
      * @author Rocex Wang
-     * @version 2019-5-21 22:58:02
+     * @since 2019-5-21 22:58:02
      ***************************************************************************/
     public Toolbar getToolBar()
     {
@@ -377,7 +377,7 @@ public class Application : Shell
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-8-23 22:06:18
+     * @since 2019-8-23 22:06:18
      ***************************************************************************/
     protected void registerActions()
     {
@@ -393,7 +393,7 @@ public class Application : Shell
     /***************************************************************************
      * @param window
      * @author Rocex Wang
-     * @version 2020-6-30 22:09:22
+     * @since 2020-6-30 22:09:22
      ***************************************************************************/
     public void restoreWindowState()
     {
@@ -418,7 +418,7 @@ public class Application : Shell
      * @param strMessage
      * @param ex
      * @author Rocex Wang
-     * @version 2020-6-9 22:51:10
+     * @since 2020-6-9 22:51:10
      ***************************************************************************/
     public void showErrorMessage(String strMessage, Exception ex)
     {
@@ -431,7 +431,7 @@ public class Application : Shell
     /***************************************************************************
      * @param strMessage
      * @author Rocex Wang
-     * @version 2019-5-23 22:27:04
+     * @since 2019-5-23 22:27:04
      ***************************************************************************/
     public void showHintMessage(String strMessage)
     {
@@ -445,7 +445,7 @@ public class Application : Shell
 /***************************************************************************
  * @param args
  * @author Rocex Wang
- * @version 2019-5-21 22:45:00
+ * @since 2019-5-21 22:45:00
  ***************************************************************************/
 public static void main(String[] args)
 {

@@ -5,7 +5,7 @@ import java.lang.String;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-6-11 22:02:16
+ * @since 2019-6-11 22:02:16
  ***************************************************************************/
 public class FieldProp
 {
@@ -28,7 +28,7 @@ public class FieldProp
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-6-11 22:33:56
+     * @since 2019-6-11 22:33:56
      ***************************************************************************/
     public this()
     {
@@ -38,7 +38,7 @@ public class FieldProp
      * @param strKey
      * @param strTitle
      * @author Rocex Wang
-     * @version 2019-6-13 22:39:23
+     * @since 2019-6-13 22:39:23
      ***************************************************************************/
     public this(String strKey, String strTitle)
     {
@@ -53,7 +53,7 @@ public class FieldProp
      * @param strTitle
      * @param blNullable
      * @author Rocex Wang
-     * @version 2019-6-13 22:24:22
+     * @since 2019-6-13 22:24:22
      ***************************************************************************/
     public this(String strKey, String strTitle, bool blNullable)
     {
@@ -68,7 +68,7 @@ public class FieldProp
      * @param strDataType
      * @param iLength
      * @author Rocex Wang
-     * @version 2019-6-12 22:21:15
+     * @since 2019-6-12 22:21:15
      ***************************************************************************/
     public this(String strKey, String strTitle, bool blNullable, String strDataType, int iLength)
     {
@@ -81,7 +81,7 @@ public class FieldProp
     /***************************************************************************
      * @return the dataType
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public String getDataType()
     {
@@ -91,7 +91,7 @@ public class FieldProp
     /***************************************************************************
      * @return the key
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public String getKey()
     {
@@ -101,7 +101,7 @@ public class FieldProp
     /***************************************************************************
      * @return the length
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public int getLength()
     {
@@ -111,7 +111,7 @@ public class FieldProp
     /***************************************************************************
      * @return the max
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public double getMax()
     {
@@ -121,7 +121,7 @@ public class FieldProp
     /***************************************************************************
      * @return the min
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public double getMin()
     {
@@ -131,7 +131,7 @@ public class FieldProp
     /***************************************************************************
      * @return the title
      * @author Rocex Wang
-     * @version 2019-6-12 22:24:28
+     * @since 2019-6-12 22:24:28
      ***************************************************************************/
     public String getTitle()
     {
@@ -141,7 +141,7 @@ public class FieldProp
     /***************************************************************************
      * @return the nullable
      * @author Rocex Wang
-     * @version 2019-6-12 22:17:11
+     * @since 2019-6-12 22:17:11
      ***************************************************************************/
     public bool isNullable()
     {
@@ -152,7 +152,7 @@ public class FieldProp
      * @param dataType the dataType to set
      * @return FieldProp
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setDataType(String dataType)
     {
@@ -165,7 +165,7 @@ public class FieldProp
      * @param strKey the id to set
      * @return FieldProp
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setKey(String key)
     {
@@ -178,7 +178,7 @@ public class FieldProp
      * @param length the length to set
      * @return FieldProp
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setLength(int length)
     {
@@ -191,7 +191,7 @@ public class FieldProp
      * @param max the max to set
      * @return FieldProp
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setMax(double max)
     {
@@ -204,7 +204,7 @@ public class FieldProp
      * @param min the min to set
      * @return FieldProp
      * @author Rocex Wang
-     * @version 2019-6-11 22:28:40
+     * @since 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setMin(double min)
     {
@@ -217,7 +217,7 @@ public class FieldProp
      * @param nullable the nullable to set
      * @return FieldProp
      * @author Rocex Wang
-     * @version 2019-6-12 22:17:11
+     * @since 2019-6-12 22:17:11
      ***************************************************************************/
     public FieldProp setNullable(bool nullable)
     {
@@ -230,7 +230,7 @@ public class FieldProp
      * @param title the title to set
      * @return FieldProp
      * @author Rocex Wang
-     * @version 2019-6-12 22:24:28
+     * @since 2019-6-12 22:24:28
      ***************************************************************************/
     public FieldProp setTitle(String title)
     {

@@ -27,7 +27,7 @@ import std.conv;
 /***************************************************************************
  * 工具栏<br>
  * @author Rocex Wang
- * @version 2019-5-7 22:03:01
+ * @since 2019-5-7 22:03:01
  ***************************************************************************/
 public class Toolbar : ToolBar
 {
@@ -43,7 +43,7 @@ public class Toolbar : ToolBar
      * @param parent
      * @param iStyle
      * @author Rocex Wang
-     * @version 2019-5-8 22:03:48
+     * @since 2019-5-8 22:03:48
      ***************************************************************************/
     public this(Composite parent, int iStyle)
     {
@@ -57,7 +57,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @param action
      * @author Rocex Wang
-     * @version 2019-5-13 22:20:26
+     * @since 2019-5-13 22:20:26
      ***************************************************************************/
     public ToolItem addAction(IAction action)
     {
@@ -68,7 +68,7 @@ public class Toolbar : ToolBar
      * @param action
      * @param iIndex
      * @author Rocex Wang
-     * @version 2019-5-13 22:20:26
+     * @since 2019-5-13 22:20:26
      ***************************************************************************/
     public ToolItem addAction(IAction action, int iIndex)
     {
@@ -117,7 +117,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @param strActionIds
      * @author Rocex Wang
-     * @version 2019-5-13 22:20:26
+     * @since 2019-5-13 22:20:26
      ***************************************************************************/
     public void addAction(int iIndex, String[] strActionIds...)
     {
@@ -139,7 +139,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @param strActionIds
      * @author Rocex Wang
-     * @version 2019-5-13 22:20:26
+     * @since 2019-5-13 22:20:26
      ***************************************************************************/
     public void addAction(String[] strActionIds...)
     {
@@ -161,7 +161,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * 自适应大小的空白占位符，会挤占剩余的所有空间
      * @author Rocex Wang
-     * @version 2019-5-23 22:19:20
+     * @since 2019-5-23 22:19:20
      ***************************************************************************/
     public ToolItem addAutoWidthSpacer()
     {
@@ -171,7 +171,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * 自适应大小的空白占位符，会挤占剩余的所有空间
      * @author Rocex Wang
-     * @version 2019-5-23 22:19:20
+     * @since 2019-5-23 22:19:20
      ***************************************************************************/
     public ToolItem addAutoWidthSpacer(int iIndex)
     {
@@ -203,7 +203,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @param control
      * @author Rocex Wang
-     * @version 2019-5-13 22:18:53
+     * @since 2019-5-13 22:18:53
      ***************************************************************************/
     public ToolItem addCustomControl(Control control)
     {
@@ -216,7 +216,7 @@ public class Toolbar : ToolBar
      * @param control
      * @param iWidth
      * @author Rocex Wang
-     * @version 2019-5-23 22:46:29
+     * @since 2019-5-23 22:46:29
      ***************************************************************************/
     public ToolItem addCustomControl(Control control, int iWidth)
     {
@@ -227,7 +227,7 @@ public class Toolbar : ToolBar
      * @param control
      * @param iWidth
      * @author Rocex Wang
-     * @version 2019-5-23 22:46:29
+     * @since 2019-5-23 22:46:29
      ***************************************************************************/
     public ToolItem addCustomControl(Control control, int iWidth, int iIndex)
     {
@@ -242,7 +242,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @return Separator item
      * @author Rocex Wang
-     * @version 2019-5-23 22:58:44
+     * @since 2019-5-23 22:58:44
      ***************************************************************************/
     public ToolItem addSeparator()
     {
@@ -252,7 +252,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @return Separator item
      * @author Rocex Wang
-     * @version 2019-5-23 22:58:44
+     * @since 2019-5-23 22:58:44
      ***************************************************************************/
     public ToolItem addSeparator(int iIndex)
     {
@@ -261,7 +261,7 @@ public class Toolbar : ToolBar
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-5-23 22:23:25
+     * @since 2019-5-23 22:23:25
      ***************************************************************************/
     protected void autoWidthSpacer()
     {
@@ -305,7 +305,7 @@ public class Toolbar : ToolBar
      * {@inheritDoc}<br>
      * @see org.eclipse.swt.widgets.Widget#dispose()
      * @author Rocex Wang
-     * @version 2020-7-4 22:29:09
+     * @since 2020-7-4 22:29:09
      ****************************************************************************/
     override public void dispose()
     {
@@ -345,7 +345,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @return the context
      * @author Rocex Wang
-     * @version 2020-6-1 22:58:05
+     * @since 2020-6-1 22:58:05
      ***************************************************************************/
     public Context getContext()
     {
@@ -355,7 +355,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @param context the context to set
      * @author Rocex Wang
-     * @version 2020-6-1 22:58:05
+     * @since 2020-6-1 22:58:05
      ***************************************************************************/
     public void setContext(Context context)
     {
@@ -365,7 +365,7 @@ public class Toolbar : ToolBar
     /***************************************************************************
      * @param evt
      * @author Rocex Wang
-     * @version 2019-5-23 22:18:32
+     * @since 2019-5-23 22:18:32
      ***************************************************************************/
     protected void showHintMessage(MouseEvent evt)
     {

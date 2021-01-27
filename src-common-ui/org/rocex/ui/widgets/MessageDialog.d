@@ -9,7 +9,7 @@ import org.rocex.utils.StringHelper;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-21 22:20:20
+ * @since 2019-5-21 22:20:20
  ***************************************************************************/
 public class MessageDialog : MessageBox
 {
@@ -19,7 +19,7 @@ public class MessageDialog : MessageBox
      * @param strMessage
      * @return <code>true</code> if the user presses the OK button, <code>false</code> otherwise
      * @author Rocex Wang
-     * @version 2019-5-22 22:32:34
+     * @since 2019-5-22 22:32:34
      ***************************************************************************/
     public static bool showConfirm(Shell parent, String strMessage)
     {
@@ -38,7 +38,7 @@ public class MessageDialog : MessageBox
      * @param parent
      * @param strMessage
      * @author Rocex Wang
-     * @version 2019-5-22 22:34:34
+     * @since 2019-5-22 22:34:34
      ***************************************************************************/
     public static void showError(Shell parent, String strMessage)
     {
@@ -55,7 +55,7 @@ public class MessageDialog : MessageBox
      * @param parent
      * @param strMessage
      * @author Rocex Wang
-     * @version 2019-5-22 22:32:36
+     * @since 2019-5-22 22:32:36
      ***************************************************************************/
     public static void showInformation(Shell parent, String strMessage)
     {
@@ -73,7 +73,7 @@ public class MessageDialog : MessageBox
      * @param strMessage
      * @return <code>true</code> if the user presses the Yes button, <code>false</code> otherwise
      * @author Rocex Wang
-     * @version 2019-5-22 22:34:30
+     * @since 2019-5-22 22:34:30
      ***************************************************************************/
     public static int showQuestion(Shell parent, String strMessage)
     {
@@ -91,7 +91,7 @@ public class MessageDialog : MessageBox
      * @param parent
      * @param strMessage
      * @author Rocex Wang
-     * @version 2019-5-22 22:34:28
+     * @since 2019-5-22 22:34:28
      ***************************************************************************/
     public static void showWarning(Shell parent, String strMessage)
     {
@@ -107,7 +107,7 @@ public class MessageDialog : MessageBox
      * @param parent
      * @param style
      * @author Rocex Wang
-     * @version 2019-5-21 22:20:20
+     * @since 2019-5-21 22:20:20
      ***************************************************************************/
     private this(Shell parent, int style)
     {

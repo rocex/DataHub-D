@@ -20,7 +20,7 @@ import std.stdio;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-8 21:22:11
+ * @since 2019-5-8 21:22:11
  ***************************************************************************/
 public class ResHelper
 {
@@ -40,7 +40,7 @@ public class ResHelper
     /***************************************************************************
      * @param closeables
      * @author Rocex Wang
-     * @version 2020-5-25 21:23:18
+     * @since 2020-5-25 21:23:18
      ***************************************************************************/
     public static void close(File[] closeables...)
     {
@@ -69,7 +69,7 @@ public class ResHelper
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-7-1 21:16:48
+     * @since 2019-7-1 21:16:48
      ***************************************************************************/
     public static void dispose()
     {
@@ -81,7 +81,7 @@ public class ResHelper
     /***************************************************************************
      * @param widgets
      * @author Rocex Wang
-     * @version 2020-7-4 21:24:40
+     * @since 2020-7-4 21:24:40
      ***************************************************************************/
     public static void dispose(Widget[] widgets)
     {
@@ -101,7 +101,7 @@ public class ResHelper
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-7-18 21:55:54
+     * @since 2019-7-18 21:55:54
      ***************************************************************************/
     public static void disposeColors()
     {
@@ -129,7 +129,7 @@ public class ResHelper
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-7-18 21:56:02
+     * @since 2019-7-18 21:56:02
      ***************************************************************************/
     public static void disposeFonts()
     {
@@ -157,7 +157,7 @@ public class ResHelper
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2020-07-31 21:50:31
+     * @since 2020-07-31 21:50:31
      ***************************************************************************/
     public static void disposeImage(String strFilePath)
     {
@@ -183,7 +183,7 @@ public class ResHelper
 
     /***************************************************************************
      * @author Rocex Wang
-     * @version 2019-7-1 21:16:55
+     * @since 2019-7-1 21:16:55
      ***************************************************************************/
     public static void disposeImages()
     {
@@ -213,7 +213,7 @@ public class ResHelper
      * @param iSystemColorID
      * @return Color
      * @author Rocex Wang
-     * @version 2019-7-18 21:02:44
+     * @since 2019-7-18 21:02:44
      ***************************************************************************/
     public static Color getColor(int iSystemColorID)
     {
@@ -237,7 +237,7 @@ public class ResHelper
      * @param b
      * @return Color
      * @author Rocex Wang
-     * @version 2019-7-18 21:10:45
+     * @since 2019-7-18 21:10:45
      ***************************************************************************/
     public static Color getColor(int r, int g, int b)
     {
@@ -248,7 +248,7 @@ public class ResHelper
      * @param rgb
      * @return Color
      * @author Rocex Wang
-     * @version 2019-7-18 21:05:38
+     * @since 2019-7-18 21:05:38
      ***************************************************************************/
     public static Color getColor(RGB rgb)
     {
@@ -272,7 +272,7 @@ public class ResHelper
      * @param style
      * @return Font
      * @author Rocex Wang
-     * @version 2019-7-18 21:54:59
+     * @since 2019-7-18 21:54:59
      ***************************************************************************/
     public static Font getFont(String name, int height, int style)
     {
@@ -296,7 +296,7 @@ public class ResHelper
      * @param strFilePath
      * @return Image
      * @author Rocex Wang
-     * @version 2019-7-1 21:17:07
+     * @since 2019-7-1 21:17:07
      ***************************************************************************/
     public static Image getImage(String strFilePath)
     {
@@ -349,7 +349,7 @@ public class ResHelper
      * @param strFileName icon文件名
      * @return Image
      * @author Rocex Wang
-     * @version 2020-6-9 21:55:06
+     * @since 2020-6-9 21:55:06
      ***************************************************************************/
     public static Image getImageIcon(String strFileName)
     {
@@ -359,7 +359,7 @@ public class ResHelper
     /***************************************************************************
      * @param lMillis
      * @author Rocex Wang
-     * @version 2020-6-8 21:16:22
+     * @since 2020-6-8 21:16:22
      ***************************************************************************/
     public static void sleep(long lMillis)
     {

@@ -21,7 +21,7 @@ import org.rocex.utils.VOHelper;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2019-5-29 21:36:12
+ * @since 2019-5-29 21:36:12
  ***************************************************************************/
 public class SuperVO
 {
@@ -29,7 +29,7 @@ public class SuperVO
      * {@inheritDoc}<br>
      * @see java.lang.Object#clone()
      * @author Rocex Wang
-     * @version 2019-6-27 21:53:55
+     * @since 2019-6-27 21:53:55
      ****************************************************************************/
     public SuperVO clone()
     {
@@ -52,7 +52,7 @@ public class SuperVO
     /***************************************************************************
      * @param mapKeyValue
      * @author Rocex Wang
-     * @version 2019-5-29 21:30:24
+     * @since 2019-5-29 21:30:24
      ***************************************************************************/
     public void cloneFrom(Map mapKeyValue)
     {
@@ -67,7 +67,7 @@ public class SuperVO
     /***************************************************************************
      * @param prop
      * @author Rocex Wang
-     * @version 2020-1-18 21:04:27
+     * @since 2020-1-18 21:04:27
      ***************************************************************************/
     //    public void cloneFrom(Properties prop)
     //    {
@@ -84,7 +84,7 @@ public class SuperVO
      * @param sourceVO
      * @return targetVO
      * @author Rocex Wang
-     * @version 2020-1-17 21:38:47
+     * @since 2020-1-17 21:38:47
      ***************************************************************************/
     public void cloneFrom(SuperVO sourceVO)
     {
@@ -96,7 +96,7 @@ public class SuperVO
      * @param strFieldName 不区分大小写
      * @return Object
      * @author Rocex Wang
-     * @version 2019-6-11 21:05:23
+     * @since 2019-6-11 21:05:23
      ***************************************************************************/
     public Object getValue(String strFieldName)
     {
@@ -136,7 +136,7 @@ public class SuperVO
      * @param strFieldName 不区分大小写
      * @param objValue
      * @author Rocex Wang
-     * @version 2020-1-18 21:45:45
+     * @since 2020-1-18 21:45:45
      ***************************************************************************/
     protected void setFieldValue(String strFieldName, Object objValue)
     {
@@ -174,7 +174,7 @@ public class SuperVO
      * @param strFieldName 不区分大小写
      * @param objValue
      * @author Rocex Wang
-     * @version 2019-6-11 21:18:34
+     * @since 2019-6-11 21:18:34
      ***************************************************************************/
     public void setValue(String strFieldName, Object objValue)
     {
@@ -239,7 +239,7 @@ public class SuperVO
      * @param objValue
      * @throws Exception
      * @author Rocex Wang
-     * @version 2020-5-18 21:22:43
+     * @since 2020-5-18 21:22:43
      ***************************************************************************/
     protected void setValueToBigDecimal(Method method, Object objValue) //throw Exception
     {
@@ -262,7 +262,7 @@ public class SuperVO
      * @param objValue
      * @throws Exception
      * @author Rocex Wang
-     * @version 2020-5-18 21:19:26
+     * @since 2020-5-18 21:19:26
      ***************************************************************************/
     protected void setValueToBoolean(Method method, Object objValue) //throws Exception
     {
@@ -292,7 +292,7 @@ public class SuperVO
      * @param method
      * @param objValue
      * @author Rocex Wang
-     * @version 2020-1-6 21:23:56
+     * @since 2020-1-6 21:23:56
      * @throws Exception
      ***************************************************************************/
     protected void setValueToInt(Method method, Object objValue) // throws Exception
@@ -320,7 +320,7 @@ public class SuperVO
      * @param objValue
      * @throws Exception
      * @author Rocex Wang
-     * @version 2020-5-28 21:44:25
+     * @since 2020-5-28 21:44:25
      ***************************************************************************/
     protected void setValueToString(Method method, Object objValue) //throws Exception
     {
@@ -341,7 +341,7 @@ public class SuperVO
     /***************************************************************************
      * @return Map
      * @author Rocex Wang
-     * @version 2019-5-29 21:02:38
+     * @since 2019-5-29 21:02:38
      ***************************************************************************/
     public Map toMap()
     {
@@ -387,7 +387,7 @@ public class SuperVO
      * {@inheritDoc}<br>
      * @see java.lang.Object#toString()
      * @author Rocex Wang
-     * @version 2019-5-24 21:23:54
+     * @since 2019-5-24 21:23:54
      ****************************************************************************/
     override public String toString()
     {

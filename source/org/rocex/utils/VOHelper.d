@@ -11,7 +11,7 @@ import org.rocex.vo.SuperVO;
 /***************************************************************************
  * <br>
  * @author Rocex Wang
- * @version 2020-7-4 21:50:54
+ * @since 2020-7-4 21:50:54
  ***************************************************************************/
 public class VOHelper
 {
@@ -24,7 +24,7 @@ public class VOHelper
      * @param clazz
      * @return Map<String, Method>
      * @author Rocex Wang
-     * @version 2020-7-4 21:05:49
+     * @since 2020-7-4 21:05:49
      ***************************************************************************/
     public static Map getGetter(TypeInfo_Class clazz)
     {
@@ -50,7 +50,7 @@ public class VOHelper
      * @param strFieldName 不区分大小写
      * @return Method
      * @author Rocex Wang
-     * @version 2020-5-26 21:30:56
+     * @since 2020-5-26 21:30:56
      ***************************************************************************/
     public static Method getGetter(Class clazz, String strFieldName)
     {
@@ -78,7 +78,7 @@ public class VOHelper
      * @param strFieldName 不区分大小写
      * @return Method
      * @author Rocex Wang
-     * @version 2020-5-18 21:15:26
+     * @since 2020-5-18 21:15:26
      ***************************************************************************/
     public static Method getSetter(Class clazz, String strFieldName)
     {
@@ -104,7 +104,7 @@ public class VOHelper
     /***************************************************************************
      * 初始化收集 VO 的所有 getter
      * @author Rocex Wang
-     * @version 2020-5-26 21:51:22
+     * @since 2020-5-26 21:51:22
      ***************************************************************************/
     protected static synchronized void initGetter(Class clazz)
     {
@@ -141,7 +141,7 @@ public class VOHelper
     /***************************************************************************
      * 初始化收集 VO 的所有 setter
      * @author Rocex Wang
-     * @version 2020-5-26 21:21:40
+     * @since 2020-5-26 21:21:40
      ***************************************************************************/
     protected static synchronized void initSetter(Class clazz)
     {
