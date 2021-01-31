@@ -160,8 +160,7 @@ public class Properties
 
                 mapValues[entity.key] = entity;
 
-                Logger.getLogger.infof("[%s] = [%s] [%s]", entity.key,
-                        entity.value, entity.comment);
+                Logger.getLogger.infof("[%s] = [%s] [%s]", entity.key, entity.value, entity.comment);
 
                 entity = Entity();
             }
@@ -182,10 +181,7 @@ public class Properties
         {
             mapValues[strKey].value = strValue;
 
-            if (strComment !is null)
-            {
-                mapValues[strKey].comment = strComment;
-            }
+            putComment(strKey, strComment);
 
             return this;
         }
@@ -309,8 +305,7 @@ public class Properties
 
             sort(strKeys);
 
-            write(strFilePath, "## " ~ (strComment is null ? this.strComment
-                    : strComment) ~ lineSep ~ lineSep);
+            write(strFilePath, "## " ~ (strComment is null ? this.strComment : strComment) ~ lineSep ~ lineSep);
 
             foreach (strKey; strKeys)
             {
@@ -318,8 +313,7 @@ public class Properties
 
                 if (entity.comment !is null && entity.comment.length > 0)
                 {
-                    append(strFilePath, lineSep ~ "#" ~ (entity.comment.startsWith(" ")
-                            ? "" : " ") ~ entity.comment ~ lineSep);
+                    append(strFilePath, lineSep ~ "#" ~ (entity.comment.startsWith(" ") ? "" : " ") ~ entity.comment ~ lineSep);
                 }
 
                 append(strFilePath, entity.key ~ " = " ~ entity.value ~ lineSep);
