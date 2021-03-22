@@ -458,7 +458,7 @@ public static void main(String[] args)
         String strMainClass = Settings.getValue(SettingConst.main_class,
                 Application.classinfo.name);
 
-        Logger.getLogger().error("main class is " ~ strMainClass);
+        Logger.getLogger().info("main class is " ~ strMainClass);
 
         Application window = cast(Application) Object.factory(strMainClass);
 

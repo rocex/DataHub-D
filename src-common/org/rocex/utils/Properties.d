@@ -8,33 +8,46 @@ import std.stdio : writefln;
 import std.string;
 
 /***************************************************************************
- * <br>
+ * key有序，并且有注释的Properties<br>
  * @author Rocex Wang
  * @since 2020-08-11 21:20:41
  ***************************************************************************/
 public class Properties
 {
-    ///
+    /** */
     struct Entity
     {
         ///
-        string key;
+        string strKey;
         ///
-        string value;
+        string strValue;
         ///
-        string comment;
+        string strComment;
 
         /** */
         this(string strKey, string strValue, string strComment = null)
         {
-            this.key = strKey;
-            this.value = strValue;
-            this.comment = strComment;
+            this.strKey = strKey;
+            this.strValue = strValue;
+            this.strComment = strComment;
+        }
+
+        /** */
+        public bool equals(Entity entity)
+        {
+            if (is(typeof(entity) == typeof(null)))
+            {
+                return false;
+            }
+
+            return equal(strKey, entity.strKey) && equal(strValue,
+                    entity.strValue) && equal(strComment, entity.strComment);
         }
     }
 
-    private string strComment; //
-    private Entity[string] mapValues; //
+    private string strFileComment; //整个Properties文件的注释
+    private Entity[string] mapKeyValues; //
+    private Properties originalProperties = null; // 原始数据，在load的时候加载，store之后重置成最新的
 
     version (Windows)
     {
@@ -51,7 +64,64 @@ public class Properties
      ***************************************************************************/
     public void clear()
     {
-        mapValues.clear();
+        mapKeyValues.clear();
+    }
+    /***************************************************************************
+     * @author Rocex Wang
+     * @since 2021-3-22 22:25:41
+     ***************************************************************************/
+    public Properties clone()
+    {
+        Properties prop = new Properties();
+
+        prop.setFileComment(getFileComment());
+
+        prop.putAll(this);
+
+        return prop;
+    }
+
+    /***************************************************************************
+     * @author Rocex Wang
+     * @since 2021-3-22 22:20:49
+     ***************************************************************************/
+    public void dispose()
+    {
+        if (!(mapKeyValues is null))
+        {
+            clear();
+            mapKeyValues = null;
+        }
+
+        originalProperties.dispose();
+    }
+
+    /****************************************************************************
+     * @author Rocex Wang
+     * @since 2021-3-22 21:36:13
+     ****************************************************************************/
+    public bool equals(Properties prop)
+    {
+        if (prop == this)
+        {
+            return true;
+        }
+
+        // 如果key都不相等，则这两个properties也不相等
+        if (keys() != prop.keys())
+        {
+            return false;
+        }
+
+        foreach (Properties.Entity entity; prop.values())
+        {
+            if (entity.strValue != get(entity.strKey))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /***************************************************************************
@@ -62,14 +132,7 @@ public class Properties
      ***************************************************************************/
     public string get(string strKey)
     {
-        if (strKey in mapValues)
-        {
-            Entity entity = mapValues[strKey];
-
-            return entity.value;
-        }
-
-        return null;
+        return (strKey in mapKeyValues) ? mapKeyValues[strKey].strValue : null;
     }
 
     /***************************************************************************
@@ -80,12 +143,27 @@ public class Properties
      ***************************************************************************/
     public string getComment(string strKey)
     {
-        if (strKey in mapValues)
-        {
-            return mapValues[strKey].comment;
-        }
+        return (strKey in mapKeyValues) ? mapKeyValues[strKey].strComment : null;
+    }
 
-        return null;
+    /***************************************************************************
+     * @return the fileComment
+     * @author Rocex Wang
+     * @since 2021-3-22 22:42:08
+     ***************************************************************************/
+    public string getFileComment()
+    {
+        return strFileComment;
+    }
+
+    /***************************************************************************
+     * @return boolean 从文件中加载以来是否有变化，包括任何的 key、value、comment 的变化
+     * @author Rocex Wang
+     * @since 2021-2-4 22:51:31
+     ***************************************************************************/
+    public bool isChangeFromLoad()
+    {
+        return !equals(originalProperties);
     }
 
     /***************************************************************************
@@ -95,7 +173,7 @@ public class Properties
      ***************************************************************************/
     public bool isEmpty()
     {
-        return mapValues is null || mapValues.length == 0;
+        return mapKeyValues is null || mapKeyValues.length == 0;
     }
 
     /***************************************************************************
@@ -105,7 +183,7 @@ public class Properties
      ***************************************************************************/
     public auto keys()
     {
-        return mapValues.keys();
+        return mapKeyValues.keys();
     }
 
     /***************************************************************************
@@ -132,7 +210,8 @@ public class Properties
 
         auto lines = splitLines(fileText).filter!q{!a.empty};
 
-        bool blFileCommnet = true;
+        bool blFileComment = true;
+        auto strFileComment = "";
 
         Entity entity = Entity();
 
@@ -140,31 +219,34 @@ public class Properties
         {
             line = strip(line);
 
-            if (blFileCommnet && line.startsWith("##"))
+            if (blFileComment && line.startsWith("##"))
             {
-                putComment(line[2 .. $]);
+                strFileComment ~= line[2 .. $] ~ lineSep;
             }
             else if (line.startsWith("#"))
             {
-                blFileCommnet = false;
-                entity.comment ~= line[1 .. $];
+                blFileComment = false;
+                entity.strComment ~= line[1 .. $];
             }
             else if (line.indexOf("=") > 0)
             {
-                blFileCommnet = false;
+                blFileComment = false;
 
                 auto index = line.indexOf("=");
 
-                entity.key = strip(line[0 .. index]);
-                entity.value = strip(line[index + 1 .. $]);
+                entity.strKey = strip(line[0 .. index]);
+                entity.strValue = strip(line[index + 1 .. $]);
 
-                mapValues[entity.key] = entity;
+                mapKeyValues[entity.strKey] = entity;
 
-                Logger.getLogger.infof("[%s] = [%s] [%s]", entity.key, entity.value, entity.comment);
+                Logger.getLogger.infof("[%s] = [%s] [%s]", entity.strKey,
+                        entity.strValue, entity.strComment);
 
                 entity = Entity();
             }
         }
+
+        setFileComment(strFileComment);
     }
 
     /***************************************************************************
@@ -177,18 +259,21 @@ public class Properties
      ***************************************************************************/
     public Properties put(string strKey, string strValue, string strComment = null)
     {
-        if (strKey in mapValues)
+        if (strKey in mapKeyValues)
         {
-            mapValues[strKey].value = strValue;
+            mapKeyValues[strKey].strValue = strValue;
 
-            putComment(strKey, strComment);
-
-            return this;
+            if (strComment !is null)
+            {
+                mapKeyValues[strKey].strComment = strComment;
+            }
         }
+        else
+        {
+            const Entity entity = Entity(strKey, strValue, strComment);
 
-        const Entity entity = Entity(strKey, strValue, strComment);
-
-        mapValues[strKey] = entity;
+            mapKeyValues[strKey] = entity;
+        }
 
         return this;
     }
@@ -205,27 +290,8 @@ public class Properties
 
         foreach (entity; entities)
         {
-            put(entity.key, entity.value, entity.comment);
+            put(entity.strKey, entity.strValue, entity.strComment);
         }
-
-        return this;
-    }
-
-    /***************************************************************************
-     * @param strKey
-     * @param strComment
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-8-11 21:17:41
-     ***************************************************************************/
-    public Properties putComment(string strComment)
-    {
-        if (strComment is null)
-        {
-            this.strComment = null;
-        }
-
-        this.strComment ~= strComment;
 
         return this;
     }
@@ -239,12 +305,12 @@ public class Properties
      ***************************************************************************/
     public Properties putComment(string strKey, string strComment)
     {
-        if (strKey !in mapValues)
+        if (strKey !in mapKeyValues)
         {
             return this;
         }
 
-        mapValues[strKey].comment = strComment;
+        mapKeyValues[strKey].strComment = strComment;
 
         return this;
     }
@@ -259,7 +325,7 @@ public class Properties
     {
         foreach (strKey; strKeys)
         {
-            mapValues.remove(strKey);
+            mapKeyValues.remove(strKey);
         }
 
         return this;
@@ -275,9 +341,9 @@ public class Properties
     {
         foreach (strKey; strKeys)
         {
-            if (strKey in mapValues)
+            if (strKey in mapKeyValues)
             {
-                mapValues[strKey].comment = null;
+                mapKeyValues[strKey].strComment = null;
             }
         }
 
@@ -285,12 +351,27 @@ public class Properties
     }
 
     /***************************************************************************
+     * 整个 Properties 文件的注释
+     * @param strKey
+     * @param strFileComment
+     * @return Properties
+     * @author Rocex Wang
+     * @since 2020-8-11 21:17:41
+     ***************************************************************************/
+    public Properties setFileComment(string strFileComment)
+    {
+        this.strFileComment = strFileComment;
+
+        return this;
+    }
+
+    /***************************************************************************
      * @param strFilePath
-     * @param strComment
+     * @param strFileComment
      * @author Rocex Wang
      * @since 2020-8-11 21:53:05
      ***************************************************************************/
-    public void store(string strFilePath, string strComment = null)
+    public void store(string strFilePath, string strFileComment = null)
     {
         try
         {
@@ -301,22 +382,24 @@ public class Properties
                 mkdirRecurse(parentPath);
             }
 
-            auto strKeys = mapValues.keys();
+            auto strKeys = mapKeyValues.keys();
 
             sort(strKeys);
 
-            write(strFilePath, "## " ~ (strComment is null ? this.strComment : strComment) ~ lineSep ~ lineSep);
+            write(strFilePath, "## " ~ (strFileComment is null
+                    ? this.strFileComment : strFileComment) ~ lineSep ~ lineSep);
 
             foreach (strKey; strKeys)
             {
-                Entity entity = mapValues[strKey];
+                Entity entity = mapKeyValues[strKey];
 
-                if (entity.comment !is null && entity.comment.length > 0)
+                if (entity.strComment !is null && entity.strComment.length > 0)
                 {
-                    append(strFilePath, lineSep ~ "#" ~ (entity.comment.startsWith(" ") ? "" : " ") ~ entity.comment ~ lineSep);
+                    append(strFilePath, lineSep ~ "#" ~ (entity.strComment.startsWith(" ")
+                            ? "" : " ") ~ entity.strComment ~ lineSep);
                 }
 
-                append(strFilePath, entity.key ~ " = " ~ entity.value ~ lineSep);
+                append(strFilePath, entity.strKey ~ " = " ~ entity.strValue ~ lineSep);
             }
         }
         catch (FileException ex)
@@ -325,13 +408,13 @@ public class Properties
         }
     }
 
-    /***************************************************************************
+    /*************************************************************************** 
      * @return Properties
      * @author Rocex Wang
      * @since 2020-08-12 21:12:02
      ***************************************************************************/
     public auto values()
     {
-        return mapValues.values();
+        return mapKeyValues.values();
     }
 }

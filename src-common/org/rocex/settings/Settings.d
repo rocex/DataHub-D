@@ -193,9 +193,9 @@ public class Settings
         {
             foreach (Properties.Entity entity; properties.values())
             {
-                String strKey = entity.key;
+                String strKey = entity.strKey;
 
-                if (entity.value != propertiesOrigin.get(strKey))
+                if (entity.strValue != propertiesOrigin.get(strKey))
                 {
                     blChanged = true;
 
@@ -216,22 +216,15 @@ public class Settings
 
     /***************************************************************************
      * @param strKey
-     * @param objValue
+     * @param strValue
      * @author Rocex Wang
      * @since 2019-5-13 21:57:50
      ***************************************************************************/
-    public static void setValue(String strKey, Object objValue)
+    public static void setValue(String strKey, String strValue)
     {
-        const String strProp = to!String(properties.get(strKey));
+        const String strProp = properties.get(strKey);
 
-        String strValue = "";
-
-        if (objValue !is null)
-        {
-            strValue = objValue.to!(String);
-        }
-
-        if (strProp == strValue)
+        if (equals(strProp, strValue))
         {
             return;
         }
@@ -247,7 +240,7 @@ public class Settings
      ***************************************************************************/
     public static void setValue(String strKey, bool blValue)
     {
-        setValue(strKey, blValue ? 1 : 0);
+        setValue(strKey, blValue ? "true" : "false");
     }
 
     /***************************************************************************
@@ -258,6 +251,17 @@ public class Settings
      ***************************************************************************/
     public static void setValue(String strKey, int iValue)
     {
-        // setValue(strKey, iValue);
+        setValue(strKey, to!String(iValue));
+    }
+
+    /***************************************************************************
+     * @param strKey
+     * @param dblValue
+     * @author Rocex Wang
+     * @since 2021-03-23 21:25:34
+     ***************************************************************************/
+    public static void setValue(String strKey, double dblValue)
+    {
+        setValue(strKey, to!String(dblValue));
     }
 }
