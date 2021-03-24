@@ -10,6 +10,8 @@ import org.eclipse.swt.widgets.Event;
 import org.rocex.settings.SettingConst;
 import org.rocex.settings.Settings;
 import org.rocex.utils.ResHelper;
+import org.rocex.utils.Logger;
+import org.rocex.ui.widgets.MessageDialog;
 
 /***************************************************************************
  * <br>
@@ -43,22 +45,24 @@ public class ExitAction : Action
 
     override public void doAction(Event evt)
     {
-        // if (!MessageDialog.showConfirm(getContext().getApplication(), "exit app?"))
+        // if (!MessageDialog.showConfirm(getContext().getApplication(), "确定要退出应用？"))
         // {
-        // evt.doit = false;
-        //
-        // return;
+        //     evt.doit = false;
+
+        //     return;
         // }
+
+        Logger.getLogger().warning("exit application!");
 
         beforeExit(evt);
 
         saveWindowState();
 
+        Settings.save();
+
         ResHelper.dispose();
 
         getActionManager().dispose();
-
-        Settings.dispose();
 
         Display display = Display.getDefault();
 

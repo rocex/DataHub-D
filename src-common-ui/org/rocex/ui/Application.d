@@ -1,7 +1,9 @@
-module org.rocex.ui.Application;
+module org.rocex.ui.app;
 
 import java.lang.all;
 import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.custom.CTabFolder;
+import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -65,12 +67,22 @@ public class Application : Shell
     {
         super();
 
+        initUI();
+    }
+
+    /***************************************************************************
+     * @author Rocex Wang
+     * @since 2021-3-24 21:56:25
+     ***************************************************************************/
+    protected void initUI()
+    {
         setText("Application");
         setImage(ResHelper.getImage(ResHelper.res_root_path ~ "app.png"));
 
         setLayout(UIHelper.getFillGridLayout(1, true));
 
         context = createContext();
+        UIHelper.context = context;
 
         actionManager = createActionManager();
         actionManager.setContext(getContext());
@@ -193,10 +205,6 @@ public class Application : Shell
      ***************************************************************************/
     protected Composite createMainControl(Composite parent)
     {
-        //todo delete those lines
-        import org.eclipse.swt.custom.CTabFolder;
-        import org.eclipse.swt.custom.CTabItem;
-
         CTabFolder tabFolder = new CTabFolder(parent, SWT.BORDER | SWT.FLAT);
         tabFolder.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
 
@@ -236,7 +244,7 @@ public class Application : Shell
 
     /***************************************************************************
      * @param shell
-     * @return
+     * @return MenuBar
      * @author Rocex Wang
      * @since 2019-5-8 22:05:17
      ***************************************************************************/
@@ -451,7 +459,7 @@ public static void main(String[] args)
 {
     Display display = Display.getDefault();
 
-    Logger.setEnableLevel(Settings.getValue(SettingConst.enable_log_level, "error"));
+    Logger.setEnableLevel(Settings.getValue(SettingConst.enable_log_level, "all"));
 
     try
     {
@@ -461,9 +469,6 @@ public static void main(String[] args)
         Logger.getLogger().info("main class is " ~ strMainClass);
 
         Application window = cast(Application) Object.factory(strMainClass);
-
-        // todo delete this line
-        window = new Application();
 
         window.restoreWindowState();
 

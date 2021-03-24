@@ -20,25 +20,25 @@ import std.string;
  ***************************************************************************/
 public class Settings
 {
-    private static Properties properties;
+    private static Properties properties = null;
 
-    /** 和 properties 做对比，以判断是否有变化 */
-    private static Properties propertiesOrigin;
+    /** 原始数据，在load的时候加载，store之后重置成最新的，和 properties 做对比，以判断是否有变化 */
+    private static Properties originalProperties = null;
 
     static this()
     {
         properties = new Properties();
-        propertiesOrigin = new Properties();
+        originalProperties = new Properties();
     }
 
     /***************************************************************************
      * @author Rocex Wang
      * @since 2020-7-7 21:30:06
      ***************************************************************************/
-    public static void dispose()
+    public static ~this()
     {
-        properties.clear();
-        propertiesOrigin.clear();
+        properties.dispose();
+        originalProperties.dispose();
     }
 
     /***************************************************************************
@@ -157,14 +157,24 @@ public class Settings
     }
 
     /***************************************************************************
+     * @return boolean 从文件中加载以来是否有变化，包括任何的 key、value、comment 的变化
      * @author Rocex Wang
-     * @since 2019-5-21 21:09:32
+     * @since 2021-2-4 22:51:31
      ***************************************************************************/
-    protected static void load()
+    public static bool isChangeFromLoad()
+    {
+        return !properties.equals(originalProperties);
+    }
+
+    /***************************************************************************
+     * @author Rocex Wang
+     * @since 2019-5-21 22:09:32
+     ***************************************************************************/
+    public static void load()
     {
         properties.load(SettingConst.file_path_of_settings);
 
-        propertiesOrigin.putAll(properties);
+        originalProperties = properties.clone();
     }
 
     /***************************************************************************
@@ -173,45 +183,16 @@ public class Settings
      ***************************************************************************/
     public static void save()
     {
-        if (properties.isEmpty())
+        if (!isChangeFromLoad())
         {
             return;
         }
 
-        bool blChanged = false;
+        properties.store(SettingConst.file_path_of_settings);
 
-        // 如果key都不相等，则这两个properties也不相等
-        if (properties.keys() != propertiesOrigin.keys())
-        {
-            blChanged = true;
-        }
+        originalProperties = properties.clone();
 
-        Logger.getLogger.info("settings keys changed!");
-
-        // 和原始的做对比
-        if (!blChanged)
-        {
-            foreach (Properties.Entity entity; properties.values())
-            {
-                String strKey = entity.strKey;
-
-                if (entity.strValue != propertiesOrigin.get(strKey))
-                {
-                    blChanged = true;
-
-                    break;
-                }
-            }
-        }
-
-        if (!blChanged)
-        {
-            return;
-        }
-
-        Logger.getLogger.info("settings values changed!");
-
-        properties.store(SettingConst.file_path_of_settings, "DataHub Settings");
+        Logger.getLogger.info("settings saved!");
     }
 
     /***************************************************************************

@@ -10,7 +10,7 @@ import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.swt.widgets.Widget;
 import org.rocex.ui.action.ActionManager;
 import org.rocex.ui.action.IAction;
-import org.rocex.ui.Application;
+import org.rocex.ui.app;
 import org.rocex.ui.Context;
 import org.rocex.ui.widgets.MessageDialog;
 import org.rocex.utils.Logger;

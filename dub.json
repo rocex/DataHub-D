@@ -1,21 +1,21 @@
 {
-  "name": "datahub",
-  "authors": ["rocex<rocexwang@gmail.com>"],
+    "name": "datahub",
+    "authors": ["rocex<rocexwang@gmail.com>"],
 
-  "copyright": "Copyright © 2019, rocex",
-  "license": "MIT",
+    "copyright": "Copyright © 2019, rocex",
+    "license": "MIT",
 
-  "targetPath": ".dub",
-  "targetName": "DataHub",
-  "targetType": "executable",
+    "targetPath": ".dub",
+    "targetName": "DataHub",
+    "targetType": "executable",
 
-  "dependencies": {
-    "dwt": "~>1.0.0"
-  },
+    "dependencies": {
+        "dwt": "~>1.0.0"
+    },
 
-  "dflags": ["-J./resource"],
+    "dflags": ["-J./resource"],
 
-  "sourceFiles": ["-J./resource"],
+    "sourceFiles": ["-J./resource"],
 
-  "sourcePaths": ["./src-common", "./src-common-ui"]
+    "sourcePaths": ["./src-common", "./src-common-ui", "./src-datahub-ui"]
 }

@@ -13,9 +13,9 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
-
-import org.rocex.ui.Application;
+import org.rocex.ui.app;
 import org.rocex.ui.Context;
+import org.rocex.utils.Logger;
 
 /***************************************************************************
  * <br>
@@ -29,6 +29,9 @@ public class UIHelper
 
     ///
     public static int iSashDefaultWidth = 4;
+
+    ///
+    public static Context context;
 
     /***************************************************************************
      * 鼠标进入时，控件自动获得焦点，鼠标离开时，让控件所在的shell获得焦点
@@ -90,7 +93,15 @@ public class UIHelper
 
         while (true)
         {
-            if (control2.classinfo.name == Application.classinfo.name)
+            if (control2 is null || control2.classinfo is null)
+            {
+                Logger.getLogger.warning("control is null,return default context!");
+                return context;
+            }
+
+            Logger.getLogger.warning("control:" ~ control2.classinfo.toString);
+
+            if (Application.classinfo.name == control2.classinfo.name)
             {
                 return (cast(Application) control2).getContext();
             }
@@ -129,11 +140,9 @@ public class UIHelper
     {
         Display display = Display.getCurrent() is null ? Display.getDefault() : Display.getCurrent();
 
-        Rectangle boundScreen = display.getBounds();
-
-        Rectangle boundParent = shell.getParent().getBounds();
-
-        Rectangle boundDialog = shell.getBounds();
+        const Rectangle boundDialog = shell.getBounds();
+        const Rectangle boundScreen = display.getBounds();
+        const Rectangle boundParent = shell.getParent().getBounds();
 
         int x = boundParent.width / 2 + boundParent.x - boundDialog.width / 2;
         int y = boundParent.height / 2 + boundParent.y - boundDialog.height / 2;
@@ -159,12 +168,11 @@ public class UIHelper
     {
         Display display = Display.getCurrent() is null ? Display.getDefault() : Display.getCurrent();
 
-        Rectangle boundScreen = display.getBounds();
+        const Rectangle boundScreen = display.getBounds();
+        const Rectangle boundDialog = shell.getBounds();
 
-        Rectangle boundDialog = shell.getBounds();
-
-        int x = boundScreen.width / 2 - boundDialog.width / 2;
-        int y = boundScreen.height / 2 - boundDialog.height / 2;
+        const int x = boundScreen.width / 2 - boundDialog.width / 2;
+        const int y = boundScreen.height / 2 - boundDialog.height / 2;
 
         return new Point(x, y);
     }

@@ -14,6 +14,15 @@ import std.string;
  ***************************************************************************/
 public class Properties
 {
+    version (Windows)
+    {
+        private auto lineSep = "\r\n";
+    }
+    else
+    {
+        private auto lineSep = "\n";
+    }
+
     /** */
     struct Entity
     {
@@ -47,15 +56,10 @@ public class Properties
 
     private string strFileComment; //整个Properties文件的注释
     private Entity[string] mapKeyValues; //
-    private Properties originalProperties = null; // 原始数据，在load的时候加载，store之后重置成最新的
 
-    version (Windows)
+    public ~this()
     {
-        private auto lineSep = "\r\n";
-    }
-    else
-    {
-        private auto lineSep = "\n";
+        dispose();
     }
 
     /***************************************************************************
@@ -64,7 +68,10 @@ public class Properties
      ***************************************************************************/
     public void clear()
     {
-        mapKeyValues.clear();
+        if (mapKeyValues !is null)
+        {
+            mapKeyValues.clear();
+        }
     }
     /***************************************************************************
      * @author Rocex Wang
@@ -87,13 +94,11 @@ public class Properties
      ***************************************************************************/
     public void dispose()
     {
-        if (!(mapKeyValues is null))
+        if (mapKeyValues !is null)
         {
-            clear();
+            mapKeyValues.clear();
             mapKeyValues = null;
         }
-
-        originalProperties.dispose();
     }
 
     /****************************************************************************
@@ -157,16 +162,6 @@ public class Properties
     }
 
     /***************************************************************************
-     * @return boolean 从文件中加载以来是否有变化，包括任何的 key、value、comment 的变化
-     * @author Rocex Wang
-     * @since 2021-2-4 22:51:31
-     ***************************************************************************/
-    public bool isChangeFromLoad()
-    {
-        return !equals(originalProperties);
-    }
-
-    /***************************************************************************
      * @return bool
      * @author Rocex Wang
      * @since 2020-8-11 21:20:49
@@ -193,6 +188,8 @@ public class Properties
      ***************************************************************************/
     public void load(string strFilePath)
     {
+        Logger.getLogger().infof("load properties from [%s]", strFilePath);
+
         if (!exists(strFilePath))
         {
             auto parentPath = dirName(strFilePath);
@@ -239,7 +236,7 @@ public class Properties
 
                 mapKeyValues[entity.strKey] = entity;
 
-                Logger.getLogger.infof("[%s] = [%s] [%s]", entity.strKey,
+                Logger.getLogger().tracef("[%s] = [%s] [%s]", entity.strKey,
                         entity.strValue, entity.strComment);
 
                 entity = Entity();
@@ -373,6 +370,8 @@ public class Properties
      ***************************************************************************/
     public void store(string strFilePath, string strFileComment = null)
     {
+        Logger.getLogger().infof("save properties to [%s]", strFilePath);
+
         try
         {
             auto parentPath = dirName(strFilePath);

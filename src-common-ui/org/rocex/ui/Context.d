@@ -2,7 +2,7 @@ module org.rocex.ui.Context;
 
 import org.eclipse.swt.widgets.Event;
 import org.rocex.ui.action.ActionManager;
-import org.rocex.ui.Application;
+import org.rocex.ui.app;
 
 /***************************************************************************
  * <br>

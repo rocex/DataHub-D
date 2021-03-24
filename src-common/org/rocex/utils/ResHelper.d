@@ -110,7 +110,7 @@ public class ResHelper
             return;
         }
 
-        Logger.getLogger().info("dispose all color");
+        Logger.getLogger().infof("dispose [%d] colors", (resColor.length));
 
         foreach (key, color; resColor)
         {
@@ -118,12 +118,9 @@ public class ResHelper
             {
                 color.dispose();
             }
-
-            resColor.remove(key);
-
-            Logger.getLogger().info("dispose color: " ~ to!String(key));
         }
 
+        resColor.clear();
         resColor = null;
     }
 
@@ -138,7 +135,7 @@ public class ResHelper
             return;
         }
 
-        Logger.getLogger().info("dispose all font");
+        Logger.getLogger().infof("dispose [%d] fonts", resFont.length);
 
         foreach (key, font; resFont)
         {
@@ -146,12 +143,9 @@ public class ResHelper
             {
                 font.dispose();
             }
-
-            resFont.remove(key);
-
-            Logger.getLogger().info("dispose color: " ~ key);
         }
 
+        resFont.clear();
         resFont = null;
     }
 
@@ -166,6 +160,8 @@ public class ResHelper
             return;
         }
 
+        Logger.getLogger().infof("dispose [%d] image ", resImage.length);
+
         if (strFilePath in resImage)
         {
             auto image = resImage[strFilePath];
@@ -175,10 +171,10 @@ public class ResHelper
                 image.dispose();
             }
 
-            resImage.remove(strFilePath);
-
-            Logger.getLogger().info("dispose image: " ~ strFilePath);
         }
+
+        resImage.clear();
+        resImage = null;
     }
 
     /***************************************************************************
@@ -192,7 +188,7 @@ public class ResHelper
             return;
         }
 
-        Logger.getLogger().info("dispose all images");
+        Logger.getLogger().infof("dispose [%d] images", resImage.length);
 
         foreach (key, image; resImage)
         {
@@ -200,12 +196,9 @@ public class ResHelper
             {
                 image.dispose();
             }
-
-            resImage.remove(key);
-
-            Logger.getLogger().info("dispose image: " ~ key);
         }
 
+        resImage.clear();
         resImage = null;
     }
 
@@ -300,7 +293,7 @@ public class ResHelper
      ***************************************************************************/
     public static Image getImage(String strFilePath)
     {
-        Logger.getLogger().info("get image: " ~ strFilePath);
+        Logger.getLogger().info("image: " ~ strFilePath);
 
         Image image = null;
 
@@ -309,7 +302,7 @@ public class ResHelper
             return resImage[strFilePath];
         }
 
-        Logger.getLogger().infof("image [%s] is not cached, load it from disk", strFilePath);
+        Logger.getLogger().warningf("image [%s] is not cached, load it from disk", strFilePath);
 
         try
         {
