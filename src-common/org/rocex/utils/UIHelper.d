@@ -99,9 +99,8 @@ public class UIHelper
                 return context;
             }
 
-            Logger.getLogger.warning("control:" ~ control2.classinfo.toString);
-
-            if (Application.classinfo.name == control2.classinfo.name)
+            if (Application.classinfo.name == typeof(control2).classinfo.name
+                    || Application.classinfo.name == typeid(control2).base.name)
             {
                 return (cast(Application) control2).getContext();
             }

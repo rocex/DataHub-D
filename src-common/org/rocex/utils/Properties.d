@@ -370,7 +370,7 @@ public class Properties
      ***************************************************************************/
     public void store(string strFilePath, string strFileComment = null)
     {
-        Logger.getLogger().infof("save properties to [%s]", strFilePath);
+        Logger.getLogger().warningf("save properties to [%s]", strFilePath);
 
         try
         {

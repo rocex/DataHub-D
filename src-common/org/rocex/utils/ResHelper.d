@@ -38,6 +38,15 @@ public class ResHelper
     public static String res_root_path = "resource/";
 
     /***************************************************************************
+     * @author Rocex Wang
+     * @since 2021-3-25 22:13:12
+     ***************************************************************************/
+    static ~this()
+    {
+        dispose();
+    }
+
+    /***************************************************************************
      * @param closeables
      * @author Rocex Wang
      * @since 2020-5-25 21:23:18
@@ -302,7 +311,7 @@ public class ResHelper
             return resImage[strFilePath];
         }
 
-        Logger.getLogger().warningf("image [%s] is not cached, load it from disk", strFilePath);
+        Logger.getLogger().warningf("[%s] is not cached, load it from disk", strFilePath);
 
         try
         {
