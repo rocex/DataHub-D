@@ -1,6 +1,6 @@
 module org.rocex.ui.widgets.LeftControl;
 
-import java.lang.all;
+import std.conv;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -9,7 +9,6 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 import org.rocex.ui.widgets.CompositeControl;
 import org.rocex.utils.UIHelper;
-import std.conv;
 
 /***************************************************************************
  * <br>
@@ -47,19 +46,19 @@ public class LeftControl : CompositeControl
         for (int i = 0; i < 40; i++)
         {
             auto iItem = new TreeItem(tree, 0);
-            iItem.setText("TreeItem (0) - " ~ to!(String)(i));
+            iItem.setText("TreeItem (0) - " ~ to!(string)(i));
             for (int j = 0; j < 4; j++)
             {
                 TreeItem jItem = new TreeItem(iItem, 0);
-                jItem.setText("TreeItem (1) - " ~ to!(String)(j));
+                jItem.setText("TreeItem (1) - " ~ to!(string)(j));
                 for (int k = 0; k < 4; k++)
                 {
                     TreeItem kItem = new TreeItem(jItem, 0);
-                    kItem.setText("TreeItem (2) - " ~ to!(String)(k));
+                    kItem.setText("TreeItem (2) - " ~ to!(string)(k));
                     for (int l = 0; l < 4; l++)
                     {
                         TreeItem lItem = new TreeItem(kItem, 0);
-                        lItem.setText("TreeItem (3) - " ~ to!(String)(l));
+                        lItem.setText("TreeItem (3) - " ~ to!(string)(l));
                     }
                 }
             }

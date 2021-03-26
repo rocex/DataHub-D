@@ -1,6 +1,6 @@
 module org.rocex.ui.action.ActionManager;
 
-import java.lang.String;
+import std.range;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Event;
 import org.rocex.ui.action.IAction;
@@ -9,7 +9,6 @@ import org.rocex.ui.Context;
 import org.rocex.ui.widgets.MessageDialog;
 import org.rocex.utils.ActionHelper;
 import org.rocex.utils.Logger;
-import std.range;
 
 /***************************************************************************
  * <br>
@@ -73,7 +72,7 @@ public class ActionManager
      * @author Rocex Wang
      * @since 2019-5-14 22:18:05
      ***************************************************************************/
-    public IAction getAction(String strActionId)
+    public IAction getAction(string strActionId)
     {
         IAction action = strActionId in mapAction ? mapAction[strActionId] : null;
 
@@ -139,7 +138,7 @@ public class ActionManager
      * @author Rocex Wang
      * @since 2019-8-23 22:10:06
      ***************************************************************************/
-    public void registerAction(String strActionId, ClassInfo actionClass)
+    public void registerAction(string strActionId, ClassInfo actionClass)
     {
         try
         {
@@ -164,14 +163,14 @@ public class ActionManager
      * @author Rocex Wang
      * @since 2020-6-3 22:38:27
      ***************************************************************************/
-    public void runAction(Event evt, String[] strActionIds...)
+    public void runAction(Event evt, string[] strActionIds...)
     {
         if (strActionIds is null || strActionIds.length == 0)
         {
             return;
         }
 
-        foreach (String strActionId; strActionIds)
+        foreach (string strActionId; strActionIds)
         {
             IAction action = getAction(strActionId);
 
@@ -214,14 +213,14 @@ public class ActionManager
      * @author Rocex Wang
      * @since 2019-6-9 22:40:25
      ***************************************************************************/
-    public void setActionEnable(bool blEnable, String[] strActionIds...)
+    public void setActionEnable(bool blEnable, string[] strActionIds...)
     {
         if (strActionIds is null || strActionIds.length == 0)
         {
             return;
         }
 
-        foreach (String strActionId; strActionIds)
+        foreach (string strActionId; strActionIds)
         {
             IAction action = mapAction[strActionId];
 
@@ -265,14 +264,14 @@ public class ActionManager
      * @author Rocex Wang
      * @since 2020-6-24 22:38:44
      ***************************************************************************/
-    public void unregister(String[] strActionIds...)
+    public void unregister(string[] strActionIds...)
     {
         if (strActionIds is null || strActionIds.length == 0)
         {
             return;
         }
 
-        foreach (String strActionId; strActionIds)
+        foreach (string strActionId; strActionIds)
         {
             mapAction[strActionId].dispose();
 

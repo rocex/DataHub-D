@@ -1,6 +1,5 @@
 module org.rocex.ui.widgets.StatusBar;
 
-import java.lang.String;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -98,7 +97,7 @@ public class StatusBar : CompositeControl
      * @author Rocex Wang
      * @since 2020-6-9 22:52:15
      ***************************************************************************/
-    public void showErrorMessage(String strMessage)
+    public void showErrorMessage(string strMessage)
     {
         if (strMessage !is null)
         {
@@ -113,7 +112,7 @@ public class StatusBar : CompositeControl
      * @author Rocex Wang
      * @since 2019-5-23 22:35:10
      ***************************************************************************/
-    public void showHintMessage(String strMessage)
+    public void showHintMessage(string strMessage)
     {
         if (strMessage !is null)
         {

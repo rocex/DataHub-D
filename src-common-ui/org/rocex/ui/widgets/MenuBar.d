@@ -1,6 +1,5 @@
 module org.rocex.ui.widgets.MenuBar;
 
-import java.lang.String;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Decorations;
@@ -74,7 +73,7 @@ public class MenuBar : Menu
 
             MenuItem item = new MenuItem(menu, SWT.NONE);
 
-            String strAccelerator = ActionHelper.convertAccelerator(action.getAccelerator());
+            string strAccelerator = ActionHelper.convertAccelerator(action.getAccelerator());
 
             item.setData(ActionConst.bind_action_with_item, cast(Object) action);
             item.setText(action.getText() ~ "\t" ~ strAccelerator);
@@ -112,11 +111,11 @@ public class MenuBar : Menu
      * @author Rocex Wang
      * @since 2019-5-13 22:20:26
      ***************************************************************************/
-    public void addAction(Menu menu, String[] strActionIds...)
+    public void addAction(Menu menu, string[] strActionIds...)
     {
-        foreach (String strActionId; strActionIds)
+        foreach (string strActionId; strActionIds)
         {
-            if (ActionConst.id_separator.equals(strActionId))
+            if (ActionConst.id_separator == strActionId)
             {
                 addSeparator(menu);
             }
@@ -136,7 +135,7 @@ public class MenuBar : Menu
      * @author Rocex Wang
      * @since 2019-5-14 22:45:53
      ***************************************************************************/
-    public Menu addCascadeMenu(Menu menu, String strText)
+    public Menu addCascadeMenu(Menu menu, string strText)
     {
         MenuItem item = new MenuItem(menu, SWT.CASCADE);
         item.setText(strText);
@@ -155,7 +154,7 @@ public class MenuBar : Menu
      * @author Rocex Wang
      * @since 2019-5-14 22:45:53
      ***************************************************************************/
-    public Menu addCascadeMenu(Menu menu, String strText, String[] strActionIds...)
+    public Menu addCascadeMenu(Menu menu, string strText, string[] strActionIds...)
     {
         Menu menu1 = addCascadeMenu(menu, strText);
 

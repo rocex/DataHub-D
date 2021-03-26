@@ -1,9 +1,9 @@
 module org.rocex.utils.ActionHelper;
 
-import java.lang.String;
 import java.util.StringTokenizer;
 import org.eclipse.swt.SWT;
 import std.conv;
+import std.string;
 
 /***************************************************************************
  * <br>
@@ -12,20 +12,20 @@ import std.conv;
  ***************************************************************************/
 public final class ActionHelper
 {
-    private static int[String] keyCodes = null;
+    private static int[string] keyCodes = null;
 
-    private static String[int] keyStrings = null;
+    private static string[int] keyStrings = null;
 
     /*****************************************************************************
      * Converts an accelerator key code to a string representation.
      * @param keyCode the key code to be translated
      * @return a string representation of the key code
      ****************************************************************************/
-    public static String convertAccelerator(int keyCode)
+    public static string convertAccelerator(int keyCode)
     {
-        String strModifier = getModifierString(keyCode);
+        const string strModifier = getModifierString(keyCode);
 
-        String strFullKey = strModifier is null || strModifier.length() == 0
+        string strFullKey = strModifier is null || strModifier.length == 0
             ? findKeyString(keyCode) : (strModifier ~ "+" ~ findKeyString(keyCode));
 
         return strFullKey;
@@ -36,7 +36,7 @@ public final class ActionHelper
      * @param acceleratorText the accelerator text
      * @return the SWT key code, or 0 if there is no accelerator
      ****************************************************************************/
-    public static int convertAccelerator(String acceleratorText)
+    public static int convertAccelerator(string acceleratorText)
     {
         int strAccelerator = 0;
 
@@ -48,7 +48,7 @@ public final class ActionHelper
 
         while (hasMoreTokens)
         {
-            String token = strToken.nextToken();
+            string token = strToken.nextToken();
             hasMoreTokens = strToken.hasMoreTokens();
 
             // Every token except the last must be one of the modifiers Ctrl, Shift, Alt, or Command
@@ -105,14 +105,14 @@ public final class ActionHelper
      * @return the SWT key code, <code>-1</code> if no match was found
      * @see SWT
      ****************************************************************************/
-    public static int findKeyCode(String strToken)
+    public static int findKeyCode(string strToken)
     {
         if (keyCodes is null || keyCodes.length == 0)
         {
             initKeyCodes();
         }
 
-        strToken = strToken.toUpperCase();
+        strToken = toLower(strToken);
         int i = keyCodes.get(strToken, -9999);
 
         if (i != -9999)
@@ -120,9 +120,9 @@ public final class ActionHelper
             return i;
         }
 
-        if (strToken.length() == 1)
+        if (strToken.length == 1)
         {
-            return strToken.charAt(0);
+            return strToken[0];
         }
 
         return -1;
@@ -137,7 +137,7 @@ public final class ActionHelper
      * @see SWT
      * @since 2.0
      ****************************************************************************/
-    public static String findKeyString(int keyCode)
+    public static string findKeyString(int keyCode)
     {
         if (keyStrings is null || keyStrings.length == 0)
         {
@@ -146,7 +146,7 @@ public final class ActionHelper
 
         const int i = keyCode & ~(SWT.CTRL | SWT.ALT | SWT.SHIFT | SWT.COMMAND);
 
-        String result = null;
+        string result = null;
 
         if (i in keyStrings)
         {
@@ -171,21 +171,22 @@ public final class ActionHelper
      * @return the SWT modifier bit, or <code>0</code> if no match was found
      * @see SWT
      ****************************************************************************/
-    public static int findModifier(String strToken)
+    public static int findModifier(string strToken)
     {
-        if ("ctrl".equalsIgnoreCase(strToken))
+        // if ("ctrl".equalsIgnoreCase(strToken))
+        if (icmp("ctrl", strToken) == 0)
         {
             return SWT.CTRL;
         }
-        else if ("shift".equalsIgnoreCase(strToken))
+        else if (icmp("shift", strToken) == 0)
         {
             return SWT.SHIFT;
         }
-        else if ("alt".equalsIgnoreCase(strToken))
+        else if (icmp("alt", strToken) == 0)
         {
             return SWT.ALT;
         }
-        else if ("command".equalsIgnoreCase(strToken))
+        else if (icmp("command", strToken) == 0)
         {
             return SWT.COMMAND;
         }
@@ -201,7 +202,7 @@ public final class ActionHelper
      *         SWT modifier bit
      * @see SWT
      ****************************************************************************/
-    public static String findModifierString(int keyCode)
+    public static string findModifierString(int keyCode)
     {
         if (keyCode == SWT.CTRL)
         {
@@ -228,9 +229,9 @@ public final class ActionHelper
      * @param keyCode The key code for which the modifier string is desired.
      * @return The string representation of the key code; never <code>null</code>.
      ****************************************************************************/
-    private static String getModifierString(int keyCode)
+    private static string getModifierString(int keyCode)
     {
-        String strModifier = "";
+        string strModifier = "";
 
         if ((keyCode & SWT.CTRL) != 0)
         {
@@ -239,21 +240,21 @@ public final class ActionHelper
 
         if ((keyCode & SWT.ALT) != 0)
         {
-            strModifier = strModifier is null || strModifier.length() == 0
+            strModifier = strModifier is null || strModifier.length == 0
                 ? findModifierString(keyCode & SWT.ALT) : strModifier ~ "+" ~ findModifierString(
                         keyCode & SWT.ALT);
         }
 
         if ((keyCode & SWT.SHIFT) != 0)
         {
-            strModifier = strModifier is null || strModifier.length() == 0
+            strModifier = strModifier is null || strModifier.length == 0
                 ? findModifierString(keyCode & SWT.SHIFT) : strModifier ~ "+" ~ findModifierString(
                         keyCode & SWT.SHIFT);
         }
 
         if ((keyCode & SWT.COMMAND) != 0)
         {
-            strModifier = strModifier is null || strModifier.length() == 0
+            strModifier = strModifier is null || strModifier.length == 0
                 ? findModifierString(keyCode & SWT.COMMAND) : strModifier ~ "+" ~ findModifierString(
                         keyCode & SWT.COMMAND);
         }

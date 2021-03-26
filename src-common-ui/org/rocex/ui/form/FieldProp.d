@@ -1,7 +1,5 @@
 module org.rocex.ui.form;
 
-import java.lang.String;
-
 /***************************************************************************
  * <br>
  * @author Rocex Wang
@@ -9,22 +7,29 @@ import java.lang.String;
  ***************************************************************************/
 public class FieldProp
 {
-    public static const String datatype_double = "double";
-    public static const String datatype_email = "email";
-    public static const String datatype_integer = "integer";
-    public static const String datatype_string = "string";
+    /** */
+    public static const string datatype_double = "double";
+
+    /** */
+    public static const string datatype_email = "email";
+
+    /** */
+    public static const string datatype_integer = "integer";
+
+    /** */
+    public static const string datatype_string = "string";
 
     private bool blNullable = true;
 
-    private double dblMax = 10000;
+    private double dblMax = 10_000;
     private double dblMin = 0;
 
     private int iLength = 128;
 
-    private String strDataType = datatype_string;
+    private string strDataType = datatype_string;
 
-    private String strKey;
-    private String strTitle;
+    private string strKey;
+    private string strTitle;
 
     /***************************************************************************
      * @author Rocex Wang
@@ -40,7 +45,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-13 22:39:23
      ***************************************************************************/
-    public this(String strKey, String strTitle)
+    public this(string strKey, string strTitle)
     {
         this();
 
@@ -55,7 +60,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-13 22:24:22
      ***************************************************************************/
-    public this(String strKey, String strTitle, bool blNullable)
+    public this(string strKey, string strTitle, bool blNullable)
     {
         this(strKey, strTitle);
 
@@ -70,7 +75,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-12 22:21:15
      ***************************************************************************/
-    public this(String strKey, String strTitle, bool blNullable, String strDataType, int iLength)
+    public this(string strKey, string strTitle, bool blNullable, string strDataType, int iLength)
     {
         this(strKey, strTitle, blNullable);
 
@@ -83,7 +88,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-11 22:28:40
      ***************************************************************************/
-    public String getDataType()
+    public string getDataType()
     {
         return strDataType;
     }
@@ -93,7 +98,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-11 22:28:40
      ***************************************************************************/
-    public String getKey()
+    public string getKey()
     {
         return strKey;
     }
@@ -133,7 +138,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-12 22:24:28
      ***************************************************************************/
-    public String getTitle()
+    public string getTitle()
     {
         return strTitle;
     }
@@ -154,7 +159,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-11 22:28:40
      ***************************************************************************/
-    public FieldProp setDataType(String dataType)
+    public FieldProp setDataType(string dataType)
     {
         strDataType = dataType;
 
@@ -167,7 +172,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-11 22:28:40
      ***************************************************************************/
-    public FieldProp setKey(String key)
+    public FieldProp setKey(string key)
     {
         strKey = key;
 
@@ -232,7 +237,7 @@ public class FieldProp
      * @author Rocex Wang
      * @since 2019-6-12 22:24:28
      ***************************************************************************/
-    public FieldProp setTitle(String title)
+    public FieldProp setTitle(string title)
     {
         strTitle = title;
 

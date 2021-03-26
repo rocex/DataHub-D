@@ -1,6 +1,5 @@
 module org.rocex.ui.app;
 
-import java.lang.all;
 import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
@@ -428,7 +427,7 @@ public class Application : Shell
      * @author Rocex Wang
      * @since 2020-6-9 22:51:10
      ***************************************************************************/
-    public void showErrorMessage(String strMessage, Exception ex)
+    public void showErrorMessage(string strMessage, Exception ex)
     {
         if (getStatusBar() !is null && !getStatusBar().isDisposed())
         {
@@ -441,7 +440,7 @@ public class Application : Shell
      * @author Rocex Wang
      * @since 2019-5-23 22:27:04
      ***************************************************************************/
-    public void showHintMessage(String strMessage)
+    public void showHintMessage(string strMessage)
     {
         if (getStatusBar() !is null && !getStatusBar().isDisposed())
         {
@@ -455,7 +454,7 @@ public class Application : Shell
  * @author Rocex Wang
  * @since 2019-5-21 22:45:00
  ***************************************************************************/
-public static void main(String[] args)
+public static void main(string[] args)
 {
     Display display = Display.getDefault();
 
@@ -463,7 +462,7 @@ public static void main(String[] args)
 
     try
     {
-        String strMainClass = Settings.getValue(SettingConst.main_class,
+        string strMainClass = Settings.getValue(SettingConst.main_class,
                 Application.classinfo.name);
 
         Logger.getLogger().info("main class is " ~ strMainClass);

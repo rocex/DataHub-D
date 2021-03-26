@@ -1,9 +1,10 @@
 module org.rocex.utils.StringHelper;
 
-import java.lang.all;
 import java.math.BigDecimal;
 import std.algorithm;
 import std.conv;
+import std.datetime;
+import std.string;
 
 /***************************************************************************
  * <br>
@@ -13,7 +14,7 @@ import std.conv;
 public class StringHelper
 {
     /** */
-    public static const String WHITESPACE = " \n\r\f\t";
+    public static const string WHITESPACE = " \n\r\f\t";
 
     /***************************************************************************
      * 驼峰转下划线，例如：userName -> user_name
@@ -22,20 +23,21 @@ public class StringHelper
      * @author Rocex Wang
      * @since 2019-10-25 21:59:29
      ***************************************************************************/
-    public static String camelToUnderline(String strValue)
+    public static string camelToUnderline(string strValue)
     {
-        if (strValue is null || strValue.trim().length() == 0)
+        if (strValue is null || strip(strValue.idup()).length == 0)
         {
             return strValue;
         }
 
-        String strResult = "";
+        string strResult = "";
 
-        char[] chars = strValue.toCharArray();
+        char[] chars = cast(char[]) strValue;
 
         foreach (char ch; chars)
         {
-            strResult ~= (ch >= 'A' && ch <= 'Z') ? ("_" ~ cast(char)(ch + ('a' - 'A'))) : to!String(ch);
+            strResult ~= (ch >= 'A' && ch <= 'Z') ? ("_" ~ cast(char)(ch + ('a' - 'A'))) : to!string(
+                    ch);
         }
 
         return strResult;
@@ -43,22 +45,22 @@ public class StringHelper
 
     /***************************************************************************
      * @param objValue
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-6-25 21:10:26
      ***************************************************************************/
-    public static String defaultString(Object objValue)
+    public static string defaultString(Object objValue)
     {
         return defaultString(objValue is null ? null : objValue.toString());
     }
 
     /***************************************************************************
      * @param strValue
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-6-4 21:37:12
      ***************************************************************************/
-    public static String defaultString(String strValue)
+    public static string defaultString(string strValue)
     {
         return defaultString(strValue, "");
     }
@@ -66,11 +68,11 @@ public class StringHelper
     /***************************************************************************
      * @param strValue
      * @param strDefault
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-6-4 21:37:09
      ***************************************************************************/
-    public static String defaultString(String strValue, String strDefault)
+    public static string defaultString(string strValue, string strDefault)
     {
         return strValue is null ? strDefault : strValue;
     }
@@ -104,16 +106,16 @@ public class StringHelper
      * @since 2019-6-11 21:59:38
      * @see com.jfinal.kit.StrKit
      ***************************************************************************/
-    public static String firstCharToLowerCase(String strValue)
+    public static string firstCharToLowerCase(string strValue)
     {
-        const char firstChar = strValue.charAt(0);
+        const char firstChar = cast(char) strValue[0];
 
         if (firstChar >= 'A' && firstChar <= 'Z')
         {
             char[] chars = strValue.dup;
             chars[0] += 'a' - 'A';
 
-            return _idup(chars);
+            return idup(chars);
         }
 
         return strValue;
@@ -126,16 +128,16 @@ public class StringHelper
      * @since 2019-6-11 21:59:51
      * @see com.jfinal.kit.StrKit
      ***************************************************************************/
-    public static String firstCharToUpperCase(String strValue)
+    public static string firstCharToUpperCase(string strValue)
     {
-        const char firstChar = strValue.charAt(0);
+        const char firstChar = strValue[0];
 
         if (firstChar >= 'a' && firstChar <= 'z')
         {
-            char[] chars = strValue.toCharArray();
+            char[] chars = cast(char[]) strValue;
             chars[0] -= 'a' - 'A';
 
-            return _idup(chars);
+            return idup(chars);
         }
 
         return strValue;
@@ -146,7 +148,7 @@ public class StringHelper
      * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
      * @since 2004-7-7 21:21:57
      ********************************************************************************************************/
-    public static int getLength(String strSource)
+    public static int getLength(string strSource)
     {
         return getLength(strSource, false);
     }
@@ -157,7 +159,7 @@ public class StringHelper
      * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
      * @since 2004-7-7 21:21:57
      ********************************************************************************************************/
-    public static int getLength(String strSource, bool blTrim)
+    public static int getLength(string strSource, bool blTrim)
     {
         if (strSource is null)
         {
@@ -166,14 +168,14 @@ public class StringHelper
 
         if (blTrim)
         {
-            strSource = strSource.trim();
+            strSource = strip(strSource.idup());
         }
 
         int iLength = 0;
 
-        for (int i = 0; i < strSource.length(); i++)
+        for (int i = 0; i < strSource.length; i++)
         {
-            const char strTemp = strSource.charAt(i);
+            const char strTemp = strSource[i];
 
             iLength = iLength + (strTemp >= 0 && strTemp <= 255 ? 1 : 2);
         }
@@ -186,9 +188,9 @@ public class StringHelper
      * @author Rocex Wang
      * @since 2019-8-6 21:19:55
      ***************************************************************************/
-    public static String getUUID()
+    public static string getUUID()
     {
-        return to!String(System.currentTimeMillis());
+        return to!string(Clock.currStdTime() / 10_000);
     }
 
     /***************************************************************************
@@ -198,9 +200,9 @@ public class StringHelper
      * @author Rocex Wang
      * @since 2020-6-4 21:43:56
      ***************************************************************************/
-    public static bool isBlank(String strSource)
+    public static bool isBlank(string strSource)
     {
-        return strSource is null || strSource.trim().length() == 0;
+        return strSource is null || strip(strSource.idup()).length == 0;
     }
 
     /***************************************************************************
@@ -210,9 +212,9 @@ public class StringHelper
      * @author Rocex Wang
      * @since 2019-7-13 21:50:00
      ***************************************************************************/
-    public static bool isEmpty(String strSource)
+    public static bool isEmpty(string strSource)
     {
-        return strSource is null || strSource.length() == 0;
+        return strSource is null || strSource.length == 0;
     }
 
     /***************************************************************************
@@ -222,7 +224,7 @@ public class StringHelper
      * @author Rocex Wang
      * @since 2020-6-22 21:00:14
      ***************************************************************************/
-    public static bool isNumber(String strSource)
+    public static bool isNumber(string strSource)
     {
         try
         {
@@ -243,18 +245,18 @@ public class StringHelper
      * @author Rocex Wang
      * @since 2019-10-25 21:44:16
      ***************************************************************************/
-    public static String underlineToCamel(String strValue)
+    public static string underlineToCamel(string strValue)
     {
-        if (strValue is null || strValue.trim().length() == 0 || !strValue.indexOf("_") > -1)
+        if (strValue is null || strip(strValue.idup()).length == 0 || !strValue.indexOf("_") > -1)
         {
             return strValue;
         }
 
         auto strSplits = strValue.splitter("_");
 
-        String strResult;
+        string strResult;
 
-        foreach (String strSplit; strSplits)
+        foreach (string strSplit; strSplits)
         {
             strResult ~= (firstCharToUpperCase(strSplit));
         }

@@ -1,7 +1,6 @@
 module org.rocex.utils.TimerLogger;
 
 import core.time;
-import java.lang.String;
 import org.rocex.utils.Logger;
 
 /***************************************************************************
@@ -13,7 +12,7 @@ public class TimerLogger
 {
     private static TimerLogger timerLogger;
 
-    private MonoTime[String] mapTimer;
+    private MonoTime[string] mapTimer;
 
     /***************************************************************************
      * @return TimerLogger
@@ -31,11 +30,11 @@ public class TimerLogger
     }
 
     /***************************************************************************
-     * @param strMessage 必须和 end(String) 的参数值相同
+     * @param strMessage 必须和 end(string) 的参数值相同
      * @author Rocex Wang
      * @since 2020-5-8 21:54:39
      ***************************************************************************/
-    public void begin(String strMessage)
+    public void begin(string strMessage)
     {
         mapTimer[strMessage] = MonoTime.currTime;
 
@@ -43,11 +42,11 @@ public class TimerLogger
     }
 
     /***************************************************************************
-     * @param strMessage 必须和 start(String) 的参数值相同
+     * @param strMessage 必须和 start(string) 的参数值相同
      * @author Rocex Wang
      * @since 2020-5-8 21:54:37
      ***************************************************************************/
-    public void end(String strMessage)
+    public void end(string strMessage)
     {
         if (strMessage !in mapTimer)
         {
@@ -56,9 +55,9 @@ public class TimerLogger
 
         auto lTime = MonoTime.currTime - mapTimer[strMessage];
 
-        String strMsg = "end   %-50s 耗时: %10.0fms, %10.3fs, %10.3fm";
+        string strMsg = "end   %-50s 耗时: %10.0fms, %10.3fs, %10.3fm";
 
-        Logger.getLogger().tracef(strMsg, strMessage, lTime, lTime / 1000, lTime / 60000);
+        Logger.getLogger().tracef(strMsg, strMessage, lTime, lTime / 1000, lTime / 60_000);
 
         mapTimer.remove(strMessage);
     }

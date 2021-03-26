@@ -1,6 +1,5 @@
 module org.rocex.utils.FileHelper;
 
-import java.lang.String;
 import java.lang.Thread;
 import org.rocex.utils.Logger;
 import std.file;
@@ -21,7 +20,7 @@ public class FileHelper
      * @author Rocex Wang
      * @since 2020-4-28 21:36:51
      ***************************************************************************/
-    public static void copyFolder(String pathFrom, String pathTo)
+    public static void copyFolder(string pathFrom, string pathTo)
     {
         if (!exists(pathFrom))
         {
@@ -49,7 +48,7 @@ public class FileHelper
      * @author Rocex Wang
      * @since 2020-5-11 21:36:23
      ***************************************************************************/
-    public static void copyFolderThread(String pathFrom, String pathTo)
+    public static void copyFolderThread(string pathFrom, string pathTo)
     {
         Thread thread = new class Thread
         {
@@ -75,7 +74,7 @@ public class FileHelper
      * @author Rocex Wang
      * @since 2019-8-9 21:03:57
      ***************************************************************************/
-    public static void deleteFile(String strFilePath)
+    public static void deleteFile(string strFilePath)
     {
         if (isDir(strFilePath) || !exists(strFilePath))
         {
@@ -110,7 +109,7 @@ public class FileHelper
      * @author Rocex Wang
      * @since 2020-4-26 21:24:35
      ***************************************************************************/
-    public static void writeFile(String strFilePath, String strContent)
+    public static void writeFile(string strFilePath, string strContent)
     {
         try
         {
@@ -136,7 +135,7 @@ public class FileHelper
      * @author Rocex Wang
      * @since 2020-5-11 21:36:58
      ***************************************************************************/
-    public static void writeFileThread(String strFilePath, String strContent)
+    public static void writeFileThread(string strFilePath, string strContent)
     {
         Thread thread = new class Thread
         {

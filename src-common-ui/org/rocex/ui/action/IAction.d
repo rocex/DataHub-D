@@ -1,6 +1,5 @@
 module org.rocex.ui.action.IAction;
 
-import java.lang.String;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Item;
 import org.rocex.ui.Context;
@@ -65,32 +64,32 @@ public interface IAction
     Context getContext();
 
     /***************************************************************************
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-05-09 22:16:38
      ***************************************************************************/
-    String getIconPath();
+    string getIconPath();
 
     /***************************************************************************
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-05-09 22:59:55
      ***************************************************************************/
-    String getId();
+    string getId();
 
     /***************************************************************************
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-05-09 22:16:35
      ***************************************************************************/
-    String getText();
+    string getText();
 
     /***************************************************************************
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-05-09 22:16:33
      ***************************************************************************/
-    String getToolTip();
+    string getToolTip();
 
     /***************************************************************************
      * @return boolean
@@ -140,26 +139,26 @@ public interface IAction
      * @author Rocex Wang
      * @since 2019-05-09 22:16:25
      ***************************************************************************/
-    void setIconPath(String strIconPath);
+    void setIconPath(string strIconPath);
 
     /***************************************************************************
      * @param strId
      * @author Rocex Wang
      * @since 2019-5-13 22:15:07
      ***************************************************************************/
-    void setId(String strId);
+    void setId(string strId);
 
     /***************************************************************************
      * @param strText
      * @author Rocex Wang
      * @since 2019-05-09 22:16:21
      ***************************************************************************/
-    void setText(String strText);
+    void setText(string strText);
 
     /***************************************************************************
      * @param strToolTip
      * @author Rocex Wang
      * @since 2019-05-09 22:16:19
      ***************************************************************************/
-    void setToolTip(String strToolTip);
+    void setToolTip(string strToolTip);
 }

@@ -1,7 +1,5 @@
 module org.rocex.utils.UIHelper;
 
-import java.lang.String;
-
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
@@ -182,7 +180,7 @@ public class UIHelper
      * @author Rocex Wang
      * @since 2019-5-30 21:45:01
      ***************************************************************************/
-    public static int getTitleWidth(String strTitle)
+    public static int getTitleWidth(string strTitle)
     {
         GC gc = new GC(Display.getCurrent());
 

@@ -1,7 +1,6 @@
 module org.rocex.utils.ResHelper;
 
 import core.thread;
-import java.lang.String;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
@@ -29,13 +28,13 @@ public class ResHelper
     private static Image[string] resImage;
 
     /***/
-    public static String res_icon_path = "resource/icon/";
+    public static string res_icon_path = "resource/icon/";
 
     /***/
-    public static String res_progress_path = "resource/icon/progress/";
+    public static string res_progress_path = "resource/icon/progress/";
 
     /***/
-    public static String res_root_path = "resource/";
+    public static string res_root_path = "resource/";
 
     /***************************************************************************
      * @author Rocex Wang
@@ -162,7 +161,7 @@ public class ResHelper
      * @author Rocex Wang
      * @since 2020-07-31 21:50:31
      ***************************************************************************/
-    public static void disposeImage(String strFilePath)
+    public static void disposeImage(string strFilePath)
     {
         if (resImage is null)
         {
@@ -219,7 +218,7 @@ public class ResHelper
      ***************************************************************************/
     public static Color getColor(int iSystemColorID)
     {
-        String strKey = to!String(iSystemColorID);
+        string strKey = to!string(iSystemColorID);
 
         Color color = strKey in resColor ? resColor[strKey] : null;
 
@@ -276,9 +275,9 @@ public class ResHelper
      * @author Rocex Wang
      * @since 2019-7-18 21:54:59
      ***************************************************************************/
-    public static Font getFont(String name, int height, int style)
+    public static Font getFont(string name, int height, int style)
     {
-        String fontName = name ~ '|' ~ to!String(height) ~ '|' ~ to!String(style);
+        string fontName = name ~ '|' ~ to!string(height) ~ '|' ~ to!string(style);
 
         Font font = resFont[fontName];
 
@@ -300,7 +299,7 @@ public class ResHelper
      * @author Rocex Wang
      * @since 2019-7-1 21:17:07
      ***************************************************************************/
-    public static Image getImage(String strFilePath)
+    public static Image getImage(string strFilePath)
     {
         Logger.getLogger().info("image: " ~ strFilePath);
 
@@ -353,7 +352,7 @@ public class ResHelper
      * @author Rocex Wang
      * @since 2020-6-9 21:55:06
      ***************************************************************************/
-    public static Image getImageIcon(String strFileName)
+    public static Image getImageIcon(string strFileName)
     {
         return getImage(res_icon_path ~ strFileName);
     }

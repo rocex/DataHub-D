@@ -1,7 +1,5 @@
 module org.rocex.ui.action.ActionConst;
 
-import java.lang.String;
-
 /***************************************************************************
  * <br>
  * @author Rocex Wang

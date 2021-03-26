@@ -1,6 +1,5 @@
 module org.rocex.ui.widgets.MessageDialog;
 
-import java.lang.String;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
@@ -21,7 +20,7 @@ public class MessageDialog : MessageBox
      * @author Rocex Wang
      * @since 2019-5-22 22:32:34
      ***************************************************************************/
-    public static bool showConfirm(Shell parent, String strMessage)
+    public static bool showConfirm(Shell parent, string strMessage)
     {
         MessageDialog dialog = new MessageDialog(parent, SWT.OK | SWT.CANCEL | SWT.ICON_QUESTION);
 
@@ -40,7 +39,7 @@ public class MessageDialog : MessageBox
      * @author Rocex Wang
      * @since 2019-5-22 22:34:34
      ***************************************************************************/
-    public static void showError(Shell parent, String strMessage)
+    public static void showError(Shell parent, string strMessage)
     {
         MessageDialog dialog = new MessageDialog(parent, SWT.ICON_ERROR);
 
@@ -57,7 +56,7 @@ public class MessageDialog : MessageBox
      * @author Rocex Wang
      * @since 2019-5-22 22:32:36
      ***************************************************************************/
-    public static void showInformation(Shell parent, String strMessage)
+    public static void showInformation(Shell parent, string strMessage)
     {
         MessageDialog dialog = new MessageDialog(parent, SWT.ICON_INFORMATION);
 
@@ -75,7 +74,7 @@ public class MessageDialog : MessageBox
      * @author Rocex Wang
      * @since 2019-5-22 22:34:30
      ***************************************************************************/
-    public static int showQuestion(Shell parent, String strMessage)
+    public static int showQuestion(Shell parent, string strMessage)
     {
         MessageDialog dialog = new MessageDialog(parent,
                 SWT.YES | SWT.NO | SWT.CANCEL | SWT.ICON_QUESTION);
@@ -93,7 +92,7 @@ public class MessageDialog : MessageBox
      * @author Rocex Wang
      * @since 2019-5-22 22:34:28
      ***************************************************************************/
-    public static void showWarning(Shell parent, String strMessage)
+    public static void showWarning(Shell parent, string strMessage)
     {
         MessageDialog dialog = new MessageDialog(parent, SWT.ICON_WARNING);
 

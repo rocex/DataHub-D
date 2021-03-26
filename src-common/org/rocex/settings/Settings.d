@@ -1,10 +1,8 @@
 module org.rocex.settings.Settings;
 
-import java.lang.all;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.SWT;
 import org.rocex.settings.SettingConst;
-import org.rocex.utils.FileHelper;
 import org.rocex.utils.Logger;
 import org.rocex.utils.Properties;
 import org.rocex.utils.ResHelper;
@@ -48,9 +46,9 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-5-13 21:57:56
      ***************************************************************************/
-    public static bool getBoolean(String strKey, bool blDefaultValue = false)
+    public static bool getBoolean(string strKey, bool blDefaultValue = false)
     {
-        String strProperty = getValue(strKey, to!string(blDefaultValue)).toLower();
+        string strProperty = getValue(strKey, to!string(blDefaultValue)).toLower();
 
         if (strProperty is null)
         {
@@ -69,9 +67,9 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-5-21 21:36:06
      ***************************************************************************/
-    public static double getDouble(String strKey, double dblDefaultValue)
+    public static double getDouble(string strKey, double dblDefaultValue)
     {
-        String strProperty = getValue(strKey, to!string(dblDefaultValue));
+        string strProperty = getValue(strKey, to!string(dblDefaultValue));
 
         return isNumeric(strProperty) ? to!double(strProperty) : dblDefaultValue;
     }
@@ -82,7 +80,7 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-7-18 21:38:26
      ***************************************************************************/
-    public static Font getFont(String strKey)
+    public static Font getFont(string strKey)
     {
         return getFont(strKey, null);
     }
@@ -94,11 +92,11 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-7-18 21:27:53
      ***************************************************************************/
-    public static Font getFont(String strKey, Font defaultFont)
+    public static Font getFont(string strKey, Font defaultFont)
     {
-        String strProperty = getValue(strKey, "");
+        string strProperty = getValue(strKey, "");
 
-        if (strProperty is null || strProperty.length() == 0)
+        if (strProperty is null || strProperty.length == 0)
         {
             return defaultFont;
         }
@@ -125,9 +123,9 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-5-21 21:34:29
      ***************************************************************************/
-    public static int getInt(String strKey, int iDefaultValue)
+    public static int getInt(string strKey, int iDefaultValue)
     {
-        String strProperty = getValue(strKey, iDefaultValue.to!string);
+        string strProperty = getValue(strKey, iDefaultValue.to!string);
 
         return isNumeric(strProperty) ? to!int(strProperty) : iDefaultValue;
     }
@@ -135,11 +133,11 @@ public class Settings
     /***************************************************************************
      * @param strKey
      * @param strDefaultValue
-     * @return String
+     * @return string
      * @author Rocex Wang
      * @since 2019-5-13 21:44:44
      ***************************************************************************/
-    public static String getValue(String strKey, String strDefaultValue)
+    public static string getValue(string strKey, string strDefaultValue)
     {
         if (properties.isEmpty())
         {
@@ -201,15 +199,8 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-5-13 21:57:50
      ***************************************************************************/
-    public static void setValue(String strKey, String strValue)
+    public static void setValue(string strKey, string strValue)
     {
-        const String strProp = properties.get(strKey);
-
-        if (equals(strProp, strValue))
-        {
-            return;
-        }
-
         properties.put(strKey, strValue);
     }
 
@@ -219,7 +210,7 @@ public class Settings
      * @author Rocex Wang
      * @since 2020-08-06 21:15:28
      ***************************************************************************/
-    public static void setValue(String strKey, bool blValue)
+    public static void setValue(string strKey, bool blValue)
     {
         setValue(strKey, blValue ? "true" : "false");
     }
@@ -230,9 +221,9 @@ public class Settings
      * @author Rocex Wang
      * @since 2020-08-06 21:15:34
      ***************************************************************************/
-    public static void setValue(String strKey, int iValue)
+    public static void setValue(string strKey, int iValue)
     {
-        setValue(strKey, to!String(iValue));
+        setValue(strKey, to!string(iValue));
     }
 
     /***************************************************************************
@@ -241,8 +232,8 @@ public class Settings
      * @author Rocex Wang
      * @since 2021-03-23 21:25:34
      ***************************************************************************/
-    public static void setValue(String strKey, double dblValue)
+    public static void setValue(string strKey, double dblValue)
     {
-        setValue(strKey, to!String(dblValue));
+        setValue(strKey, to!string(dblValue));
     }
 }

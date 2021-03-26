@@ -1,6 +1,7 @@
 module org.rocex.ui.widgets.Toolbar;
 
-import java.lang.all;
+import std.conv;
+import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.swt.events.MouseEvent;
@@ -22,7 +23,6 @@ import org.rocex.ui.Context;
 import org.rocex.utils.ActionHelper;
 import org.rocex.utils.ResHelper;
 import org.rocex.utils.UIHelper;
-import std.conv;
 
 /***************************************************************************
  * 工具栏<br>
@@ -32,7 +32,7 @@ import std.conv;
 public class Toolbar : ToolBar
 {
     /** 自适应大小的空白占位符，会挤占剩余的所有空间 */
-    private const String auto_width_spacer = "auto_width_spacer";
+    private const string auto_width_spacer = "auto_width_spacer";
 
     private Context context;
 
@@ -119,11 +119,11 @@ public class Toolbar : ToolBar
      * @author Rocex Wang
      * @since 2019-5-13 22:20:26
      ***************************************************************************/
-    public void addAction(int iIndex, String[] strActionIds...)
+    public void addAction(int iIndex, string[] strActionIds...)
     {
-        foreach (String strActionId; strActionIds)
+        foreach (string strActionId; strActionIds)
         {
-            if (ActionConst.id_separator.equals(strActionId))
+            if (ActionConst.id_separator == (strActionId))
             {
                 addSeparator(iIndex);
             }
@@ -141,11 +141,11 @@ public class Toolbar : ToolBar
      * @author Rocex Wang
      * @since 2019-5-13 22:20:26
      ***************************************************************************/
-    public void addAction(String[] strActionIds...)
+    public void addAction(string[] strActionIds...)
     {
-        foreach (String strActionId; strActionIds)
+        foreach (string strActionId; strActionIds)
         {
-            if (ActionConst.id_separator.equals(strActionId))
+            if (ActionConst.id_separator == (strActionId))
             {
                 addSeparator();
             }
@@ -275,7 +275,7 @@ public class Toolbar : ToolBar
 
         foreach (ToolItem item; items)
         {
-            if (auto_width_spacer.equals(to!(String)(item.getData(auto_width_spacer))))
+            if (auto_width_spacer == (to!(string)(item.getData(auto_width_spacer))))
             {
                 itemSpacer[$] = item;
                 continue;
@@ -383,7 +383,7 @@ public class Toolbar : ToolBar
             return;
         }
 
-        String strHintMessage = (cast(IAction) data).getToolTip();
+        string strHintMessage = (cast(IAction) data).getToolTip();
 
         getContext().getApplication().showHintMessage(strHintMessage);
     }
