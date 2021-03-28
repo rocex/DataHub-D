@@ -141,7 +141,6 @@ public class Application : Shell
 
         // 左边控件
         leftControl = createLeftControl(sashMainBaseControl);
-        leftControl.setContext(getContext());
 
         // 右边主控件
         mainControl = createMainControl(sashMainBaseControl);
@@ -152,6 +151,7 @@ public class Application : Shell
         }
         else
         {
+            leftControl.setContext(getContext());
             sashMainBaseControl.setWeights([2, 8]);
         }
 
@@ -204,25 +204,7 @@ public class Application : Shell
      ***************************************************************************/
     protected Composite createMainControl(Composite parent)
     {
-        CTabFolder tabFolder = new CTabFolder(parent, SWT.BORDER | SWT.FLAT);
-        tabFolder.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-
-        Composite queryAnalyzer = new Composite(tabFolder, SWT.NONE);
-
-        CTabItem tabItem = new CTabItem(tabFolder, SWT.NONE);
-        tabItem.setImage(ResHelper.getImage(ResHelper.res_icon_path ~ "script.png"));
-        tabItem.setText(" [无标题1] * ");
-        tabItem.setControl(queryAnalyzer);
-
-        tabItem = new CTabItem(tabFolder, SWT.NONE);
-        tabItem.setImage(ResHelper.getImage(ResHelper.res_icon_path ~ "script.png"));
-        tabItem.setText(" [无标题2] * ");
-        tabItem.setControl(queryAnalyzer);
-
-        tabFolder.setSelection(0);
-
-        // return new Composite(parent, SWT.NONE);
-        return tabFolder;
+        return new Composite(parent, SWT.NONE);
     }
 
     /***************************************************************************
@@ -235,8 +217,8 @@ public class Application : Shell
         menuBar.addCascadeMenu(menuBar, "&File", ActionConst.id_exit);
 
         // menuBar.addCascadeMenu(menuBar, "&Edit", ActionConst.id_edit_cut, ActionConst.id_edit_copy,
-        //  ActionConst.id_edit_paste, ActionConst.id_separator,
-        //  ActionConst.id_edit_select_all);
+        //         ActionConst.id_edit_paste, ActionConst.id_separator,
+        //         ActionConst.id_edit_select_all);
 
         menuBar.addCascadeMenu(menuBar, "&Help", ActionConst.id_about);
     }
@@ -298,8 +280,7 @@ public class Application : Shell
      ***************************************************************************/
     protected void createToolBar(Toolbar toolbar)
     {
-        toolbar.addAction(ActionConst.id_about, ActionConst.id_separator,
-                ActionConst.id_about, ActionConst.id_separator, ActionConst.id_exit);
+        toolbar.addAction(ActionConst.id_about, ActionConst.id_separator, ActionConst.id_exit);
     }
 
     /***************************************************************************
@@ -465,7 +446,7 @@ public static void main(string[] args)
         string strMainClass = Settings.getValue(SettingConst.main_class,
                 Application.classinfo.name);
 
-        Logger.getLogger().info("main class is " ~ strMainClass);
+        Logger.getLogger().warningf("main class is [%s]", strMainClass);
 
         Application window = cast(Application) Object.factory(strMainClass);
 
