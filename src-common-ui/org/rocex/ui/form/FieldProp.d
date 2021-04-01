@@ -1,4 +1,4 @@
-module org.rocex.ui.form;
+module org.rocex.ui.form.FieldProp;
 
 /***************************************************************************
  * <br>

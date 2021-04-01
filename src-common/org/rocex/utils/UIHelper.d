@@ -49,6 +49,36 @@ public class UIHelper
     }
 
     /***************************************************************************
+     * 把shell居中屏幕显示
+     * @param shell
+     * @author Rocex Wang
+     * @since 2021-3-30 22:33:15
+     ***************************************************************************/
+    public static void centerScreenShell(Shell shell)
+    {
+        Display display = Display.getCurrent() is null ? Display.getDefault() : Display.getCurrent();
+
+        Rectangle boundScreen = display.getBounds();
+
+        centerScreenShell(shell, boundScreen.width / 2, boundScreen.height / 2);
+    }
+
+    /***************************************************************************
+     * 先给shell设置大小，然后再居中屏幕显示
+     * @param shell
+     * @param iWidth
+     * @param iHeight
+     * @author Rocex Wang
+     * @since 2021-3-30 22:40:55
+     ***************************************************************************/
+    public static void centerScreenShell(Shell shell, int iWidth, int iHeight)
+    {
+        shell.setSize(iWidth, iHeight);
+
+        shell.setLocation(getScreenCenterLocation(shell));
+    }
+
+    /***************************************************************************
      * @param parent
      * @return
      * @author Rocex Wang
@@ -156,8 +186,8 @@ public class UIHelper
     }
 
     /***************************************************************************
-     * 把shell显示在屏幕中心，shell中心和屏幕中心位置重合
-     * @return Point 打开shell的位置
+     * shell显示在屏幕中心，shell中心和屏幕中心位置重合
+     * @return Point shell居中时左上角的位置
      * @author Rocex Wang
      * @since 2019-5-28 21:09:01
      ***************************************************************************/

@@ -140,7 +140,7 @@ public abstract class Action : IAction
      * @author Rocex Wang
      * @since 2019-7-11 22:07:49
      ***************************************************************************/
-    protected void fireEvent(Event evt)
+    public void fireEvent(Event evt)
     {
         getContext().fireEvent(evt);
     }
@@ -170,7 +170,7 @@ public abstract class Action : IAction
      * @author Rocex Wang
      * @since 2019-6-3 22:01:44
      ***************************************************************************/
-    protected Application getApplication()
+    public Application getApplication()
     {
         return getContext().getApplication();
     }

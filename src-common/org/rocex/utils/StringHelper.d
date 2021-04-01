@@ -5,6 +5,7 @@ import std.algorithm;
 import std.conv;
 import std.datetime;
 import std.string;
+import std.regex;
 
 /***************************************************************************
  * <br>
@@ -13,6 +14,15 @@ import std.string;
  ***************************************************************************/
 public class StringHelper
 {
+    // [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}
+    private static string strRegexEmail = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+
+    /** url regex */
+    private static string strRegexUrl = r"(([h|H][t|T]|[f|F])[t|T][p|P]([s|S]?)\:\/\/|~/|/)?"
+        ~ r"([\w]+:\w+@)?(([a-zA-Z]{1}([\w\-]+\.)+([\w]{2,5}))"
+        ~ r"(:[\d]{1,5})?)?((/?\w+/)+|/?)"
+        ~ r"(\w+\.[\w]{3,4})?([,]\w+)*((\?\w+=\w+)?(&\w+=\w+)*([,]\w*)*)?";
+
     /** */
     public static const string WHITESPACE = " \n\r\f\t";
 
@@ -80,7 +90,7 @@ public class StringHelper
     /***************************************************************************
      * @param object1
      * @param object2
-     * @return boolean
+     * @return bool
      * @author Rocex Wang
      * @since 2019-5-13 21:10:22
      ***************************************************************************/
@@ -144,38 +154,38 @@ public class StringHelper
     }
 
     /*********************************************************************************************************
-     * @param strSource
+     * @param strText
      * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
      * @since 2004-7-7 21:21:57
      ********************************************************************************************************/
-    public static int getLength(string strSource)
+    public static int getLength(string strText)
     {
-        return getLength(strSource, false);
+        return getLength(strText, false);
     }
 
     /*********************************************************************************************************
-     * @param strSource
+     * @param strText
      * @param blTrim
      * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
      * @since 2004-7-7 21:21:57
      ********************************************************************************************************/
-    public static int getLength(string strSource, bool blTrim)
+    public static int getLength(string strText, bool blTrim)
     {
-        if (strSource is null)
+        if (strText is null)
         {
             return 0;
         }
 
         if (blTrim)
         {
-            strSource = strip(strSource.idup());
+            strText = strip(strText.idup());
         }
 
         int iLength = 0;
 
-        for (int i = 0; i < strSource.length; i++)
+        for (int i = 0; i < strText.length; i++)
         {
-            const char strTemp = strSource[i];
+            const char strTemp = strText[i];
 
             iLength = iLength + (strTemp >= 0 && strTemp <= 255 ? 1 : 2);
         }
@@ -194,48 +204,83 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * strSource is null  || strSource.trim().length() == 0
-     * @param strSource
-     * @return boolean
+     * strText is null  || strText.trim().length() == 0
+     * @param strText
+     * @return bool
      * @author Rocex Wang
      * @since 2020-6-4 21:43:56
      ***************************************************************************/
-    public static bool isBlank(string strSource)
+    public static bool isBlank(string strText)
     {
-        return strSource is null || strip(strSource.idup()).length == 0;
+        return strText is null || strip(strText.idup()).length == 0;
     }
 
     /***************************************************************************
-     * strSource is null  || strSource.length() == 0
-     * @param strSource
-     * @return boolean
+     * @param strText
+     * @return bool
+     * @author Rocex Wang
+     * @since 2021-4-1 22:44:08
+     ***************************************************************************/
+    public static bool isDouble(string strText)
+    {
+        return isNumber(strText);
+    }
+
+    /***************************************************************************
+     * @param strText
+     * @return bool
+     * @author Rocex Wang
+     * @since 2021-4-1 22:43:02
+     ***************************************************************************/
+    public static bool isEmail(string strText)
+    {
+        return !isBlank(strText) && !match(strText, regex(strRegexEmail)).empty;
+    }
+
+    /***************************************************************************
+     * strText is null  || strText.length() == 0
+     * @param strText
+     * @return bool
      * @author Rocex Wang
      * @since 2019-7-13 21:50:00
      ***************************************************************************/
-    public static bool isEmpty(string strSource)
+    public static bool isEmpty(string strText)
     {
-        return strSource is null || strSource.length == 0;
+        return strText is null || strText.length == 0;
+    }
+
+    /***************************************************************************
+     * @param strText
+     * @return bool
+     * @author Rocex Wang
+     * @since 2021-4-1 22:43:37
+     ***************************************************************************/
+    public static bool isInteger(string strText)
+    {
+        return !isBlank(strText) && !match(strText, regex("^-?\\d+$"));
     }
 
     /***************************************************************************
      * 判断字符串是否数字
-     * @param strSource
-     * @return boolean
+     * @param strText
+     * @return bool
      * @author Rocex Wang
      * @since 2020-6-22 21:00:14
      ***************************************************************************/
-    public static bool isNumber(string strSource)
+    public static bool isNumber(string strText)
     {
-        try
-        {
-            new BigDecimal(strSource);
-        }
-        catch (Exception ex)
-        {
-            return false;
-        }
+        return !isBlank(strText) && isNumeric(strText);
+    }
 
-        return true;
+    /***************************************************************************
+     * @param strText
+     * @return bool
+     * @author Rocex Wang
+     * @since 2021-4-1 22:45:04
+     ***************************************************************************/
+    public static bool isURL(string strText)
+    {
+        return !isBlank(strText) && !match(strText, regex(strRegexUrl));
     }
 
     /***************************************************************************
