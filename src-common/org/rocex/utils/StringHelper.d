@@ -6,6 +6,7 @@ import std.conv;
 import std.datetime;
 import std.string;
 import std.regex;
+import std.traits;
 
 /***************************************************************************
  * <br>
@@ -257,7 +258,8 @@ public class StringHelper
      ***************************************************************************/
     public static bool isInteger(string strText)
     {
-        return !isBlank(strText) && !match(strText, regex("^-?\\d+$"));
+        return __traits(isIntegral, strText);
+        // return !isBlank(strText) && !match(strText, regex("^-?\\d+$"));
     }
 
     /***************************************************************************
