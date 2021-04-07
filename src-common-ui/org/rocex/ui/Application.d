@@ -397,9 +397,7 @@ public class Application : Shell
         const int iWidth = Settings.getInt(SettingConst.window_width, 800);
         const int iHeight = Settings.getInt(SettingConst.window_heigth, 600);
 
-        setSize(iWidth, iHeight);
-
-        setLocation(UIHelper.getScreenCenterLocation(this));
+        UIHelper.centerScreen(this, iWidth, iHeight);
     }
 
     /***************************************************************************

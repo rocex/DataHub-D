@@ -54,13 +54,13 @@ public class UIHelper
      * @author Rocex Wang
      * @since 2021-3-30 22:33:15
      ***************************************************************************/
-    public static void centerScreenShell(Shell shell)
+    public static void centerScreen(Shell shell)
     {
         Display display = Display.getCurrent() is null ? Display.getDefault() : Display.getCurrent();
 
         Rectangle boundScreen = display.getBounds();
 
-        centerScreenShell(shell, boundScreen.width / 2, boundScreen.height / 2);
+        centerScreen(shell, boundScreen.width / 2, boundScreen.height / 2);
     }
 
     /***************************************************************************
@@ -71,7 +71,7 @@ public class UIHelper
      * @author Rocex Wang
      * @since 2021-3-30 22:40:55
      ***************************************************************************/
-    public static void centerScreenShell(Shell shell, int iWidth, int iHeight)
+    public static void centerScreen(Shell shell, int iWidth, int iHeight)
     {
         shell.setSize(iWidth, iHeight);
 
