@@ -1,5 +1,6 @@
 module org.rocex.utils.Logger;
 
+import core.time;
 import std.experimental.logger;
 import std.string;
 
@@ -10,6 +11,8 @@ import std.string;
  ***************************************************************************/
 public class Logger
 {
+    private static MonoTime[string] mapTimer;
+
     private static std.experimental.logger.Logger logger;
 
     /***************************************************************************
@@ -22,7 +25,7 @@ public class Logger
 
         multiLogger.logLevel(LogLevel.info);
 
-        auto loggerFile = new FileLogger("DataHub.log");
+        auto loggerFile = new FileLogger("access.log");
 
         import std.stdio : console = stdout;
 
@@ -31,6 +34,39 @@ public class Logger
         multiLogger.insertLogger("loggerFile", loggerFile);
         multiLogger.insertLogger("loggerConsole", loggerConsole);
         logger = multiLogger;
+    }
+
+    /***************************************************************************
+     * @param strMessage 必须和 end(string) 的参数值相同
+     * @author Rocex Wang
+     * @since 2020-5-8 21:54:39
+     ***************************************************************************/
+    public static void begin(string strMessage)
+    {
+        mapTimer[strMessage] = MonoTime.currTime;
+
+        Logger.getLogger.warning(strMessage);
+    }
+
+    /***************************************************************************
+     * @param strMessage 必须和 start(string) 的参数值相同
+     * @author Rocex Wang
+     * @since 2020-5-8 21:54:37
+     ***************************************************************************/
+    public static void end(string strMessage)
+    {
+        if (strMessage !in mapTimer)
+        {
+            return;
+        }
+
+        auto lTime = MonoTime.currTime - mapTimer[strMessage];
+
+        string strMsg = "%s, cost: %s";
+
+        Logger.getLogger.warningf(strMsg, strMessage, lTime);
+
+        mapTimer.remove(strMessage);
     }
 
     /***************************************************************************
