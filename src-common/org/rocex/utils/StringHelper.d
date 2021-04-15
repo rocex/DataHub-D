@@ -1,6 +1,5 @@
 module org.rocex.utils.StringHelper;
 
-import java.math.BigDecimal;
 import std.algorithm;
 import std.conv;
 import std.datetime;
@@ -45,10 +44,15 @@ public class StringHelper
 
         char[] chars = cast(char[]) strValue;
 
-        foreach (char ch; chars)
+        auto gap = 'a' - 'A';
+
+        const char ch0 = chars[0];
+        strResult ~= (ch0 >= 'A' && ch0 <= 'Z') ? ("" ~ cast(char)(ch0 + gap)) : to!string(ch0);
+
+        for (int i = 1; i < chars.length; i++)
         {
-            strResult ~= (ch >= 'A' && ch <= 'Z') ? ("_" ~ cast(char)(ch + ('a' - 'A'))) : to!string(
-                    ch);
+            const char ch = chars[i];
+            strResult ~= (ch >= 'A' && ch <= 'Z') ? ("_" ~ cast(char)(ch + gap)) : to!string(ch);
         }
 
         return strResult;

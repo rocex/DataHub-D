@@ -188,7 +188,7 @@ public class Properties
      ***************************************************************************/
     public void load(string strFilePath)
     {
-        Logger.getLogger().infof("load properties from [%s]", strFilePath);
+        Logger.getLogger().tracef("load properties from [%s]", strFilePath);
 
         if (!exists(strFilePath))
         {

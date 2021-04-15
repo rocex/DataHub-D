@@ -23,6 +23,10 @@ public class Settings
     /** 原始数据，在load的时候加载，store之后重置成最新的，和 properties 做对比，以判断是否有变化 */
     private static Properties originalProperties = null;
 
+    /***************************************************************************
+     * @author Rocex Wang
+     * @since 2020-7-7 21:30:06
+     ***************************************************************************/
     static this()
     {
         properties = new Properties();
@@ -123,7 +127,7 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-5-21 21:34:29
      ***************************************************************************/
-    public static int getInt(string strKey, int iDefaultValue)
+    public static int getInt(string strKey, int iDefaultValue = 0)
     {
         string strProperty = getValue(strKey, iDefaultValue.to!string);
 
@@ -137,7 +141,7 @@ public class Settings
      * @author Rocex Wang
      * @since 2019-5-13 21:44:44
      ***************************************************************************/
-    public static string getValue(string strKey, string strDefaultValue)
+    public static string getValue(string strKey, string strDefaultValue = null)
     {
         if (properties.isEmpty())
         {
