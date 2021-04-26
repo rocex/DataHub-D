@@ -10,18 +10,18 @@ import org.rocex.utils.UIHelper;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-5-7 22:02:30
+ * Authors: Rocex Wang
+ * Date: 2019-5-7 22:02:30
  ***************************************************************************/
 public class StatusBar : CompositeControl
 {
     private Label labelHintMessage;
 
     /***************************************************************************
-     * @param parent
-     * @param iStyle
-     * @author Rocex Wang
-     * @since 2019-5-8 22:37:56
+     * Params: parent
+     * Params: iStyle
+     * Authors: Rocex Wang
+     * Date: 2019-5-8 22:37:56
      ***************************************************************************/
     public this(Composite parent, int iStyle)
     {
@@ -59,9 +59,9 @@ public class StatusBar : CompositeControl
     }
 
     /***************************************************************************
-     * @param statusBar
-     * @author Rocex Wang
-     * @since 2019-5-6 22:37:36
+     * Params: statusBar
+     * Authors: Rocex Wang
+     * Date: 2019-5-6 22:37:36
      ***************************************************************************/
     public void addSeparator()
     {
@@ -71,8 +71,8 @@ public class StatusBar : CompositeControl
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.widgets.CompositeControl#getControl()
-     * @author Rocex Wang
-     * @since 2019-5-28 22:00:17
+     * Authors: Rocex Wang
+     * Date: 2019-5-28 22:00:17
      ****************************************************************************/
     override public Label getControl()
     {
@@ -80,9 +80,9 @@ public class StatusBar : CompositeControl
     }
 
     /***************************************************************************
-     * @return GridData
-     * @author Rocex Wang
-     * @since 2019-5-23 22:43:16
+     * Returns: GridData
+     * Authors: Rocex Wang
+     * Date: 2019-5-23 22:43:16
      ***************************************************************************/
     private GridData getGridData()
     {
@@ -93,9 +93,9 @@ public class StatusBar : CompositeControl
     }
 
     /***************************************************************************
-     * @param strMessage
-     * @author Rocex Wang
-     * @since 2020-6-9 22:52:15
+     * Params: strMessage
+     * Authors: Rocex Wang
+     * Date: 2020-6-9 22:52:15
      ***************************************************************************/
     public void showErrorMessage(string strMessage)
     {
@@ -108,9 +108,9 @@ public class StatusBar : CompositeControl
     }
 
     /***************************************************************************
-     * @param strMessage
-     * @author Rocex Wang
-     * @since 2019-5-23 22:35:10
+     * Params: strMessage
+     * Authors: Rocex Wang
+     * Date: 2019-5-23 22:35:10
      ***************************************************************************/
     public void showHintMessage(string strMessage)
     {

@@ -13,8 +13,8 @@ import org.rocex.utils.ResHelper;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-4-28 22:15:48
+ * Authors: Rocex Wang
+ * Date: 2019-4-28 22:15:48
  ***************************************************************************/
 public class BigDataTableTest : Shell
 {
@@ -61,63 +61,73 @@ public class BigDataTableTest : Shell
                 {
                     public void run()
                     {
-                        auto start = System.currentTimeMillis(); for (int i = 0; i < rows; i++)
+                        auto start = System.currentTimeMillis(); for (int i = 0; i < rows;
+                            i++)
                         {
-                            TableItem tableItem = new TableItem(table, SWT.NONE); for (int j = 0; j < cols; j++)
+                            TableItem tableItem = new TableItem(table, SWT.NONE); for (int j = 0;
+                                j < cols; j++)
                             {
-                                tableItem.setText(j, to!(String)(i) ~ "_" ~ to!(String)(j));}
+                                tableItem.setText(j, to!(String)(i) ~ "_" ~ to!(String)(j));
                             }
-
-                            status.setText("cost time:" ~ to!(String)((System.currentTimeMillis() - start)));}
                         }
-);}
+
+                        status.setText("cost time:" ~ to!(String)(
+                        (System.currentTimeMillis() - start)));}
                     }
+);}
+                }
 );
-                    auto data = new String[cols][rows];
+                auto data = new String[cols][rows];
 
-                    table.addListener(SWT.SetData, new class Listener
+                table.addListener(SWT.SetData, new class Listener
                 {
-                        override public void handleEvent(Event evt)
-                        {
-                            Logger.getLogger().info("begin virtual fill table rows"); TableItem item = to!(TableItem)(evt.item); int index = evt.index; item
-                            .setText(data[index]); status.setText(data[index][0]); Logger.getLogger().info(data[index][0]);}
+                    override public void handleEvent(Event evt)
+                    {
+                        Logger.getLogger().info("begin virtual fill table rows"); TableItem item = to!(
+                        TableItem)(evt.item); int index = evt.index; item.setText(data[index]);
+                        status.setText(data[index][0]); Logger.getLogger().info(data[index][0]);
+                    }
+                }
+);
+                table.setItemCount(rows);
+
+                MenuItem mntmFillVirtual = new MenuItem(menu, SWT.NONE);
+                mntmFillVirtual.setText("填充(虚拟)");
+                mntmFillVirtual.addSelectionListener(new class SelectionAdapter
+                {
+                    override void widgetSelected(SelectionEvent e)
+                    {
+                        Display.getDefault().syncExec(new class Runnable
+                    {
+                            public void run()
+                            {
+                                Logger.getLogger().info("begin virtual fill table");
+                                auto start = System.currentTimeMillis(); for (int i = 0;
+                                    i < rows; i++)
+                                {
+                                    for (int j = 0; j < cols; j++)
+                                    {
+                                        data[i][j] = to!(String)(i) ~ "_" ~ to!(String)(j);
+                                        status.setText(data[i][j]);}
+                                    }
+
+                                    //                     status.setText( "cost time:" ~ to!(String)((System.currentTimeMillis() - start)));
+                                }
+                            }
+);}
                         }
 );
-                        table.setItemCount(rows);
+                        new MenuItem(menu, SWT.SEPARATOR);
 
-                        MenuItem mntmFillVirtual = new MenuItem(menu, SWT.NONE);
-                        mntmFillVirtual.setText("填充(虚拟)");
-                        mntmFillVirtual.addSelectionListener(new class SelectionAdapter
+                        MenuItem mntmClean = new MenuItem(menu, SWT.NONE);
+                        mntmClean.setText("清空");
+                        mntmClean.addSelectionListener(new class SelectionAdapter
                     {
                             override void widgetSelected(SelectionEvent e)
                             {
-                                Display.getDefault().syncExec(new class Runnable
-                            {
-                                    public void run()
-                                    {
-                                        Logger.getLogger().info("begin virtual fill table"); auto start = System.currentTimeMillis(); for (int i = 0; i < rows; i++)
-                                        {
-                                            for (int j = 0; j < cols; j++)
-                                            {
-                                                data[i][j] = to!(String)(i) ~ "_" ~ to!(String)(j); status.setText(data[i][j]);}
-                                            }
-
-                                            //                     status.setText( "cost time:" ~ to!(String)((System.currentTimeMillis() - start)));
-                                        }
-                                    }
-);}
-                                }
-);
-                                new MenuItem(menu, SWT.SEPARATOR);
-
-                                MenuItem mntmClean = new MenuItem(menu, SWT.NONE);
-                                mntmClean.setText("清空");
-                                mntmClean.addSelectionListener(new class SelectionAdapter
-                            {
-                                    override void widgetSelected(SelectionEvent e)
-                                    {
-                                        table.clearAll(); table.removeAll(); status.setText("");}
-                                    }
-);
-                                }
+                                table.clearAll(); table.removeAll(); status.setText("");
                             }
+                        }
+);
+                    }
+                }

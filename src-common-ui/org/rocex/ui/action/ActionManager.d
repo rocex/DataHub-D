@@ -12,8 +12,8 @@ import org.rocex.utils.Logger;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-5-13 22:54:06
+ * Authors: Rocex Wang
+ * Date: 2019-5-13 22:54:06
  ***************************************************************************/
 public class ActionManager
 {
@@ -22,8 +22,8 @@ public class ActionManager
     private IAction[string] mapAction; // action.id -> action
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-6-3 22:38:25
+     * Authors: Rocex Wang
+     * Date: 2019-6-3 22:38:25
      ***************************************************************************/
     ~this()
     {
@@ -32,9 +32,9 @@ public class ActionManager
 
     /***************************************************************************
      * 检查并打印快捷键冲突的action
-     * @param action
-     * @author Rocex Wang
-     * @since 2019-6-3 22:36:42
+     * Params: action=
+     * Authors: Rocex Wang
+     * Date: 2019-6-3 22:36:42
      ***************************************************************************/
     protected void checkAcceleratorConflict(IAction action)
     {
@@ -55,8 +55,8 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-7-6 22:11:57
+     * Authors: Rocex Wang
+     * Date: 2020-7-6 22:11:57
      ***************************************************************************/
     public void dispose()
     {
@@ -67,10 +67,10 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @param strActionId
-     * @return IAction
-     * @author Rocex Wang
-     * @since 2019-5-14 22:18:05
+     * Params: strActionId=
+     * Returns: IAction
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:18:05
      ***************************************************************************/
     public IAction getAction(string strActionId)
     {
@@ -80,9 +80,9 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @return the context
-     * @author Rocex Wang
-     * @since 2020-6-1 22:47:23
+     * Returns: the context
+     * Authors: Rocex Wang
+     * Date: 2020-6-1 22:47:23
      ***************************************************************************/
     public Context getContext()
     {
@@ -90,8 +90,8 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-7-9 22:20:08
+     * Authors: Rocex Wang
+     * Date: 2019-7-9 22:20:08
      ***************************************************************************/
     public void refreshActionState()
     {
@@ -102,9 +102,9 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @param actions
-     * @author Rocex Wang
-     * @since 2019-7-23 22:54:34
+     * Params: actions=
+     * Authors: Rocex Wang
+     * Date: 2019-7-23 22:54:34
      ***************************************************************************/
     public void registerAction(IAction[] actions...)
     {
@@ -133,10 +133,11 @@ public class ActionManager
 
     /***************************************************************************
      * 注册action
-     * @param strActionId
-     * @param actionClass
-     * @author Rocex Wang
-     * @since 2019-8-23 22:10:06
+     * Params: 
+     *      strActionId=
+     *      actionClass=
+     * Authors: Rocex Wang
+     * Date: 2019-8-23 22:10:06
      ***************************************************************************/
     public void registerAction(string strActionId, ClassInfo actionClass)
     {
@@ -158,10 +159,11 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @param evt
-     * @param strActionId
-     * @author Rocex Wang
-     * @since 2020-6-3 22:38:27
+     * Params: 
+     *  evt=
+     *  strActionId=
+     * Authors: Rocex Wang
+     * Date: 2020-6-3 22:38:27
      ***************************************************************************/
     public void runAction(Event evt, string[] strActionIds...)
     {
@@ -194,9 +196,9 @@ public class ActionManager
 
     /***************************************************************************
      * 设置所有Action状态
-     * @param blEnable
-     * @author Rocex Wang
-     * @since 2019-7-9 22:17:14
+     * Params: blEnable=
+     * Authors: Rocex Wang
+     * Date: 2019-7-9 22:17:14
      ***************************************************************************/
     public void setActionEnable(bool blEnable)
     {
@@ -208,10 +210,10 @@ public class ActionManager
 
     /***************************************************************************
      * 设置指定Action状态
-     * @param blEnable
-     * @param strActionIds
-     * @author Rocex Wang
-     * @since 2019-6-9 22:40:25
+     * Params: blEnable=
+     * Params: strActionIds=
+     * Authors: Rocex Wang
+     * Date: 2019-6-9 22:40:25
      ***************************************************************************/
     public void setActionEnable(bool blEnable, string[] strActionIds...)
     {
@@ -229,9 +231,9 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @param context the context to set
-     * @author Rocex Wang
-     * @since 2020-6-1 22:47:23
+     * Params: context=the context to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-1 22:47:23
      ***************************************************************************/
     public void setContext(Context context)
     {
@@ -239,9 +241,9 @@ public class ActionManager
     }
 
     /***************************************************************************
-     * @param actions
-     * @author Rocex Wang
-     * @since 2020-7-4 22:15:10
+     * Params: actions=
+     * Authors: Rocex Wang
+     * Date: 2020-7-4 22:15:10
      ***************************************************************************/
     public void unregister(IAction[] actions...)
     {
@@ -260,9 +262,9 @@ public class ActionManager
 
     /***************************************************************************
      * 注销action
-     * @param strActionIds
-     * @author Rocex Wang
-     * @since 2020-6-24 22:38:44
+     * Params: strActionIds
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:38:44
      ***************************************************************************/
     public void unregister(string[] strActionIds...)
     {

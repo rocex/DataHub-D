@@ -9,8 +9,8 @@ import std.traits;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-6-4 21:24:28
+ * Authors: Rocex Wang
+ * Date: 2019-6-4 21:24:28
  ***************************************************************************/
 public class StringHelper
 {
@@ -28,10 +28,10 @@ public class StringHelper
 
     /***************************************************************************
      * 驼峰转下划线，例如：userName -> user_name
-     * @param strValue
-     * @return 驼峰转下划线，例如：userName -> user_name
-     * @author Rocex Wang
-     * @since 2019-10-25 21:59:29
+     * Params: strValue
+     * Returns: 驼峰转下划线，例如：userName -> user_name
+     * Authors: Rocex Wang
+     * Date: 2019-10-25 21:59:29
      ***************************************************************************/
     public static string camelToUnderline(string strValue)
     {
@@ -59,10 +59,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param objValue
-     * @return string
-     * @author Rocex Wang
-     * @since 2019-6-25 21:10:26
+     * Params: objValue
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2019-6-25 21:10:26
      ***************************************************************************/
     public static string defaultString(Object objValue)
     {
@@ -70,10 +70,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strValue
-     * @return string
-     * @author Rocex Wang
-     * @since 2019-6-4 21:37:12
+     * Params: strValue
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2019-6-4 21:37:12
      ***************************************************************************/
     public static string defaultString(string strValue)
     {
@@ -81,11 +81,11 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strValue
-     * @param strDefault
-     * @return string
-     * @author Rocex Wang
-     * @since 2019-6-4 21:37:09
+     * Params: strValue
+     * Params: strDefault
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2019-6-4 21:37:09
      ***************************************************************************/
     public static string defaultString(string strValue, string strDefault)
     {
@@ -93,11 +93,11 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param object1
-     * @param object2
-     * @return bool
-     * @author Rocex Wang
-     * @since 2019-5-13 21:10:22
+     * Params: object1
+     * Params: object2
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 21:10:22
      ***************************************************************************/
     public static bool equals(Object object1, Object object2)
     {
@@ -115,10 +115,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strValue
-     * @return 首字母变小写
-     * @author Rocex Wang
-     * @since 2019-6-11 21:59:38
+     * Params: strValue
+     * Returns: 首字母变小写
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 21:59:38
      * @see com.jfinal.kit.StrKit
      ***************************************************************************/
     public static string firstCharToLowerCase(string strValue)
@@ -137,10 +137,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strValue
-     * @return 首字母变大写
-     * @author Rocex Wang
-     * @since 2019-6-11 21:59:51
+     * Params: strValue
+     * Returns: 首字母变大写
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 21:59:51
      * @see com.jfinal.kit.StrKit
      ***************************************************************************/
     public static string firstCharToUpperCase(string strValue)
@@ -159,9 +159,9 @@ public class StringHelper
     }
 
     /*********************************************************************************************************
-     * @param strText
-     * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
-     * @since 2004-7-7 21:21:57
+     * Params: strText
+     * Returns: int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
+     * Date: 2004-7-7 21:21:57
      ********************************************************************************************************/
     public static int getLength(string strText)
     {
@@ -169,10 +169,10 @@ public class StringHelper
     }
 
     /*********************************************************************************************************
-     * @param strText
-     * @param blTrim
-     * @return int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
-     * @since 2004-7-7 21:21:57
+     * Params: strText
+     * Params: blTrim
+     * Returns: int 返回strSource的长度，以一个英文字符的长度为单位，汉字占两位
+     * Date: 2004-7-7 21:21:57
      ********************************************************************************************************/
     public static int getLength(string strText, bool blTrim)
     {
@@ -199,9 +199,9 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @return UUID.toString()
-     * @author Rocex Wang
-     * @since 2019-8-6 21:19:55
+     * Returns: UUID.toString()
+     * Authors: Rocex Wang
+     * Date: 2019-8-6 21:19:55
      ***************************************************************************/
     public static string getUUID()
     {
@@ -210,10 +210,10 @@ public class StringHelper
 
     /***************************************************************************
      * strText is null  || strText.trim().length() == 0
-     * @param strText
-     * @return bool
-     * @author Rocex Wang
-     * @since 2020-6-4 21:43:56
+     * Params: strText
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2020-6-4 21:43:56
      ***************************************************************************/
     public static bool isBlank(string strText)
     {
@@ -221,10 +221,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strText
-     * @return bool
-     * @author Rocex Wang
-     * @since 2021-4-1 22:44:08
+     * Params: strText
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2021-4-1 22:44:08
      ***************************************************************************/
     public static bool isDouble(string strText)
     {
@@ -232,10 +232,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strText
-     * @return bool
-     * @author Rocex Wang
-     * @since 2021-4-1 22:43:02
+     * Params: strText
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2021-4-1 22:43:02
      ***************************************************************************/
     public static bool isEmail(string strText)
     {
@@ -244,10 +244,10 @@ public class StringHelper
 
     /***************************************************************************
      * strText is null  || strText.length() == 0
-     * @param strText
-     * @return bool
-     * @author Rocex Wang
-     * @since 2019-7-13 21:50:00
+     * Params: strText
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2019-7-13 21:50:00
      ***************************************************************************/
     public static bool isEmpty(string strText)
     {
@@ -255,10 +255,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strText
-     * @return bool
-     * @author Rocex Wang
-     * @since 2021-4-1 22:43:37
+     * Params: strText
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2021-4-1 22:43:37
      ***************************************************************************/
     public static bool isInteger(string strText)
     {
@@ -268,10 +268,10 @@ public class StringHelper
 
     /***************************************************************************
      * 判断字符串是否数字
-     * @param strText
-     * @return bool
-     * @author Rocex Wang
-     * @since 2020-6-22 21:00:14
+     * Params: strText
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2020-6-22 21:00:14
      ***************************************************************************/
     public static bool isNumber(string strText)
     {
@@ -279,10 +279,10 @@ public class StringHelper
     }
 
     /***************************************************************************
-     * @param strText
-     * @return bool
-     * @author Rocex Wang
-     * @since 2021-4-1 22:45:04
+     * Params: strText
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2021-4-1 22:45:04
      ***************************************************************************/
     public static bool isURL(string strText)
     {
@@ -291,10 +291,10 @@ public class StringHelper
 
     /***************************************************************************
      * 下划线转驼峰，例如：user_name -> userName
-     * @param strValue
-     * @return 下划线转驼峰，例如：user_name -> userName
-     * @author Rocex Wang
-     * @since 2019-10-25 21:44:16
+     * Params: strValue
+     * Returns: 下划线转驼峰，例如：user_name -> userName
+     * Authors: Rocex Wang
+     * Date: 2019-10-25 21:44:16
      ***************************************************************************/
     public static string underlineToCamel(string strValue)
     {

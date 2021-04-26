@@ -2,10 +2,10 @@ module org.rocex.vo.Pair;
 
 /***************************************************************************
  * <br>
- * @param <K>
- * @param <V>
- * @author Rocex Wang
- * @since 2021-3-30 22:04:22
+ * Params: <K>
+ * Params: <V>
+ * Authors: Rocex Wang
+ * Date: 2021-3-30 22:04:22
  ***************************************************************************/
 public class Pair(K, V)
 {
@@ -16,10 +16,10 @@ public class Pair(K, V)
     private V objValue;
 
     /***************************************************************************
-     * @param key
-     * @param value
-     * @author Rocex Wang
-     * @since 2021-3-30 22:04:37
+     * Params: key
+     * Params: value
+     * Authors: Rocex Wang
+     * Date: 2021-3-30 22:04:37
      ***************************************************************************/
     public this(K key, V value)
     {
@@ -28,9 +28,9 @@ public class Pair(K, V)
     }
 
     /***************************************************************************
-     * @param obj
-     * @author Rocex Wang
-     * @since 2021-3-30 22:04:37
+     * Params: obj
+     * Authors: Rocex Wang
+     * Date: 2021-3-30 22:04:37
      ***************************************************************************/
     public bool equals(Object obj)
     {
@@ -55,9 +55,9 @@ public class Pair(K, V)
     }
 
     /***************************************************************************
-     * @return string
-     * @author Rocex Wang
-     * @since 2021-3-30 22:04:51
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2021-3-30 22:04:51
      ***************************************************************************/
     public K getKey()
     {
@@ -65,9 +65,9 @@ public class Pair(K, V)
     }
 
     /***************************************************************************
-     * @return string
-     * @author Rocex Wang
-     * @since 2021-3-30 22:04:59
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2021-3-30 22:04:59
      ***************************************************************************/
     public V getValue()
     {

@@ -1,13 +1,13 @@
 module org.rocex.utils.Logger;
 
-import core.time;
+import std.datetime;
 import std.experimental.logger;
 import std.string;
 
 /***************************************************************************
  * all < trace < info < warn < error < critical < fatal <br>
- * @author Rocex Wang
- * @since 2019-5-21 21:13:04
+ * Authors: Rocex Wang
+ * Date: 2019-5-21 21:13:04
  ***************************************************************************/
 public class Logger
 {
@@ -16,8 +16,8 @@ public class Logger
     private static std.experimental.logger.Logger logger;
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-08-15 21:32:21
+     * Authors: Rocex Wang
+     * Date: 2020-08-15 21:32:21
      ***************************************************************************/
     private static this()
     {
@@ -25,7 +25,10 @@ public class Logger
 
         multiLogger.logLevel(LogLevel.info);
 
-        auto loggerFile = new FileLogger("access.log");
+        SysTime today = Clock.currTime();
+
+        auto loggerFile = new FileLogger("./logs/access_" ~ (cast(Date) today)
+                .toISOExtString() ~ ".log");
 
         import std.stdio : console = stdout;
 
@@ -37,9 +40,9 @@ public class Logger
     }
 
     /***************************************************************************
-     * @param strMessage 必须和 end(string) 的参数值相同
-     * @author Rocex Wang
-     * @since 2020-5-8 21:54:39
+     * Params: strMessage 必须和 end(string) 的参数值相同
+     * Authors: Rocex Wang
+     * Date: 2020-5-8 21:54:39
      ***************************************************************************/
     public static void begin(string strMessage)
     {
@@ -49,9 +52,9 @@ public class Logger
     }
 
     /***************************************************************************
-     * @param strMessage 必须和 start(string) 的参数值相同
-     * @author Rocex Wang
-     * @since 2020-5-8 21:54:37
+     * Params: strMessage 必须和 start(string) 的参数值相同
+     * Authors: Rocex Wang
+     * Date: 2020-5-8 21:54:37
      ***************************************************************************/
     public static void end(string strMessage)
     {
@@ -70,18 +73,18 @@ public class Logger
     }
 
     /***************************************************************************
-     * @return std.experimental.logger.Logger
-     * @author Rocex Wang
-     * @since 2020-08-15 21:31:53
+     * Returns: std.experimental.logger.Logger
+     * Authors: Rocex Wang
+     * Date: 2020-08-15 21:31:53
      ***************************************************************************/
     public static std.experimental.logger.Logger getLogger()
     {
         return logger;
     }
     /***************************************************************************
-     * @param strLogLevel
-     * @author Rocex Wang
-     * @since 2020-08-15 21:31:53
+     * Params: strLogLevel
+     * Authors: Rocex Wang
+     * Date: 2020-08-15 21:31:53
      ***************************************************************************/
     public static void setEnableLevel(string strEnableLogLevel)
     {

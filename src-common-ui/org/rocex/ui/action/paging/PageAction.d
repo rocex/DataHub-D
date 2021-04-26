@@ -9,8 +9,8 @@ import org.rocex.ui.action.paging.PageModel;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-5-14 22:46:17
+ * Authors: Rocex Wang
+ * Date: 2019-5-14 22:46:17
  ***************************************************************************/
 public class PageAction : Action
 {
@@ -20,9 +20,9 @@ public class PageAction : Action
     private PagingBar pagingBar;
 
     /***************************************************************************
-     * @param strId
-     * @author Rocex Wang
-     * @since 2019-5-14 22:46:17
+     * Params: strId
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:46:17
      ***************************************************************************/
     public this(string strId)
     {
@@ -32,8 +32,8 @@ public class PageAction : Action
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.Action#doAction(org.eclipse.swt.widgets.Event)
-     * @author Rocex Wang
-     * @since 2019-5-14 22:46:17
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:46:17
      ****************************************************************************/
     override public void doAction(Event evt)
     {
@@ -50,9 +50,9 @@ public class PageAction : Action
     }
 
     /***************************************************************************
-     * @return the pageInfo
-     * @author Rocex Wang
-     * @since 2020-6-24 22:06:30
+     * Returns: the pageInfo
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:06:30
      ***************************************************************************/
     public PageInfo getPageInfo()
     {
@@ -60,9 +60,9 @@ public class PageAction : Action
     }
 
     /***************************************************************************
-     * @return the pageModel
-     * @author Rocex Wang
-     * @since 2020-6-24 22:54:21
+     * Returns: the pageModel
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:54:21
      ***************************************************************************/
     public PageModel getPageModel()
     {
@@ -72,8 +72,8 @@ public class PageAction : Action
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.Action#isEnabled()
-     * @author Rocex Wang
-     * @since 2020-6-24 22:33:11
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:33:11
      ****************************************************************************/
     override public bool isEnabled()
     {
@@ -81,9 +81,9 @@ public class PageAction : Action
     }
 
     /***************************************************************************
-     * @param pageInfo the pageInfo to set
-     * @author Rocex Wang
-     * @since 2020-6-24 22:06:30
+     * Params: pageInfo the pageInfo to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:06:30
      ***************************************************************************/
     public void setPageInfo(PageInfo pageInfo)
     {
@@ -91,9 +91,9 @@ public class PageAction : Action
     }
 
     /***************************************************************************
-     * @param pageModel the pageModel to set
-     * @author Rocex Wang
-     * @since 2020-6-24 22:54:21
+     * Params: pageModel the pageModel to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:54:21
      ***************************************************************************/
     public void setPageModel(PageModel pageModel)
     {
@@ -101,9 +101,9 @@ public class PageAction : Action
     }
 
     /***************************************************************************
-     * @param pagingBar the pagingBar to set
-     * @author Rocex Wang
-     * @since 2020-6-24 22:09:15
+     * Params: pagingBar the pagingBar to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:09:15
      ***************************************************************************/
     public void setPagingBar(PagingBar pagingBar)
     {

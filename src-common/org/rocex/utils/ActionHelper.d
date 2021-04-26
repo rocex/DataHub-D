@@ -7,8 +7,8 @@ import std.string;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2020-5-29 21:16:50
+ * Authors: Rocex Wang
+ * Date: 2020-5-29 21:16:50
  ***************************************************************************/
 public final class ActionHelper
 {
@@ -18,8 +18,8 @@ public final class ActionHelper
 
     /*****************************************************************************
      * Converts an accelerator key code to a string representation.
-     * @param keyCode the key code to be translated
-     * @return a string representation of the key code
+     * Params: keyCode the key code to be translated
+     * Returns: a string representation of the key code
      ****************************************************************************/
     public static string convertAccelerator(int keyCode)
     {
@@ -33,8 +33,8 @@ public final class ActionHelper
 
     /*****************************************************************************
      * Parses the given accelerator text, and converts it to an accelerator key code.
-     * @param acceleratorText the accelerator text
-     * @return the SWT key code, or 0 if there is no accelerator
+     * Params: acceleratorText the accelerator text
+     * Returns: the SWT key code, or 0 if there is no accelerator
      ****************************************************************************/
     public static int convertAccelerator(string acceleratorText)
     {
@@ -101,8 +101,8 @@ public final class ActionHelper
      * <li><code>"INSERT"</code></li>
      * <li><code>"F1"</code>, <code>"F2"</code> through <code>"F12"</code></li>
      * </ul>
-     * @param strToken the key name
-     * @return the SWT key code, <code>-1</code> if no match was found
+     * Params: strToken the key name
+     * Returns: the SWT key code, <code>-1</code> if no match was found
      * @see SWT
      ****************************************************************************/
     public static int findKeyCode(string strToken)
@@ -132,10 +132,10 @@ public final class ActionHelper
      * Maps an SWT key code to a standard keyboard key name. The key code is stripped of modifiers (SWT.CTRL,
      * SWT.ALT, SWT.SHIFT, and SWT.COMMAND). If the key code is not an SWT code (for example if it a key code for
      * the key 'S'), a string containing a character representation of the key code is returned.
-     * @param keyCode the key code to be translated
-     * @return the string representation of the key code
+     * Params: keyCode the key code to be translated
+     * Returns: the string representation of the key code
      * @see SWT
-     * @since 2.0
+     * Date: 2.0
      ****************************************************************************/
     public static string findKeyString(int keyCode)
     {
@@ -167,8 +167,8 @@ public final class ActionHelper
      * Maps standard keyboard modifier key names to the corresponding SWT modifier bit. The following modifier key
      * names are recognized (case is ignored): <code>"CTRL"</code>, <code>"SHIFT"</code>, <code>"ALT"</code>, and
      * <code>"COMMAND"</code>. The given modifier key name is converted to upper case before comparison.
-     * @param strToken the modifier key name
-     * @return the SWT modifier bit, or <code>0</code> if no match was found
+     * Params: strToken the modifier key name
+     * Returns: the SWT modifier bit, or <code>0</code> if no match was found
      * @see SWT
      ****************************************************************************/
     public static int findModifier(string strToken)
@@ -197,8 +197,8 @@ public final class ActionHelper
     /*****************************************************************************
      * Returns a string representation of an SWT modifier bit (SWT.CTRL, SWT.ALT, SWT.SHIFT, and SWT.COMMAND).
      * Returns <code>null</code> if the key code is not an SWT modifier bit.
-     * @param keyCode the SWT modifier bit to be translated
-     * @return the string representation of the SWT modifier bit, or <code>null</code> if the key code was not an
+     * Params: keyCode the SWT modifier bit to be translated
+     * Returns: the string representation of the SWT modifier bit, or <code>null</code> if the key code was not an
      *         SWT modifier bit
      * @see SWT
      ****************************************************************************/
@@ -226,8 +226,8 @@ public final class ActionHelper
 
     /*****************************************************************************
      * Returns the string representation of the modifiers (Ctrl, Alt, Shift, Command) of the key event.
-     * @param keyCode The key code for which the modifier string is desired.
-     * @return The string representation of the key code; never <code>null</code>.
+     * Params: keyCode The key code for which the modifier string is desired.
+     * Returns: The string representation of the key code; never <code>null</code>.
      ****************************************************************************/
     private static string getModifierString(int keyCode)
     {

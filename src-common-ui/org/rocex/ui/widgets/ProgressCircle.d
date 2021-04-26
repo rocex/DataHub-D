@@ -13,8 +13,8 @@ import org.rocex.utils.ResHelper;
 
 /***************************************************************************
  * 把带有图标的控件的图标换成转圈的动画图标，并在任务完成之后恢复成原有图标<br>
- * @author Rocex Wang
- * @since 2020-6-8 22:06:48
+ * Authors: Rocex Wang
+ * Date: 2020-6-8 22:06:48
  ***************************************************************************/
 public class ProgressCircle
 {
@@ -34,9 +34,9 @@ public class ProgressCircle
     private Widget widget; // 带有图标的控件
 
     /***************************************************************************
-     * @param widget 带有图标的控件，该控件必须带有 getImage()、setImage(Image) 方法
-     * @author Rocex Wang
-     * @since 2020-6-8 22:40:49
+     * Params: widget 带有图标的控件，该控件必须带有 getImage()、setImage(Image) 方法
+     * Authors: Rocex Wang
+     * Date: 2020-6-8 22:40:49
      ***************************************************************************/
     public this(Widget widget)
     {
@@ -66,8 +66,8 @@ public class ProgressCircle
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-7-6 22:09:44
+     * Authors: Rocex Wang
+     * Date: 2020-7-6 22:09:44
      ***************************************************************************/
     protected void dispose()
     {
@@ -80,9 +80,9 @@ public class ProgressCircle
     }
 
     /***************************************************************************
-     * @return Image
-     * @author Rocex Wang
-     * @since 2020-6-9 22:06:03
+     * Returns: Image
+     * Authors: Rocex Wang
+     * Date: 2020-6-9 22:06:03
      ***************************************************************************/
     protected Image getWidgetImage()
     {
@@ -102,9 +102,9 @@ public class ProgressCircle
     }
 
     /***************************************************************************
-     * @param image
-     * @author Rocex Wang
-     * @since 2020-6-9 22:06:11
+     * Params: image
+     * Authors: Rocex Wang
+     * Date: 2020-6-9 22:06:11
      ***************************************************************************/
     protected void setWidgetImage(Image image)
     {
@@ -123,8 +123,8 @@ public class ProgressCircle
 
     /***************************************************************************
      * 开始执行动画图标
-     * @author Rocex Wang
-     * @since 2020-6-9 22:06:16
+     * Authors: Rocex Wang
+     * Date: 2020-6-9 22:06:16
      ***************************************************************************/
     public ProgressCircle start()
     {
@@ -172,8 +172,8 @@ public class ProgressCircle
 
     /***************************************************************************
      * 停止执行动画图标
-     * @author Rocex Wang
-     * @since 2020-6-9 22:06:37
+     * Authors: Rocex Wang
+     * Date: 2020-6-9 22:06:37
      ***************************************************************************/
     public void stop()
     {

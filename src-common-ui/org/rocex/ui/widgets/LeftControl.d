@@ -12,18 +12,18 @@ import org.rocex.utils.UIHelper;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-5-21 22:01:16
+ * Authors: Rocex Wang
+ * Date: 2019-5-21 22:01:16
  ***************************************************************************/
 public class LeftControl : CompositeControl
 {
     protected Tree tree;
 
     /***************************************************************************
-     * @param parent
-     * @param iStyle
-     * @author Rocex Wang
-     * @since 2020-6-3 22:50:47
+     * Params: parent
+     * Params: iStyle
+     * Authors: Rocex Wang
+     * Date: 2020-6-3 22:50:47
      ***************************************************************************/
     public this(Composite parent, int iStyle)
     {
@@ -35,8 +35,8 @@ public class LeftControl : CompositeControl
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-5-28 22:51:47
+     * Authors: Rocex Wang
+     * Date: 2019-5-28 22:51:47
      ***************************************************************************/
     protected void createControl()
     {
@@ -68,9 +68,9 @@ public class LeftControl : CompositeControl
     }
 
     /***************************************************************************
-     * @return
-     * @author Rocex Wang
-     * @since 2019-5-28 22:52:46
+     * Returns:
+     * Authors: Rocex Wang
+     * Date: 2019-5-28 22:52:46
      ***************************************************************************/
     override public Control getControl()
     {

@@ -18,17 +18,17 @@ import org.rocex.utils.UIHelper;
 
 /***************************************************************************
  * 菜单栏<br>
- * @author Rocex Wang
- * @since 2019-5-13 22:09:27
+ * Authors: Rocex Wang
+ * Date: 2019-5-13 22:09:27
  ***************************************************************************/
 public class MenuBar : Menu
 {
     private Context context;
 
     /***************************************************************************
-     * @param parent
-     * @author Rocex Wang
-     * @since 2019-6-3 22:55:59
+     * Params: parent
+     * Authors: Rocex Wang
+     * Date: 2019-6-3 22:55:59
      ***************************************************************************/
     public this(Control parent)
     {
@@ -38,10 +38,10 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @param parent
-     * @param iStyle
-     * @author Rocex Wang
-     * @since 2019-5-13 22:34:24
+     * Params: parent
+     * Params: iStyle
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 22:34:24
      ***************************************************************************/
     public this(Decorations parent, int iStyle)
     {
@@ -51,9 +51,9 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @param actions
-     * @author Rocex Wang
-     * @since 2019-5-13 22:20:26
+     * Params: actions
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 22:20:26
      ***************************************************************************/
     public void addAction(Menu menu, IAction[] actions...)
     {
@@ -106,10 +106,10 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @param menu
-     * @param strActionIds
-     * @author Rocex Wang
-     * @since 2019-5-13 22:20:26
+     * Params: menu
+     * Params: strActionIds
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 22:20:26
      ***************************************************************************/
     public void addAction(Menu menu, string[] strActionIds...)
     {
@@ -129,11 +129,11 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @param menu
-     * @param strText
-     * @return Menu
-     * @author Rocex Wang
-     * @since 2019-5-14 22:45:53
+     * Params: menu
+     * Params: strText
+     * Returns: Menu
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:45:53
      ***************************************************************************/
     public Menu addCascadeMenu(Menu menu, string strText)
     {
@@ -147,12 +147,12 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @param menu
-     * @param strText
-     * @param strActionIds
-     * @return Menu
-     * @author Rocex Wang
-     * @since 2019-5-14 22:45:53
+     * Params: menu
+     * Params: strText
+     * Params: strActionIds
+     * Returns: Menu
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:45:53
      ***************************************************************************/
     public Menu addCascadeMenu(Menu menu, string strText, string[] strActionIds...)
     {
@@ -164,9 +164,9 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @param menu
-     * @author Rocex Wang
-     * @since 2019-5-14 22:46:00
+     * Params: menu
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:46:00
      ***************************************************************************/
     public void addSeparator(Menu menu)
     {
@@ -180,8 +180,8 @@ public class MenuBar : Menu
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.eclipse.swt.widgets.Widget#dispose()
-     * @author Rocex Wang
-     * @since 2020-7-4 22:49:22
+     * Authors: Rocex Wang
+     * Date: 2020-7-4 22:49:22
      ****************************************************************************/
     override public void dispose()
     {
@@ -216,9 +216,9 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @return the context
-     * @author Rocex Wang
-     * @since 2020-6-1 22:57:01
+     * Returns: the context
+     * Authors: Rocex Wang
+     * Date: 2020-6-1 22:57:01
      ***************************************************************************/
     public Context getContext()
     {
@@ -226,9 +226,9 @@ public class MenuBar : Menu
     }
 
     /***************************************************************************
-     * @param context the context to set
-     * @author Rocex Wang
-     * @since 2020-6-1 22:57:01
+     * Params: context the context to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-1 22:57:01
      ***************************************************************************/
     public void setContext(Context context)
     {

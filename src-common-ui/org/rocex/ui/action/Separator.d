@@ -6,14 +6,14 @@ import org.rocex.ui.action.ActionConst;
 
 /***************************************************************************
  * 分割条，适用于 {@link MenuBar} 和 {@link ToolBar}<br>
- * @author Rocex Wang
- * @since 2019-7-29 22:28:54
+ * Authors: Rocex Wang
+ * Date: 2019-7-29 22:28:54
  ***************************************************************************/
 public class Separator : Action
 {
     /****************************************************************************
-     * @author Rocex Wang
-     * @since 2020-08-04 22:12:08
+     * Authors: Rocex Wang
+     * Date: 2020-08-04 22:12:08
      ****************************************************************************/
     public this()
     {
@@ -23,8 +23,8 @@ public class Separator : Action
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.Action#doAction(org.eclipse.swt.widgets.Event)
-     * @author Rocex Wang
-     * @since 2019-7-29 22:24:07
+     * Authors: Rocex Wang
+     * Date: 2019-7-29 22:24:07
      ****************************************************************************/
     override public void doAction(Event evt)
     {
@@ -33,8 +33,8 @@ public class Separator : Action
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.Action#isEnabled()
-     * @author Rocex Wang
-     * @since 2019-7-29 22:24:07
+     * Authors: Rocex Wang
+     * Date: 2019-7-29 22:24:07
      ****************************************************************************/
     override public bool isEnabled()
     {

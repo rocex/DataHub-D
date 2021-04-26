@@ -13,8 +13,8 @@ import std.string;
 
 /***************************************************************************
  * 系统参数设置中心，只保存有变化的参数值<br>
- * @author Rocex Wang
- * @since 2019-5-13 21:30:23
+ * Authors: Rocex Wang
+ * Date: 2019-5-13 21:30:23
  ***************************************************************************/
 public class Settings
 {
@@ -24,8 +24,8 @@ public class Settings
     private static Properties originalProperties = null;
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-7-7 21:30:06
+     * Authors: Rocex Wang
+     * Date: 2020-7-7 21:30:06
      ***************************************************************************/
     static this()
     {
@@ -34,8 +34,8 @@ public class Settings
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-7-7 21:30:06
+     * Authors: Rocex Wang
+     * Date: 2020-7-7 21:30:06
      ***************************************************************************/
     public static ~this()
     {
@@ -44,11 +44,11 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param blDefaultValue
-     * @return boolean
-     * @author Rocex Wang
-     * @since 2019-5-13 21:57:56
+     * Params: strKey
+     * Params: blDefaultValue
+     * Returns: boolean
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 21:57:56
      ***************************************************************************/
     public static bool getBoolean(string strKey, bool blDefaultValue = false)
     {
@@ -65,11 +65,11 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param dblDefaultValue
-     * @return double
-     * @author Rocex Wang
-     * @since 2019-5-21 21:36:06
+     * Params: strKey
+     * Params: dblDefaultValue
+     * Returns: double
+     * Authors: Rocex Wang
+     * Date: 2019-5-21 21:36:06
      ***************************************************************************/
     public static double getDouble(string strKey, double dblDefaultValue)
     {
@@ -79,10 +79,10 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @return Font
-     * @author Rocex Wang
-     * @since 2019-7-18 21:38:26
+     * Params: strKey
+     * Returns: Font
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:38:26
      ***************************************************************************/
     public static Font getFont(string strKey)
     {
@@ -90,11 +90,11 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param defaultFont
-     * @return Font
-     * @author Rocex Wang
-     * @since 2019-7-18 21:27:53
+     * Params: strKey
+     * Params: defaultFont
+     * Returns: Font
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:27:53
      ***************************************************************************/
     public static Font getFont(string strKey, Font defaultFont)
     {
@@ -121,11 +121,11 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param iDefaultValue
-     * @return int
-     * @author Rocex Wang
-     * @since 2019-5-21 21:34:29
+     * Params: strKey
+     * Params: iDefaultValue
+     * Returns: int
+     * Authors: Rocex Wang
+     * Date: 2019-5-21 21:34:29
      ***************************************************************************/
     public static int getInt(string strKey, int iDefaultValue = 0)
     {
@@ -135,11 +135,11 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param strDefaultValue
-     * @return string
-     * @author Rocex Wang
-     * @since 2019-5-13 21:44:44
+     * Params: strKey
+     * Params: strDefaultValue
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 21:44:44
      ***************************************************************************/
     public static string getValue(string strKey, string strDefaultValue = null)
     {
@@ -159,9 +159,9 @@ public class Settings
     }
 
     /***************************************************************************
-     * @return boolean 从文件中加载以来是否有变化，包括任何的 key、value、comment 的变化
-     * @author Rocex Wang
-     * @since 2021-2-4 22:51:31
+     * Returns: boolean 从文件中加载以来是否有变化，包括任何的 key、value、comment 的变化
+     * Authors: Rocex Wang
+     * Date: 2021-2-4 22:51:31
      ***************************************************************************/
     public static bool isChangeFromLoad()
     {
@@ -169,8 +169,8 @@ public class Settings
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-5-21 22:09:32
+     * Authors: Rocex Wang
+     * Date: 2019-5-21 22:09:32
      ***************************************************************************/
     public static void load()
     {
@@ -180,8 +180,8 @@ public class Settings
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-5-13 21:44:47
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 21:44:47
      ***************************************************************************/
     public static void save()
     {
@@ -198,10 +198,10 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param strValue
-     * @author Rocex Wang
-     * @since 2019-5-13 21:57:50
+     * Params: strKey
+     * Params: strValue
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 21:57:50
      ***************************************************************************/
     public static void setValue(string strKey, string strValue)
     {
@@ -209,10 +209,10 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param blValue
-     * @author Rocex Wang
-     * @since 2020-08-06 21:15:28
+     * Params: strKey
+     * Params: blValue
+     * Authors: Rocex Wang
+     * Date: 2020-08-06 21:15:28
      ***************************************************************************/
     public static void setValue(string strKey, bool blValue)
     {
@@ -220,10 +220,10 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param iValue
-     * @author Rocex Wang
-     * @since 2020-08-06 21:15:34
+     * Params: strKey
+     * Params: iValue
+     * Authors: Rocex Wang
+     * Date: 2020-08-06 21:15:34
      ***************************************************************************/
     public static void setValue(string strKey, int iValue)
     {
@@ -231,10 +231,10 @@ public class Settings
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param dblValue
-     * @author Rocex Wang
-     * @since 2021-03-23 21:25:34
+     * Params: strKey
+     * Params: dblValue
+     * Authors: Rocex Wang
+     * Date: 2021-03-23 21:25:34
      ***************************************************************************/
     public static void setValue(string strKey, double dblValue)
     {

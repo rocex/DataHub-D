@@ -19,8 +19,8 @@ import std.algorithm;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-5-14 22:47:34
+ * Authors: Rocex Wang
+ * Date: 2019-5-14 22:47:34
  ***************************************************************************/
 public abstract class Action : IAction
 {
@@ -41,16 +41,16 @@ public abstract class Action : IAction
     private String strToolTip;
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-5-14 22:47:34
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:47:34
      ***************************************************************************/
     public this()
     {
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-5-14 22:49:36
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:49:36
      ***************************************************************************/
     ~this()
     {
@@ -58,9 +58,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param strId
-     * @author Rocex Wang
-     * @since 2019-5-9 22:15:57
+     * Params: strId
+     * Authors: Rocex Wang
+     * Date: 2019-5-9 22:15:57
      ***************************************************************************/
     protected this(String strId)
     {
@@ -72,8 +72,8 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#addBindingItem(org.eclipse.swt.widgets.Item)
-     * @author Rocex Wang
-     * @since 2019-5-14 22:03:56
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:03:56
      ****************************************************************************/
     override public void addBindingItem(Item item)
     {
@@ -83,8 +83,8 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#afterAction()
-     * @author Rocex Wang
-     * @since 2020-6-13 22:47:51
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:47:51
      ****************************************************************************/
     override public void afterAction()
     {
@@ -93,8 +93,8 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#beforeAction()
-     * @author Rocex Wang
-     * @since 2019-5-09 22:15:44
+     * Authors: Rocex Wang
+     * Date: 2019-5-09 22:15:44
      ****************************************************************************/
     override public void beforeAction()
     {
@@ -104,8 +104,8 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#dispose()
-     * @author Rocex Wang
-     * @since 2020-7-6 22:09:21
+     * Authors: Rocex Wang
+     * Date: 2020-7-6 22:09:21
      ****************************************************************************/
     override public void dispose()
     {
@@ -118,9 +118,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param evt
-     * @author Rocex Wang
-     * @since 2019-5-11 22:23:10
+     * Params: evt
+     * Authors: Rocex Wang
+     * Date: 2019-5-11 22:23:10
      * @throws Exception
      ***************************************************************************/
     public abstract void doAction(Event evt);
@@ -128,17 +128,17 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#finallyAction()
-     * @author Rocex Wang
-     * @since 2020-6-13 22:47:51
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:47:51
      ****************************************************************************/
     override public void finallyAction()
     {
     }
 
     /***************************************************************************
-     * @param evt
-     * @author Rocex Wang
-     * @since 2019-7-11 22:07:49
+     * Params: evt
+     * Authors: Rocex Wang
+     * Date: 2019-7-11 22:07:49
      ***************************************************************************/
     public void fireEvent(Event evt)
     {
@@ -146,9 +146,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return the accelerator
-     * @author Rocex Wang
-     * @since 2019-5-13 22:36:48
+     * Returns: the accelerator
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 22:36:48
      ***************************************************************************/
     override public int getAccelerator()
     {
@@ -156,9 +156,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return ActionManager
-     * @author Rocex Wang
-     * @since 2019-6-9 22:54:34
+     * Returns: ActionManager
+     * Authors: Rocex Wang
+     * Date: 2019-6-9 22:54:34
      ***************************************************************************/
     protected ActionManager getActionManager()
     {
@@ -166,9 +166,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return Application
-     * @author Rocex Wang
-     * @since 2019-6-3 22:01:44
+     * Returns: Application
+     * Authors: Rocex Wang
+     * Date: 2019-6-3 22:01:44
      ***************************************************************************/
     public Application getApplication()
     {
@@ -178,8 +178,8 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#getBindingItems()
-     * @author Rocex Wang
-     * @since 2019-5-14 22:03:56
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:03:56
      ****************************************************************************/
     override public Item[] getBindingItems()
     {
@@ -187,9 +187,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return the context
-     * @author Rocex Wang
-     * @since 2019-5-14 22:42:37
+     * Returns: the context
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:42:37
      ***************************************************************************/
     override public Context getContext()
     {
@@ -197,9 +197,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return Display
-     * @author Rocex Wang
-     * @since 2020-6-11 22:20:45
+     * Returns: Display
+     * Authors: Rocex Wang
+     * Date: 2020-6-11 22:20:45
      ***************************************************************************/
     public Display getDisplay()
     {
@@ -207,9 +207,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return the iconPath
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Returns: the iconPath
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public String getIconPath()
     {
@@ -217,9 +217,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return the strId
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Returns: the strId
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public String getId()
     {
@@ -227,9 +227,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return the text
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Returns: the text
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public String getText()
     {
@@ -237,9 +237,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @return the toolTip
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Returns: the toolTip
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public String getToolTip()
     {
@@ -247,9 +247,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param ex
-     * @author Rocex Wang
-     * @since 2020-6-11 22:22:06
+     * Params: ex
+     * Authors: Rocex Wang
+     * Date: 2020-6-11 22:22:06
      ***************************************************************************/
     public void handleException(Exception ex)
     {
@@ -265,8 +265,8 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#isEnabled()
-     * @author Rocex Wang
-     * @since 2020-6-16 22:29:23
+     * Authors: Rocex Wang
+     * Date: 2020-6-16 22:29:23
      ****************************************************************************/
     override public bool isEnabled()
     {
@@ -276,8 +276,8 @@ public abstract class Action : IAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.IAction#removeBindingItem(org.eclipse.swt.widgets.Item)
-     * @author Rocex Wang
-     * @since 2020-7-4 22:56:40
+     * Authors: Rocex Wang
+     * Date: 2020-7-4 22:56:40
      ****************************************************************************/
     override public void removeBindingItem(Item item)
     {
@@ -291,8 +291,8 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-5-9 22:15:59
+     * Authors: Rocex Wang
+     * Date: 2019-5-9 22:15:59
      ***************************************************************************/
     override public void run(Event evt)
     {
@@ -330,9 +330,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param accelerator the accelerator to set
-     * @author Rocex Wang
-     * @since 2019-5-13 22:36:48
+     * Params: accelerator the accelerator to set
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 22:36:48
      ***************************************************************************/
     override public void setAccelerator(int accelerator)
     {
@@ -340,9 +340,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param context the context to set
-     * @author Rocex Wang
-     * @since 2019-5-14 22:42:37
+     * Params: context the context to set
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:42:37
      ***************************************************************************/
     override public void setContext(Context context)
     {
@@ -350,9 +350,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param enabled the enabled to set
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Params: enabled the enabled to set
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public final void setEnabled(bool enabled)
     {
@@ -377,9 +377,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param iconPath the iconPath to set
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Params: iconPath the iconPath to set
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public void setIconPath(String iconPath)
     {
@@ -387,9 +387,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param strId the strId to set
-     * @author Rocex Wang
-     * @since 2019-5-13 22:14:13
+     * Params: strId the strId to set
+     * Authors: Rocex Wang
+     * Date: 2019-5-13 22:14:13
      ***************************************************************************/
     override public void setId(String strId)
     {
@@ -397,9 +397,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param text the text to set
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Params: text the text to set
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public void setText(String text)
     {
@@ -407,9 +407,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param toolTip the toolTip to set
-     * @author Rocex Wang
-     * @since 2019-05-09 22:14:34
+     * Params: toolTip the toolTip to set
+     * Authors: Rocex Wang
+     * Date: 2019-05-09 22:14:34
      ***************************************************************************/
     override public void setToolTip(String toolTip)
     {
@@ -417,10 +417,10 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param strMessage
-     * @param ex
-     * @author Rocex Wang
-     * @since 2020-6-9 22:02:48
+     * Params: strMessage
+     * Params: ex
+     * Authors: Rocex Wang
+     * Date: 2020-6-9 22:02:48
      ***************************************************************************/
     public void showErrorMessage(String strMessage, Exception ex)
     {
@@ -428,9 +428,9 @@ public abstract class Action : IAction
     }
 
     /***************************************************************************
-     * @param strMessage
-     * @author Rocex Wang
-     * @since 2019-6-18 22:59:19
+     * Params: strMessage
+     * Authors: Rocex Wang
+     * Date: 2019-6-18 22:59:19
      ***************************************************************************/
     public void showHintMessage(String strMessage)
     {

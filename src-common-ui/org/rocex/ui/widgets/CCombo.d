@@ -15,8 +15,8 @@ import org.rocex.vo.Pair;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2020-6-19 22:49:00
+ * Authors: Rocex Wang
+ * Date: 2020-6-19 22:49:00
  ***************************************************************************/
 public class CCombo : Combo, IWidget
 {
@@ -27,10 +27,10 @@ public class CCombo : Combo, IWidget
     private Object objValue;
 
     /***************************************************************************
-     * @param parent
-     * @param style
-     * @author Rocex Wang
-     * @since 2020-6-19 22:49:00
+     * Params: parent
+     * Params: style
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:49:00
      ***************************************************************************/
     public this(Composite parent, int style)
     {
@@ -38,11 +38,11 @@ public class CCombo : Combo, IWidget
     }
 
     /***************************************************************************
-     * @param strText
-     * @param objValue
-     * @return Combo
-     * @author Rocex Wang
-     * @since 2020-6-19 22:53:53
+     * Params: strText
+     * Params: objValue
+     * Returns: Combo
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:53:53
      ***************************************************************************/
     public Combo addItem(String strText, Object objValue)
     {
@@ -61,8 +61,8 @@ public class CCombo : Combo, IWidget
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.eclipse.swt.widgets.Combo#checkSubclass()
-     * @author Rocex Wang
-     * @since 2020-6-19 22:21:34
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:21:34
      ****************************************************************************/
     override protected void checkSubclass()
     {
@@ -71,8 +71,8 @@ public class CCombo : Combo, IWidget
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.eclipse.swt.widgets.Widget#dispose()
-     * @author Rocex Wang
-     * @since 2020-7-4 22:29:47
+     * Authors: Rocex Wang
+     * Date: 2020-7-4 22:29:47
      ****************************************************************************/
     override public void dispose()
     {
@@ -86,9 +86,9 @@ public class CCombo : Combo, IWidget
     }
 
     /***************************************************************************
-     * @return the fieldProp
-     * @author Rocex Wang
-     * @since 2020-6-19 22:07:29
+     * Returns: the fieldProp
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:07:29
      ***************************************************************************/
     public FieldProp getProp()
     {
@@ -96,9 +96,9 @@ public class CCombo : Combo, IWidget
     }
 
     /***************************************************************************
-     * @return the value
-     * @author Rocex Wang
-     * @since 2020-6-19 22:50:34
+     * Returns: the value
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:50:34
      ***************************************************************************/
     override public Object getValue()
     {
@@ -107,9 +107,9 @@ public class CCombo : Combo, IWidget
     }
 
     /***************************************************************************
-     * @param listModel
-     * @author Rocex Wang
-     * @since 2020-6-19 22:55:17
+     * Params: listModel
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:55:17
      ***************************************************************************/
     public void setModel(List listModel)
     {
@@ -132,9 +132,9 @@ public class CCombo : Combo, IWidget
     }
 
     /***************************************************************************
-     * @param fieldProp the fieldProp to set
-     * @author Rocex Wang
-     * @since 2020-6-19 22:07:29
+     * Params: fieldProp the fieldProp to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:07:29
      ***************************************************************************/
     public void setProp(FieldProp prop)
     {
@@ -142,9 +142,9 @@ public class CCombo : Combo, IWidget
     }
 
     /***************************************************************************
-     * @param objValue the value to set
-     * @author Rocex Wang
-     * @since 2020-6-19 22:50:34
+     * Params: objValue the value to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:50:34
      ***************************************************************************/
     override public void setValue(Object objValue)
     {

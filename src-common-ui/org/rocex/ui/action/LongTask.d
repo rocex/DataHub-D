@@ -16,8 +16,8 @@ import org.rocex.utils.ResHelper;
 
 /***************************************************************************
  * 处理长任务抽象类，一个长任务的执行流程 beforeTask() => doTask() => afterTask() => finallyTask()<br>
- * @author Rocex Wang
- * @since 2020-6-11 22:50:25
+ * Authors: Rocex Wang
+ * Date: 2020-6-11 22:50:25
  ***************************************************************************/
 public abstract class LongTask : Thread, Runnable
 {
@@ -42,8 +42,8 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-6-17 22:52:47
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:52:47
      ***************************************************************************/
     public this()
     {
@@ -51,8 +51,8 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-6-13 22:11:30
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:11:30
      ***************************************************************************/
     public this(Action action, Event evt)
     {
@@ -66,8 +66,8 @@ public abstract class LongTask : Thread, Runnable
      * 可处理任何操作，和界面相关的、无关的都可以<br>
      * 主要是一些任务执行后向界面放数等操作，有异常直接抛出，系统会自动中断操作<br>
      * @throws Exception
-     * @author Rocex Wang
-     * @since 2020-6-13 22:12:19
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:12:19
      ***************************************************************************/
     protected void afterTask()
     {
@@ -78,8 +78,8 @@ public abstract class LongTask : Thread, Runnable
      * 主要是一些任务执行前的校验、从界面存取数操作，有异常直接抛出，系统会自动中断操作<br>
      * 子类继承的时候要在最后调用父类的beforeTask()，因为要调用getProgressWidget()，而ui操作要在子类的beforeTask()里实现<br>
      * @throws Exception
-     * @author Rocex Wang
-     * @since 2020-6-13 22:12:11
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:12:11
      ***************************************************************************/
     protected void beforeTask()
     {
@@ -98,8 +98,8 @@ public abstract class LongTask : Thread, Runnable
     /***************************************************************************
      * 只处理长任务，任何和界面相关的都不能在这儿处理，执行完的结果放到线程成员变量里面待afterTask()使用<br>
      * @throws Exception
-     * @author Rocex Wang
-     * @since 2020-6-13 22:12:16
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:12:16
      ***************************************************************************/
     protected abstract void doTask();
 
@@ -107,8 +107,8 @@ public abstract class LongTask : Thread, Runnable
      * 可处理任何操作，和界面相关的、无关的都可以<br>
      * 任务最后的收尾工作
      * @throws Exception
-     * @author Rocex Wang
-     * @since 2020-6-13 22:12:52
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:12:52
      ***************************************************************************/
     protected void finallyTask()
     {
@@ -125,9 +125,9 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @param evt
-     * @author Rocex Wang
-     * @since 2020-6-17 22:57:12
+     * Params: evt
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:57:12
      ***************************************************************************/
     protected void fireEvent(Event evt)
     {
@@ -135,9 +135,9 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @return Application
-     * @author Rocex Wang
-     * @since 2020-6-17 22:20:26
+     * Returns: Application
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:20:26
      ***************************************************************************/
     protected Application getApplication()
     {
@@ -145,16 +145,16 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @return Widget
-     * @author Rocex Wang
-     * @since 2020-6-17 22:10:14
+     * Returns: Widget
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:10:14
      ***************************************************************************/
     protected abstract Widget getProgressWidget();
 
     /***************************************************************************
-     * @return the taskState
-     * @author Rocex Wang
-     * @since 2020-6-16 22:04:30
+     * Returns: the taskState
+     * Authors: Rocex Wang
+     * Date: 2020-6-16 22:04:30
      ***************************************************************************/
     public TaskState getTaskState()
     {
@@ -162,9 +162,9 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @param ex
-     * @author Rocex Wang
-     * @since 2020-6-13 22:12:49
+     * Params: ex
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:12:49
      ***************************************************************************/
     protected void handleException(Exception ex)
     {
@@ -174,8 +174,8 @@ public abstract class LongTask : Thread, Runnable
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see java.lang.Runnable#run()
-     * @author Rocex Wang
-     * @since 2020-6-13 22:10:47
+     * Authors: Rocex Wang
+     * Date: 2020-6-13 22:10:47
      ****************************************************************************/
     override public void run()
     {
@@ -296,9 +296,9 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @param action
-     * @author Rocex Wang
-     * @since 2020-6-17 22:56:40
+     * Params: action
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:56:40
      ***************************************************************************/
     public void setAction(Action action)
     {
@@ -306,9 +306,9 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @param evt
-     * @author Rocex Wang
-     * @since 2020-6-17 22:58:11
+     * Params: evt
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:58:11
      ***************************************************************************/
     public void setEvent(Event evt)
     {
@@ -316,9 +316,9 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @param taskState the taskState to set
-     * @author Rocex Wang
-     * @since 2020-6-16 22:04:30
+     * Params: taskState the taskState to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-16 22:04:30
      ***************************************************************************/
     public void setTaskState(TaskState taskState)
     {
@@ -327,10 +327,10 @@ public abstract class LongTask : Thread, Runnable
 
     /***************************************************************************
      * 设置鼠标样式
-     * @param progressWidget
-     * @param cursor
-     * @author Rocex Wang
-     * @since 2020-7-9 22:12:38
+     * Params: progressWidget
+     * Params: cursor
+     * Authors: Rocex Wang
+     * Date: 2020-7-9 22:12:38
      ***************************************************************************/
     protected void showCursor(Widget progressWidget, Cursor cursor)
     {
@@ -351,9 +351,9 @@ public abstract class LongTask : Thread, Runnable
     }
 
     /***************************************************************************
-     * @param strMsg
-     * @author Rocex Wang
-     * @since 2020-6-17 22:21:22
+     * Params: strMsg
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:21:22
      ***************************************************************************/
     protected void showHintMessage(String strMsg)
     {

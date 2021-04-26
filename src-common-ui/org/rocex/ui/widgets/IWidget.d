@@ -2,22 +2,22 @@ module org.rocex.ui.widgets.IWidget;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2020-6-19 22:51:03
+ * Authors: Rocex Wang
+ * Date: 2020-6-19 22:51:03
  ***************************************************************************/
 public interface IWidget
 {
     /***************************************************************************
-     * @return Object value
-     * @author Rocex Wang
-     * @since 2020-6-19 22:51:41
+     * Returns: Object value
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:51:41
      ***************************************************************************/
     Object getValue();
 
     /***************************************************************************
-     * @param objValue
-     * @author Rocex Wang
-     * @since 2020-6-19 22:51:43
+     * Params: objValue
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:51:43
      ***************************************************************************/
     void setValue(Object objValue);
 }

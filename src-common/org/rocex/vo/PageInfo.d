@@ -2,8 +2,8 @@ module org.rocex.vo.PageInfo;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-8-7 22:15:47
+ * Authors: Rocex Wang
+ * Date: 2019-8-7 22:15:47
  ***************************************************************************/
 public class PageInfo //todo : SuperVO
 {
@@ -16,9 +16,9 @@ public class PageInfo //todo : SuperVO
     private long iTotalRecord = 0; // 总记录数
 
     /***************************************************************************
-     * @return the pageCount > 0
-     * @author Rocex Wang
-     * @since 2019-8-7 22:19:12
+     * Returns: the pageCount > 0
+     * Authors: Rocex Wang
+     * Date: 2019-8-7 22:19:12
      ***************************************************************************/
     public int getPageCount()
     {
@@ -26,9 +26,9 @@ public class PageInfo //todo : SuperVO
     }
 
     /***************************************************************************
-     * @return the pageIndex > 0
-     * @author Rocex Wang
-     * @since 2019-8-7 22:19:12
+     * Returns: the pageIndex > 0
+     * Authors: Rocex Wang
+     * Date: 2019-8-7 22:19:12
      ***************************************************************************/
     public int getPageIndex()
     {
@@ -36,9 +36,9 @@ public class PageInfo //todo : SuperVO
     }
 
     /***************************************************************************
-     * @return the pageSize
-     * @author Rocex Wang
-     * @since 2019-8-7 22:19:12
+     * Returns: the pageSize
+     * Authors: Rocex Wang
+     * Date: 2019-8-7 22:19:12
      ***************************************************************************/
     public int getPageSize()
     {
@@ -46,9 +46,9 @@ public class PageInfo //todo : SuperVO
     }
 
     /***************************************************************************
-     * @return the recordTotal
-     * @author Rocex Wang
-     * @since 2019-8-7 22:19:23
+     * Returns: the recordTotal
+     * Authors: Rocex Wang
+     * Date: 2019-8-7 22:19:23
      ***************************************************************************/
     public long getTotalRecord()
     {
@@ -56,9 +56,9 @@ public class PageInfo //todo : SuperVO
     }
 
     /***************************************************************************
-     * @param pageIndex the pageIndex to set
-     * @author Rocex Wang
-     * @since 2019-8-7 22:19:12
+     * Params: pageIndex the pageIndex to set
+     * Authors: Rocex Wang
+     * Date: 2019-8-7 22:19:12
      ***************************************************************************/
     public PageInfo setPageIndex(int pageIndex)
     {
@@ -73,9 +73,9 @@ public class PageInfo //todo : SuperVO
     }
 
     /***************************************************************************
-     * @param pageSize the pageSize to set
-     * @author Rocex Wang
-     * @since 2019-8-7 22:19:12
+     * Params: pageSize the pageSize to set
+     * Authors: Rocex Wang
+     * Date: 2019-8-7 22:19:12
      ***************************************************************************/
     public PageInfo setPageSize(int pageSize)
     {
@@ -90,9 +90,9 @@ public class PageInfo //todo : SuperVO
     }
 
     /***************************************************************************
-     * @param recordTotal the recordTotal to set
-     * @author Rocex Wang
-     * @since 2019-8-7 22:19:23
+     * Params: recordTotal the recordTotal to set
+     * Authors: Rocex Wang
+     * Date: 2019-8-7 22:19:23
      ***************************************************************************/
     public PageInfo setTotalRecord(long recordTotal)
     {

@@ -2,8 +2,8 @@ module org.rocex.ui.form.FieldProp;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-6-11 22:02:16
+ * Authors: Rocex Wang
+ * Date: 2019-6-11 22:02:16
  ***************************************************************************/
 public class FieldProp
 {
@@ -32,18 +32,18 @@ public class FieldProp
     private string strTitle;
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-6-11 22:33:56
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:33:56
      ***************************************************************************/
     public this()
     {
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param strTitle
-     * @author Rocex Wang
-     * @since 2019-6-13 22:39:23
+     * Params: strKey
+     * Params: strTitle
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:39:23
      ***************************************************************************/
     public this(string strKey, string strTitle)
     {
@@ -54,11 +54,11 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param strTitle
-     * @param blNullable
-     * @author Rocex Wang
-     * @since 2019-6-13 22:24:22
+     * Params: strKey
+     * Params: strTitle
+     * Params: blNullable
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:24:22
      ***************************************************************************/
     public this(string strKey, string strTitle, bool blNullable)
     {
@@ -68,12 +68,12 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param blNullable
-     * @param strDataType
-     * @param iLength
-     * @author Rocex Wang
-     * @since 2019-6-12 22:21:15
+     * Params: strKey
+     * Params: blNullable
+     * Params: strDataType
+     * Params: iLength
+     * Authors: Rocex Wang
+     * Date: 2019-6-12 22:21:15
      ***************************************************************************/
     public this(string strKey, string strTitle, bool blNullable, string strDataType, int iLength)
     {
@@ -84,9 +84,9 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @return the dataType
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Returns: the dataType
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public string getDataType()
     {
@@ -94,9 +94,9 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @return the key
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Returns: the key
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public string getKey()
     {
@@ -104,9 +104,9 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @return the length
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Returns: the length
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public int getLength()
     {
@@ -114,9 +114,9 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @return the max
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Returns: the max
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public double getMax()
     {
@@ -124,9 +124,9 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @return the min
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Returns: the min
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public double getMin()
     {
@@ -134,9 +134,9 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @return the title
-     * @author Rocex Wang
-     * @since 2019-6-12 22:24:28
+     * Returns: the title
+     * Authors: Rocex Wang
+     * Date: 2019-6-12 22:24:28
      ***************************************************************************/
     public string getTitle()
     {
@@ -144,9 +144,9 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @return the nullable
-     * @author Rocex Wang
-     * @since 2019-6-12 22:17:11
+     * Returns: the nullable
+     * Authors: Rocex Wang
+     * Date: 2019-6-12 22:17:11
      ***************************************************************************/
     public bool isNullable()
     {
@@ -154,10 +154,10 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param dataType the dataType to set
-     * @return FieldProp
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Params: dataType the dataType to set
+     * Returns: FieldProp
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setDataType(string dataType)
     {
@@ -167,10 +167,10 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param strKey the id to set
-     * @return FieldProp
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Params: strKey the id to set
+     * Returns: FieldProp
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setKey(string key)
     {
@@ -180,10 +180,10 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param length the length to set
-     * @return FieldProp
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Params: length the length to set
+     * Returns: FieldProp
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setLength(int length)
     {
@@ -193,10 +193,10 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param max the max to set
-     * @return FieldProp
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Params: max the max to set
+     * Returns: FieldProp
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setMax(double max)
     {
@@ -206,10 +206,10 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param min the min to set
-     * @return FieldProp
-     * @author Rocex Wang
-     * @since 2019-6-11 22:28:40
+     * Params: min the min to set
+     * Returns: FieldProp
+     * Authors: Rocex Wang
+     * Date: 2019-6-11 22:28:40
      ***************************************************************************/
     public FieldProp setMin(double min)
     {
@@ -219,10 +219,10 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param nullable the nullable to set
-     * @return FieldProp
-     * @author Rocex Wang
-     * @since 2019-6-12 22:17:11
+     * Params: nullable the nullable to set
+     * Returns: FieldProp
+     * Authors: Rocex Wang
+     * Date: 2019-6-12 22:17:11
      ***************************************************************************/
     public FieldProp setNullable(bool nullable)
     {
@@ -232,10 +232,10 @@ public class FieldProp
     }
 
     /***************************************************************************
-     * @param title the title to set
-     * @return FieldProp
-     * @author Rocex Wang
-     * @since 2019-6-12 22:24:28
+     * Params: title the title to set
+     * Returns: FieldProp
+     * Authors: Rocex Wang
+     * Date: 2019-6-12 22:24:28
      ***************************************************************************/
     public FieldProp setTitle(string title)
     {

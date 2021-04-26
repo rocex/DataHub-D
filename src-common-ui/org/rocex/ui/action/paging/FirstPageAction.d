@@ -8,15 +8,15 @@ import org.rocex.utils.ResHelper;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-5-14 22:46:17
+ * Authors: Rocex Wang
+ * Date: 2019-5-14 22:46:17
  ***************************************************************************/
 public class FirstPageAction : PageAction
 {
     /***************************************************************************
-     * @param strId
-     * @author Rocex Wang
-     * @since 2019-5-14 22:46:17
+     * Params: strId
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:46:17
      ***************************************************************************/
     public this()
     {
@@ -31,8 +31,8 @@ public class FirstPageAction : PageAction
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.Action#doAction(org.eclipse.swt.widgets.Event)
-     * @author Rocex Wang
-     * @since 2019-5-14 22:46:17
+     * Authors: Rocex Wang
+     * Date: 2019-5-14 22:46:17
      ****************************************************************************/
     override public void doAction(Event evt)
     {

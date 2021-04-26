@@ -8,17 +8,17 @@ import std.string;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2020-4-28 21:19:15
+ * Authors: Rocex Wang
+ * Date: 2020-4-28 21:19:15
  ***************************************************************************/
 public class FileHelper
 {
     /***************************************************************************
      * 拷贝文件夹下所有的文件夹和文件
-     * @param pathFrom
-     * @param pathTo
-     * @author Rocex Wang
-     * @since 2020-4-28 21:36:51
+     * Params: pathFrom
+     * Params: pathTo
+     * Authors: Rocex Wang
+     * Date: 2020-4-28 21:36:51
      ***************************************************************************/
     public static void copyFolder(string pathFrom, string pathTo)
     {
@@ -42,11 +42,11 @@ public class FileHelper
 
     /***************************************************************************
      * 在新线程下拷贝文件夹下所有的文件夹和文件
-     * @param pathFrom
-     * @param pathTo
-     * @param options
-     * @author Rocex Wang
-     * @since 2020-5-11 21:36:23
+     * Params: pathFrom
+     * Params: pathTo
+     * Params: options
+     * Authors: Rocex Wang
+     * Date: 2020-5-11 21:36:23
      ***************************************************************************/
     public static void copyFolderThread(string pathFrom, string pathTo)
     {
@@ -70,9 +70,9 @@ public class FileHelper
     }
 
     /***************************************************************************
-     * @param strFilePath
-     * @author Rocex Wang
-     * @since 2019-8-9 21:03:57
+     * Params: strFilePath
+     * Authors: Rocex Wang
+     * Date: 2019-8-9 21:03:57
      ***************************************************************************/
     public static void deleteFile(string strFilePath)
     {
@@ -86,11 +86,11 @@ public class FileHelper
 
     /***************************************************************************
      * 删除文件夹下所有的文件夹和文件
-     * @param path
-     * @param pathTo
-     * @param options
-     * @author Rocex Wang
-     * @since 2020-4-28 21:36:51
+     * Params: path
+     * Params: pathTo
+     * Params: options
+     * Authors: Rocex Wang
+     * Date: 2020-4-28 21:36:51
      ***************************************************************************/
     public static void deleteFolder(string path)
     {
@@ -104,10 +104,10 @@ public class FileHelper
 
     /***************************************************************************
      * 写文件
-     * @param strFilePath
-     * @param strContent
-     * @author Rocex Wang
-     * @since 2020-4-26 21:24:35
+     * Params: strFilePath
+     * Params: strContent
+     * Authors: Rocex Wang
+     * Date: 2020-4-26 21:24:35
      ***************************************************************************/
     public static void writeFile(string strFilePath, string strContent)
     {
@@ -130,10 +130,10 @@ public class FileHelper
 
     /***************************************************************************
      * 在新线程下写文件
-     * @param strFilePath
-     * @param strContent
-     * @author Rocex Wang
-     * @since 2020-5-11 21:36:58
+     * Params: strFilePath
+     * Params: strContent
+     * Authors: Rocex Wang
+     * Date: 2020-5-11 21:36:58
      ***************************************************************************/
     public static void writeFileThread(string strFilePath, string strContent)
     {

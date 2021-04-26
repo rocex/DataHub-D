@@ -25,8 +25,8 @@ import org.rocex.vo.Pair;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-4-25 22:40:57
+ * Authors: Rocex Wang
+ * Date: 2019-4-25 22:40:57
  ***************************************************************************/
 public class PagingBar : Toolbar
 {
@@ -47,10 +47,10 @@ public class PagingBar : Toolbar
     private CText txtPageIndex;
 
     /***************************************************************************
-     * @param parent
-     * @param iStyle
-     * @author Rocex Wang
-     * @since 2019-4-25 22:42:07
+     * Params: parent
+     * Params: iStyle
+     * Authors: Rocex Wang
+     * Date: 2019-4-25 22:42:07
      ***************************************************************************/
     public this(Composite parent, int iStyle)
     {
@@ -124,9 +124,9 @@ public class PagingBar : Toolbar
     }
 
     /***************************************************************************
-     * @return the pageInfo
-     * @author Rocex Wang
-     * @since 2020-6-18 22:06:57
+     * Returns: the pageInfo
+     * Authors: Rocex Wang
+     * Date: 2020-6-18 22:06:57
      ***************************************************************************/
     public PageInfo getPageInfo()
     {
@@ -143,9 +143,9 @@ public class PagingBar : Toolbar
     }
 
     /***************************************************************************
-     * @param pageInfo the pageInfo to set
-     * @author Rocex Wang
-     * @since 2020-6-18 22:06:57
+     * Params: pageInfo the pageInfo to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-18 22:06:57
      ***************************************************************************/
     public void setPageInfo(PageInfo pageInfo)
     {
@@ -178,9 +178,9 @@ public class PagingBar : Toolbar
     }
 
     /***************************************************************************
-     * @param pageModel
-     * @author Rocex Wang
-     * @since 2020-6-24 22:25:26
+     * Params: pageModel
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:25:26
      ***************************************************************************/
     public void setPageModel(PageModel pageModel)
     {

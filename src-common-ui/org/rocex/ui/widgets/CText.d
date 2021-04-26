@@ -14,18 +14,18 @@ import org.rocex.utils.StringHelper;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2020-6-19 22:47:46
+ * Authors: Rocex Wang
+ * Date: 2020-6-19 22:47:46
  ***************************************************************************/
 public class CText : Text, IWidget
 {
     private FieldProp prop;
 
     /***************************************************************************
-     * @param parent
-     * @param style
-     * @author Rocex Wang
-     * @since 2020-6-19 22:47:46
+     * Params: parent
+     * Params: style
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:47:46
      ***************************************************************************/
     public this(Composite parent, int style)
     {
@@ -35,18 +35,18 @@ public class CText : Text, IWidget
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.eclipse.swt.widgets.Widget#checkSubclass()
-     * @author Rocex Wang
-     * @since 2020-6-19 22:42:15
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:42:15
      ****************************************************************************/
     override protected void checkSubclass()
     {
     }
 
     /***************************************************************************
-     * @param evt
-     * @return String
-     * @author Rocex Wang
-     * @since 2019-6-13 22:19:56
+     * Params: evt
+     * Returns: String
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:19:56
      ***************************************************************************/
     protected String getNewValue(Event evt)
     {
@@ -56,9 +56,9 @@ public class CText : Text, IWidget
     }
 
     /***************************************************************************
-     * @return the prop
-     * @author Rocex Wang
-     * @since 2020-6-19 22:29:55
+     * Returns: the prop
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:29:55
      ***************************************************************************/
     public FieldProp getProp()
     {
@@ -68,8 +68,8 @@ public class CText : Text, IWidget
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.widgets.IWidget#getValue()
-     * @author Rocex Wang
-     * @since 2020-6-19 22:52:11
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:52:11
      ****************************************************************************/
     override public Object getValue()
     {
@@ -90,9 +90,9 @@ public class CText : Text, IWidget
     }
 
     /***************************************************************************
-     * @param prop the prop to set
-     * @author Rocex Wang
-     * @since 2020-6-19 22:29:55
+     * Params: prop the prop to set
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:29:55
      ***************************************************************************/
     public void setProp(FieldProp fieldProp)
     {
@@ -114,8 +114,8 @@ public class CText : Text, IWidget
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.widgets.IWidget#setValue(java.lang.Object)
-     * @author Rocex Wang
-     * @since 2020-6-19 22:52:11
+     * Authors: Rocex Wang
+     * Date: 2020-6-19 22:52:11
      ****************************************************************************/
     override public void setValue(Object objValue)
     {
@@ -123,9 +123,9 @@ public class CText : Text, IWidget
     }
 
     /***************************************************************************
-     * @param evt
-     * @author Rocex Wang
-     * @since 2019-6-13 22:07:02
+     * Params: evt
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:07:02
      ***************************************************************************/
     protected void verifyData(Event evt)
     {
@@ -152,10 +152,10 @@ public class CText : Text, IWidget
     }
 
     /***************************************************************************
-     * @param evt
-     * @return boolean
-     * @author Rocex Wang
-     * @since 2019-6-13 22:15:21
+     * Params: evt
+     * Returns: boolean
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:15:21
      ***************************************************************************/
     protected bool verifyDouble(Event evt)
     {
@@ -176,10 +176,10 @@ public class CText : Text, IWidget
     }
 
     /***************************************************************************
-     * @param evt
-     * @return boolean
-     * @author Rocex Wang
-     * @since 2019-6-13 22:17:13
+     * Params: evt
+     * Returns: boolean
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:17:13
      ***************************************************************************/
     protected bool verifyEmail(Event evt)
     {
@@ -199,10 +199,10 @@ public class CText : Text, IWidget
     }
 
     /***************************************************************************
-     * @param evt
-     * @return boolean
-     * @author Rocex Wang
-     * @since 2019-6-13 22:15:57
+     * Params: evt
+     * Returns: boolean
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:15:57
      ***************************************************************************/
     protected bool verifyInteger(Event evt)
     {
@@ -222,10 +222,10 @@ public class CText : Text, IWidget
     }
 
     /***************************************************************************
-     * @param evt
-     * @return boolean
-     * @author Rocex Wang
-     * @since 2019-6-13 22:23:24
+     * Params: evt
+     * Returns: boolean
+     * Authors: Rocex Wang
+     * Date: 2019-6-13 22:23:24
      ***************************************************************************/
     protected bool verifyString(Event evt)
     {

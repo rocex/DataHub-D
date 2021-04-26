@@ -18,8 +18,8 @@ import std.stdio;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2019-5-8 21:22:11
+ * Authors: Rocex Wang
+ * Date: 2019-5-8 21:22:11
  ***************************************************************************/
 public class ResHelper
 {
@@ -37,8 +37,8 @@ public class ResHelper
     public static string res_root_path = "resource/";
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2021-3-25 22:13:12
+     * Authors: Rocex Wang
+     * Date: 2021-3-25 22:13:12
      ***************************************************************************/
     static ~this()
     {
@@ -46,9 +46,9 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param closeables
-     * @author Rocex Wang
-     * @since 2020-5-25 21:23:18
+     * Params: closeables
+     * Authors: Rocex Wang
+     * Date: 2020-5-25 21:23:18
      ***************************************************************************/
     public static void close(File[] closeables...)
     {
@@ -76,8 +76,8 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-7-1 21:16:48
+     * Authors: Rocex Wang
+     * Date: 2019-7-1 21:16:48
      ***************************************************************************/
     public static void dispose()
     {
@@ -87,9 +87,9 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param widgets
-     * @author Rocex Wang
-     * @since 2020-7-4 21:24:40
+     * Params: widgets
+     * Authors: Rocex Wang
+     * Date: 2020-7-4 21:24:40
      ***************************************************************************/
     public static void dispose(Widget[] widgets)
     {
@@ -108,8 +108,8 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-7-18 21:55:54
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:55:54
      ***************************************************************************/
     public static void disposeColors()
     {
@@ -133,8 +133,8 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-7-18 21:56:02
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:56:02
      ***************************************************************************/
     public static void disposeFonts()
     {
@@ -158,8 +158,8 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-07-31 21:50:31
+     * Authors: Rocex Wang
+     * Date: 2020-07-31 21:50:31
      ***************************************************************************/
     public static void disposeImage(string strFilePath)
     {
@@ -186,8 +186,8 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2019-7-1 21:16:55
+     * Authors: Rocex Wang
+     * Date: 2019-7-1 21:16:55
      ***************************************************************************/
     public static void disposeImages()
     {
@@ -211,10 +211,10 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param iSystemColorID
-     * @return Color
-     * @author Rocex Wang
-     * @since 2019-7-18 21:02:44
+     * Params: iSystemColorID
+     * Returns: Color
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:02:44
      ***************************************************************************/
     public static Color getColor(int iSystemColorID)
     {
@@ -233,12 +233,12 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param r
-     * @param g
-     * @param b
-     * @return Color
-     * @author Rocex Wang
-     * @since 2019-7-18 21:10:45
+     * Params: r
+     * Params: g
+     * Params: b
+     * Returns: Color
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:10:45
      ***************************************************************************/
     public static Color getColor(int r, int g, int b)
     {
@@ -246,10 +246,10 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param rgb
-     * @return Color
-     * @author Rocex Wang
-     * @since 2019-7-18 21:05:38
+     * Params: rgb
+     * Returns: Color
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:05:38
      ***************************************************************************/
     public static Color getColor(RGB rgb)
     {
@@ -268,12 +268,12 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param name
-     * @param height
-     * @param style
-     * @return Font
-     * @author Rocex Wang
-     * @since 2019-7-18 21:54:59
+     * Params: name
+     * Params: height
+     * Params: style
+     * Returns: Font
+     * Authors: Rocex Wang
+     * Date: 2019-7-18 21:54:59
      ***************************************************************************/
     public static Font getFont(string name, int height, int style)
     {
@@ -294,10 +294,10 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param strFilePath
-     * @return Image
-     * @author Rocex Wang
-     * @since 2019-7-1 21:17:07
+     * Params: strFilePath
+     * Returns: Image
+     * Authors: Rocex Wang
+     * Date: 2019-7-1 21:17:07
      ***************************************************************************/
     public static Image getImage(string strFilePath)
     {
@@ -347,10 +347,10 @@ public class ResHelper
 
     /***************************************************************************
      * 得到 resource\icon 目录下的图片
-     * @param strFileName icon文件名
-     * @return Image
-     * @author Rocex Wang
-     * @since 2020-6-9 21:55:06
+     * Params: strFileName icon文件名
+     * Returns: Image
+     * Authors: Rocex Wang
+     * Date: 2020-6-9 21:55:06
      ***************************************************************************/
     public static Image getImageIcon(string strFileName)
     {
@@ -358,9 +358,9 @@ public class ResHelper
     }
 
     /***************************************************************************
-     * @param lMillis
-     * @author Rocex Wang
-     * @since 2020-6-8 21:16:22
+     * Params: lMillis
+     * Authors: Rocex Wang
+     * Date: 2020-6-8 21:16:22
      ***************************************************************************/
     public static void sleep(long lMillis)
     {

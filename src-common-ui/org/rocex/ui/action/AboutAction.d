@@ -9,15 +9,15 @@ import org.rocex.utils.ResHelper;
 
 /***************************************************************************
  * about<br>
- * @author Rocex Wang
- * @since 2019-5-11 22:32:50
+ * Authors: Rocex Wang
+ * Date: 2019-5-11 22:32:50
  ***************************************************************************/
 public class AboutAction : Action
 {
     /***************************************************************************
-     * @param strId
-     * @author Rocex Wang
-     * @since 2019-5-11 22:33:01
+     * Params: strId
+     * Authors: Rocex Wang
+     * Date: 2019-5-11 22:33:01
      ***************************************************************************/
     public this()
     {
@@ -32,8 +32,8 @@ public class AboutAction : Action
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.Action#doAction(org.eclipse.swt.events.SelectionEvent)
-     * @author Rocex Wang
-     * @since 2019-5-11 22:32:50
+     * Authors: Rocex Wang
+     * Date: 2019-5-11 22:32:50
      ****************************************************************************/
     override public void doAction(Event evt)
     {

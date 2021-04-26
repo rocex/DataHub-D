@@ -6,8 +6,8 @@ import org.rocex.vo.PageInfo;
 
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2020-6-24 22:44:33
+ * Authors: Rocex Wang
+ * Date: 2020-6-24 22:44:33
  ***************************************************************************/
 public class PageModel
 {
@@ -16,18 +16,18 @@ public class PageModel
     private PageInfo pageInfo;
 
     /***************************************************************************
-     * @param evt
-     * @author Rocex Wang
-     * @since 2020-6-24 22:05:49
+     * Params: evt
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:05:49
      ***************************************************************************/
     public void doAction(Event evt)
     {
     }
 
     /***************************************************************************
-     * @return the context
-     * @author Rocex Wang
-     * @since 2020-7-25 22:37:06
+     * Returns: the context
+     * Authors: Rocex Wang
+     * Date: 2020-7-25 22:37:06
      ***************************************************************************/
     public Context getContext()
     {
@@ -35,9 +35,9 @@ public class PageModel
     }
 
     /***************************************************************************
-     * @return the pageInfo
-     * @author Rocex Wang
-     * @since 2020-6-24 22:32:18
+     * Returns: the pageInfo
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:32:18
      ***************************************************************************/
     public PageInfo getPageInfo()
     {
@@ -45,9 +45,9 @@ public class PageModel
     }
 
     /***************************************************************************
-     * @param context the context to set
-     * @author Rocex Wang
-     * @since 2020-7-25 22:37:06
+     * Params: context the context to set
+     * Authors: Rocex Wang
+     * Date: 2020-7-25 22:37:06
      ***************************************************************************/
     public PageModel setContext(Context context)
     {
@@ -57,9 +57,9 @@ public class PageModel
     }
 
     /***************************************************************************
-     * @param pageInfo
-     * @author Rocex Wang
-     * @since 2020-6-24 22:31:49
+     * Params: pageInfo
+     * Authors: Rocex Wang
+     * Date: 2020-6-24 22:31:49
      ***************************************************************************/
     public PageModel setPageInfo(PageInfo pageInfo)
     {

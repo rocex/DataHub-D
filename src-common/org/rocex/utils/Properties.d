@@ -9,8 +9,8 @@ import std.string;
 
 /***************************************************************************
  * key有序，并且有注释的Properties<br>
- * @author Rocex Wang
- * @since 2020-08-11 21:20:41
+ * Authors: Rocex Wang
+ * Date: 2020-08-11 21:20:41
  ***************************************************************************/
 public class Properties
 {
@@ -63,8 +63,8 @@ public class Properties
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2020-8-11 21:20:49
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:20:49
      ***************************************************************************/
     public void clear()
     {
@@ -74,8 +74,8 @@ public class Properties
         }
     }
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2021-3-22 22:25:41
+     * Authors: Rocex Wang
+     * Date: 2021-3-22 22:25:41
      ***************************************************************************/
     public Properties clone()
     {
@@ -89,8 +89,8 @@ public class Properties
     }
 
     /***************************************************************************
-     * @author Rocex Wang
-     * @since 2021-3-22 22:20:49
+     * Authors: Rocex Wang
+     * Date: 2021-3-22 22:20:49
      ***************************************************************************/
     public void dispose()
     {
@@ -102,8 +102,8 @@ public class Properties
     }
 
     /****************************************************************************
-     * @author Rocex Wang
-     * @since 2021-3-22 21:36:13
+     * Authors: Rocex Wang
+     * Date: 2021-3-22 21:36:13
      ****************************************************************************/
     public bool equals(Properties prop)
     {
@@ -130,10 +130,10 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strKey
-     * @return string
-     * @author Rocex Wang
-     * @since 2020-8-11 21:20:49
+     * Params: strKey
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:20:49
      ***************************************************************************/
     public string get(string strKey)
     {
@@ -141,10 +141,10 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strKey
-     * @return string
-     * @author Rocex Wang
-     * @since 2020-8-11 21:20:49
+     * Params: strKey
+     * Returns: string
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:20:49
      ***************************************************************************/
     public string getComment(string strKey)
     {
@@ -152,9 +152,9 @@ public class Properties
     }
 
     /***************************************************************************
-     * @return the fileComment
-     * @author Rocex Wang
-     * @since 2021-3-22 22:42:08
+     * Returns: the fileComment
+     * Authors: Rocex Wang
+     * Date: 2021-3-22 22:42:08
      ***************************************************************************/
     public string getFileComment()
     {
@@ -162,9 +162,9 @@ public class Properties
     }
 
     /***************************************************************************
-     * @return bool
-     * @author Rocex Wang
-     * @since 2020-8-11 21:20:49
+     * Returns: bool
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:20:49
      ***************************************************************************/
     public bool isEmpty()
     {
@@ -172,9 +172,9 @@ public class Properties
     }
 
     /***************************************************************************
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-08-12 21:11:01
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-08-12 21:11:01
      ***************************************************************************/
     public auto keys()
     {
@@ -182,9 +182,9 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strFilePath
-     * @author Rocex Wang
-     * @since 2020-8-11 21:52:02
+     * Params: strFilePath
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:52:02
      ***************************************************************************/
     public void load(string strFilePath)
     {
@@ -247,12 +247,12 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param strValue
-     * @param strComment
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-8-11 21:17:41
+     * Params: strKey
+     * Params: strValue
+     * Params: strComment
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties put(string strKey, string strValue, string strComment = null)
     {
@@ -276,10 +276,10 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param properties
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-08-12 21:19:59
+     * Params: properties
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-08-12 21:19:59
      ***************************************************************************/
     public Properties putAll(Properties properties)
     {
@@ -294,11 +294,11 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strKey
-     * @param strComment
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-8-11 21:17:41
+     * Params: strKey
+     * Params: strComment
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties putComment(string strKey, string strComment)
     {
@@ -313,10 +313,10 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strKeys
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-8-11 21:17:41
+     * Params: strKeys
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties remove(string[] strKeys...)
     {
@@ -329,10 +329,10 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strKeys
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-8-11 21:17:41
+     * Params: strKeys
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties removeComment(string[] strKeys...)
     {
@@ -349,11 +349,11 @@ public class Properties
 
     /***************************************************************************
      * 整个 Properties 文件的注释
-     * @param strKey
-     * @param strFileComment
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-8-11 21:17:41
+     * Params: strKey
+     * Params: strFileComment
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:17:41
      ***************************************************************************/
     public Properties setFileComment(string strFileComment)
     {
@@ -363,10 +363,10 @@ public class Properties
     }
 
     /***************************************************************************
-     * @param strFilePath
-     * @param strFileComment
-     * @author Rocex Wang
-     * @since 2020-8-11 21:53:05
+     * Params: strFilePath
+     * Params: strFileComment
+     * Authors: Rocex Wang
+     * Date: 2020-8-11 21:53:05
      ***************************************************************************/
     public void store(string strFilePath, string strFileComment = null)
     {
@@ -408,9 +408,9 @@ public class Properties
     }
 
     /*************************************************************************** 
-     * @return Properties
-     * @author Rocex Wang
-     * @since 2020-08-12 21:12:02
+     * Returns: Properties
+     * Authors: Rocex Wang
+     * Date: 2020-08-12 21:12:02
      ***************************************************************************/
     public auto values()
     {

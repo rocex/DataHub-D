@@ -5,18 +5,17 @@ import org.eclipse.swt.widgets.Event;
 import org.rocex.ui.action.Action;
 import org.rocex.ui.action.LongTask;
 
-
 /***************************************************************************
  * <br>
- * @author Rocex Wang
- * @since 2020-6-17 22:03:46
+ * Authors: Rocex Wang
+ * Date: 2020-6-17 22:03:46
  ***************************************************************************/
 public abstract class LongAction : Action
 {
     /***************************************************************************
-     * @param strId
-     * @author Rocex Wang
-     * @since 2020-6-17 22:03:46
+     * Params: strId
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:03:46
      ***************************************************************************/
     public this(string strId)
     {
@@ -26,8 +25,8 @@ public abstract class LongAction : Action
     /****************************************************************************
      * {@inheritDoc}<br>
      * @see org.rocex.ui.action.Action#doAction(org.eclipse.swt.widgets.Event)
-     * @author Rocex Wang
-     * @since 2020-6-17 22:03:46
+     * Authors: Rocex Wang
+     * Date: 2020-6-17 22:03:46
      ****************************************************************************/
     override public void doAction(Event evt)
     {
@@ -44,9 +43,9 @@ public abstract class LongAction : Action
     }
 
     /***************************************************************************
-     * @return LongTask
-     * @author Rocex Wang
-     * @since 2020-6-28 22:21:51
+     * Returns: LongTask
+     * Authors: Rocex Wang
+     * Date: 2020-6-28 22:21:51
      ***************************************************************************/
     protected abstract LongTask getLongTask();
 }
