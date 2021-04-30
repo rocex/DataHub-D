@@ -23,11 +23,11 @@ public class Logger
     {
         auto multiLogger = new MultiLogger();
 
-        multiLogger.logLevel(LogLevel.info);
+        multiLogger.logLevel(LogLevel.error);
 
         SysTime today = Clock.currTime();
 
-        auto loggerFile = new FileLogger("./logs/access_" ~ (cast(Date) today)
+        auto loggerFile = new RolloverFileLogger("./logs/access_" ~ (cast(Date) today)
                 .toISOExtString() ~ ".log");
 
         import std.stdio : console = stdout;
@@ -36,6 +36,7 @@ public class Logger
 
         multiLogger.insertLogger("loggerFile", loggerFile);
         multiLogger.insertLogger("loggerConsole", loggerConsole);
+
         logger = multiLogger;
     }
 
@@ -88,33 +89,100 @@ public class Logger
      ***************************************************************************/
     public static void setEnableLevel(string strEnableLogLevel)
     {
-        if (icmp("all", strEnableLogLevel) > -1)
+        strEnableLogLevel = toLower(strip(strEnableLogLevel));
+
+        if ("all" == strEnableLogLevel)
         {
-            Logger.getLogger().logLevel(LogLevel.all);
+            Logger.getLogger().logLevel = LogLevel.all;
         }
-        else if (icmp("trace", strEnableLogLevel) > -1)
+        else if ("trace" == strEnableLogLevel)
         {
-            Logger.getLogger().logLevel(LogLevel.trace);
+            Logger.getLogger().logLevel = LogLevel.trace;
         }
-        else if (icmp("info", strEnableLogLevel) > -1)
+        else if ("info" == strEnableLogLevel)
         {
-            Logger.getLogger().logLevel(LogLevel.info);
+            Logger.getLogger().logLevel = LogLevel.info;
         }
-        else if (icmp("warn", strEnableLogLevel) > -1)
+        else if ("warn" == strEnableLogLevel || "warning" == strEnableLogLevel)
         {
-            Logger.getLogger().logLevel(LogLevel.warning);
+            Logger.getLogger().logLevel = LogLevel.warning;
         }
-        else if (icmp("error", strEnableLogLevel) > -1)
+        else if ("error" == strEnableLogLevel)
         {
-            Logger.getLogger().logLevel(LogLevel.error);
+            Logger.getLogger().logLevel = LogLevel.error;
         }
-        else if (icmp("critical", strEnableLogLevel) > -1)
+        else if ("critical" == strEnableLogLevel)
         {
-            Logger.getLogger().logLevel(LogLevel.critical);
+            Logger.getLogger().logLevel = LogLevel.critical;
         }
         else
         {
-            Logger.getLogger().logLevel(LogLevel.fatal);
+            Logger.getLogger().logLevel = LogLevel.fatal;
+        }
+    }
+}
+
+import std.stdio;
+import std.concurrency : Tid;
+import std.experimental.logger;
+import std.path;
+import std.conv;
+
+class RolloverFileLogger : FileLogger
+{
+    private int index = 0;
+    private ulong maxSize = 5 * 1024 * 1024;
+    private string baseFileName;
+
+    ///
+    this(in string fn, const LogLevel lv = LogLevel.all) @safe
+    {
+        super(fn, lv);
+
+        baseFileName = filename;
+    }
+
+    ///
+    this(in string fn, const LogLevel lv, CreateFolder createFileNameFolder) @safe
+    {
+        super(fn, lv, createFileNameFolder);
+
+        baseFileName = filename;
+    }
+
+    ///
+    this(File file, const LogLevel lv = LogLevel.all) @safe
+    {
+        super(file, lv);
+
+        baseFileName = filename;
+    }
+
+    ///
+    override protected void beginLogMsg(string file2, int line, string funcName, string prettyFuncName, string moduleName,
+            LogLevel logLevel, Tid threadId, SysTime timestamp,
+            std.experimental.logger.Logger logger) @safe
+    {
+        rollover();
+
+        super.beginLogMsg(file2, line, funcName, prettyFuncName, moduleName,
+                logLevel, threadId, timestamp, logger);
+    }
+
+    ///
+    void rollover() @safe
+    {
+        const ulong size = file_.size();
+
+        if (size > maxSize)
+        {
+            const auto newFileName = buildPath(dirName(baseFileName), baseName(baseFileName,
+                    extension(baseFileName)) ~ "-" ~ to!string(index++) ~ extension(baseFileName));
+
+            this.filename = newFileName;
+
+            this.file_ = File(this.filename, "w");
+            this.file_.open(this.filename, "a");
         }
     }
 }
