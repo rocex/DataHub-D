@@ -199,7 +199,7 @@ public class Properties
                 mkdirRecurse(parentPath);
             }
 
-            //todo 为了创建一个空白文件
+            // 为了创建一个空白文件
             write(strFilePath, "");
         }
 
@@ -385,8 +385,8 @@ public class Properties
 
             sort(strKeys);
 
-            write(strFilePath, "## " ~ (strFileComment is null
-                    ? this.strFileComment : strFileComment) ~ lineSep ~ lineSep);
+            write(strFilePath, "##" ~ (strFileComment is null
+                    ? this.strFileComment : strFileComment) ~ lineSep);
 
             foreach (strKey; strKeys)
             {

@@ -18,6 +18,9 @@ import std.string;
  ***************************************************************************/
 public class Settings
 {
+    /** 配置文件全路径 */
+    public static string strSettingsFileName = SettingConst.file_path_of_settings;
+
     private static Properties properties = null;
 
     /** 原始数据，在load的时候加载，store之后重置成最新的，和 properties 做对比，以判断是否有变化 */
@@ -174,7 +177,7 @@ public class Settings
      ***************************************************************************/
     public static void load()
     {
-        properties.load(SettingConst.file_path_of_settings);
+        properties.load(strSettingsFileName);
 
         originalProperties = properties.clone();
     }
@@ -190,7 +193,7 @@ public class Settings
             return;
         }
 
-        properties.store(SettingConst.file_path_of_settings);
+        properties.store(strSettingsFileName);
 
         originalProperties = properties.clone();
 

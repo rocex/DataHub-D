@@ -15,7 +15,11 @@
 
     "dflags": ["-J./resource"],
 
+    "buildRequirements":["silenceDeprecations"],
+
     "sourceFiles": ["-J./resource"],
 
-    "sourcePaths": ["./src-common", "./src-common-ui", "./src-datahub-ui"]
+    "sourcePaths": ["./src-common", "./src-common-ui", "./src-datahub-ui"],
+
+    "copyFiles":["./resource/DataHub.exe.manifest"],
 }

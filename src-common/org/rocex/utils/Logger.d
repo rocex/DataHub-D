@@ -27,7 +27,7 @@ public class Logger
 
         SysTime today = Clock.currTime();
 
-        auto loggerFile = new RolloverFileLogger("./logs/access_" ~ (cast(Date) today)
+        auto loggerFile = new RollingFileLogger("./logs/access_" ~ (cast(Date) today)
                 .toISOExtString() ~ ".log");
 
         import std.stdio : console = stdout;
@@ -128,13 +128,17 @@ import std.experimental.logger;
 import std.path;
 import std.conv;
 
-class RolloverFileLogger : FileLogger
+/****************************************************************************** 
+ * 
+ * Authors: Rocex Wang 
+ * Date: 2021-05-08 10:20:29
+ ******************************************************************************/
+class RollingFileLogger : FileLogger
 {
     private int index = 0;
     private ulong maxSize = 5 * 1024 * 1024;
     private string baseFileName;
 
-    ///
     this(in string fn, const LogLevel lv = LogLevel.all) @safe
     {
         super(fn, lv);
@@ -172,17 +176,18 @@ class RolloverFileLogger : FileLogger
     ///
     void rollover() @safe
     {
-        const ulong size = file_.size();
-
-        if (size > maxSize)
+        while (this.file_.size() > maxSize)
         {
             const auto newFileName = buildPath(dirName(baseFileName), baseName(baseFileName,
                     extension(baseFileName)) ~ "-" ~ to!string(index++) ~ extension(baseFileName));
 
             this.filename = newFileName;
 
-            this.file_ = File(this.filename, "w");
-            this.file_.open(this.filename, "a");
+            this.file_ = File(this.filename, "a");
+
+            writefln("filename is %s", filename);
         }
+
+        this.file_.open(this.filename, "a");
     }
 }
