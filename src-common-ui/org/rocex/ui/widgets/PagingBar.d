@@ -36,7 +36,7 @@ public class PagingBar : Toolbar
     private PageAction actionNextPage;
     private PageAction actionPrevPage;
 
-    private CCombo comboPageSize;
+    private CCombo!(int) comboPageSize;
 
     private Listener listener;
 
@@ -44,7 +44,7 @@ public class PagingBar : Toolbar
 
     private PageModel pageModel;
 
-    private CText txtPageIndex;
+    private CText!(int) txtPageIndex;
 
     /***************************************************************************
      * Params: parent
@@ -56,7 +56,7 @@ public class PagingBar : Toolbar
     {
         super(parent, iStyle | SWT.FLAT);
 
-        comboPageSize = new CCombo(this, SWT.READ_ONLY | SWT.FLAT);
+        comboPageSize = new CCombo!(int)(this, SWT.READ_ONLY | SWT.FLAT);
 
         List list = new ArrayList();
         list.add(new Pair!(string, int)("--不分页--", PageInfo.no_paging));
@@ -80,7 +80,7 @@ public class PagingBar : Toolbar
         addAction(actionFirstPage);
         addAction(actionPrevPage);
 
-        txtPageIndex = new CText(this, SWT.BORDER | SWT.RIGHT);
+        txtPageIndex = new CText!(int)(this, SWT.BORDER | SWT.RIGHT);
         txtPageIndex.setProp(new FieldProp("PageIndex", null, false,
                 FieldProp.datatype_integer, 10).setMin(1));
 
@@ -101,14 +101,12 @@ public class PagingBar : Toolbar
         {
             void handleEvent(Event evt)
             {
-                if (evt.widget == comboPageSize && to!(int)(comboPageSize.getValue()
-                        .toString) == PageInfo.no_paging)
+                if (evt.widget == comboPageSize && comboPageSize.getValue() == PageInfo.no_paging)
                 {
-                    txtPageIndex.setValue(stringcast("1"));
+                    txtPageIndex.setValue(1);
                 }
 
-                txtPageIndex.setEnabled(to!(int)(
-                        stringcast(comboPageSize.getValue())) != PageInfo.no_paging);
+                txtPageIndex.setEnabled(comboPageSize.getValue() != PageInfo.no_paging);
 
                 if (pageModel !is null)
                 {
@@ -135,9 +133,9 @@ public class PagingBar : Toolbar
             pageInfo = new PageInfo();
         }
 
-        Object objPageIndex = txtPageIndex.getValue();
-        pageInfo.setPageIndex(objPageIndex is null ? 1 : to!(int)(stringcast(objPageIndex)));
-        pageInfo.setPageSize(to!(int)(comboPageSize.getValue().toString));
+        const int objPageIndex = txtPageIndex.getValue();
+        pageInfo.setPageIndex(objPageIndex);
+        pageInfo.setPageSize(comboPageSize.getValue());
 
         return pageInfo;
     }
@@ -157,9 +155,9 @@ public class PagingBar : Toolbar
         txtPageIndex.setToolTipText(format("第 %s 页，共 %s 页",
                 pageInfo.getPageIndex(), pageInfo.getPageCount()));
 
-        comboPageSize.setValue(stringcast(to!string(pageInfo.getPageSize())));
+        comboPageSize.setValue(pageInfo.getPageSize());
 
-        txtPageIndex.setValue(stringcast(to!string(pageInfo.getPageIndex())));
+        txtPageIndex.setValue(pageInfo.getPageIndex());
         txtPageIndex.getProp().setMax(pageInfo.getPageCount());
         txtPageIndex.setEnabled(pageInfo.getPageSize() != PageInfo.no_paging);
 

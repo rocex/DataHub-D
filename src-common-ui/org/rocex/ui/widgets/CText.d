@@ -1,6 +1,6 @@
 module org.rocex.ui.widgets.CText;
 
-import std.regex;
+import std.conv;
 
 import java.lang.all;
 import org.eclipse.swt.SWT;
@@ -17,7 +17,7 @@ import org.rocex.utils.StringHelper;
  * Authors: Rocex Wang
  * Date: 2020-6-19 22:47:46
  ***************************************************************************/
-public class CText : Text, IWidget
+public class CText(T) : Text, IWidget!(T)
 {
     private FieldProp prop;
 
@@ -71,22 +71,45 @@ public class CText : Text, IWidget
      * Authors: Rocex Wang
      * Date: 2020-6-19 22:52:11
      ****************************************************************************/
-    override public Object getValue()
+    override public T getValue()
     {
         String strValue = getText();
 
-        // todo
-        // switch (getProp().getDataType())
-        // {
-        //  case FieldProp.datatype_double:
-        //     return StringHelper.isNumber(strValue)
-        //         ? Double.parseDouble(strValue) : cast(Double) null;
-        // case FieldProp.datatype_integer:
-        //     return StringHelper.isNumber(strValue)
-        //         ? Integer.parseInt(strValue) : cast(Integer) null;
-        // }
+        static if (is(T == double))
+        {
+            assert(!StringHelper.isNumber(strValue), strValue ~ " is not a double!");
 
-        return stringcast(strValue);
+            return to!double(strValue);
+        }
+        else static if (is(T == float))
+        {
+            assert(!StringHelper.isInteger(strValue), strValue ~ " is not a float!");
+
+            return to!float(strValue);
+        }
+        else static if (is(T == long))
+        {
+            assert(!StringHelper.isInteger(strValue), strValue ~ " is not a long!");
+
+            return to!long(strValue);
+        }
+        else static if (is(T == int))
+        {
+            assert(!StringHelper.isInteger(strValue), strValue ~ " is not a email!");
+
+            return to!int(strValue);
+        }
+        else static if (is(T == string))
+        {
+            if (getProp().getDataType() == FieldProp.datatype_email)
+            {
+                assert(!StringHelper.isEmail(strValue), strValue ~ " is not a email!");
+
+                return strValue;
+            }
+
+            return strValue;
+        }
     }
 
     /***************************************************************************
@@ -117,9 +140,9 @@ public class CText : Text, IWidget
      * Authors: Rocex Wang
      * Date: 2020-6-19 22:52:11
      ****************************************************************************/
-    override public void setValue(Object objValue)
+    override public void setValue(T objValue)
     {
-        setText(StringHelper.defaultString(objValue));
+        setText(to!string(objValue));
     }
 
     /***************************************************************************

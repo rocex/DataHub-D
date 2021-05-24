@@ -18,7 +18,7 @@ import org.rocex.utils.ResHelper;
  * Authors: Rocex Wang
  * Date: 2019-5-23 22:21:09
  ***************************************************************************/
-public class AboutDialog : Dialog
+public class AboutDialog(T) : Dialog!(T)
 {
     /****************************************************************************
      * Authors: Rocex Wang

@@ -262,8 +262,8 @@ public class StringHelper
      ***************************************************************************/
     public static bool isInteger(string strText)
     {
-        return __traits(isIntegral, strText);
-        // return !isBlank(strText) && !match(strText, regex("^-?\\d+$"));
+        // return __traits(isIntegral, strText);
+        return !isBlank(strText) && !match(strText, regex("^-?\\d+$"));
     }
 
     /***************************************************************************

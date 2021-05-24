@@ -18,13 +18,13 @@ import org.rocex.vo.Pair;
  * Authors: Rocex Wang
  * Date: 2020-6-19 22:49:00
  ***************************************************************************/
-public class CCombo : Combo, IWidget
+public class CCombo(T) : Combo, IWidget!(T)
 {
     private FieldProp fieldProp;
 
     private List listModel;
 
-    private Object objValue;
+    private T objValue;
 
     /***************************************************************************
      * Params: parent
@@ -44,14 +44,14 @@ public class CCombo : Combo, IWidget
      * Authors: Rocex Wang
      * Date: 2020-6-19 22:53:53
      ***************************************************************************/
-    public Combo addItem(String strText, Object objValue)
+    public Combo addItem(String strText, T objValue)
     {
         if (listModel is null)
         {
             listModel = new ArrayList();
         }
 
-        listModel.add(new Pair!(string, Object)(strText, objValue));
+        listModel.add(new Pair!(string, T)(strText, objValue));
 
         setModel(listModel);
 
@@ -77,7 +77,7 @@ public class CCombo : Combo, IWidget
     override public void dispose()
     {
         fieldProp = null;
-        objValue = null;
+        // objValue = null;
 
         listModel.clear();
         listModel = null;
@@ -100,10 +100,16 @@ public class CCombo : Combo, IWidget
      * Authors: Rocex Wang
      * Date: 2020-6-19 22:50:34
      ***************************************************************************/
-    override public Object getValue()
+    override public T getValue()
     {
-        return listModel is null ? stringcast(getText()) : (cast(Pair!(string,
-                Object)) listModel.get(getSelectionIndex())).getValue();
+        assert(listModel is null, "listModel is null");
+        // if (listModel is null)
+        // {
+        //     string strValue = getText();
+        //     return cast(T) strValue;
+        // }
+
+        return (cast(Pair!(string, T)) listModel.get(getSelectionIndex())).getValue();
     }
 
     /***************************************************************************
@@ -123,7 +129,7 @@ public class CCombo : Combo, IWidget
         List listItem = new ArrayList();
         foreach (key; listModel)
         {
-            listItem.add((cast(Pair!(string, Object)) key).getKey());
+            listItem.add((cast(Pair!(string, T)) key).getKey());
         }
 
         setItems(listItem.toArray(new String[0]));
@@ -146,22 +152,24 @@ public class CCombo : Combo, IWidget
      * Authors: Rocex Wang
      * Date: 2020-6-19 22:50:34
      ***************************************************************************/
-    override public void setValue(Object objValue)
+    override public void setValue(T objValue)
     {
+        assert(listModel is null, "listModel is null");
+
         this.objValue = objValue;
 
-        if (listModel is null)
-        {
-            setText(StringHelper.defaultString(objValue));
+        // if (listModel is null)
+        // {
+        //     setText(StringHelper.defaultString(objValue));
 
-            return;
-        }
+        //     return;
+        // }
 
         for (int i = 0; i < listModel.size(); i++)
         {
-            Pair!(string, Object) entry = cast(Pair!(string, Object)) listModel.get(i);
+            Pair!(string, T) entry = cast(Pair!(string, T)) listModel.get(i);
 
-            if (StringHelper.equals(entry.getValue(), objValue))
+            if (entry.getValue() == objValue)
             {
                 select(i);
 

@@ -5,19 +5,19 @@ module org.rocex.ui.widgets.IWidget;
  * Authors: Rocex Wang
  * Date: 2020-6-19 22:51:03
  ***************************************************************************/
-public interface IWidget
+public interface IWidget(T)
 {
     /***************************************************************************
      * Returns: Object value
      * Authors: Rocex Wang
      * Date: 2020-6-19 22:51:41
      ***************************************************************************/
-    Object getValue();
+    T getValue();
 
     /***************************************************************************
      * Params: objValue
      * Authors: Rocex Wang
      * Date: 2020-6-19 22:51:43
      ***************************************************************************/
-    void setValue(Object objValue);
+    void setValue(T objValue);
 }

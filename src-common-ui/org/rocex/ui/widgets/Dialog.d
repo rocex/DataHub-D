@@ -21,7 +21,7 @@ import org.rocex.utils.UIHelper;
  * Authors: Rocex Wang
  * Date: 2019-5-23 22:21:09
  ***************************************************************************/
-public class Dialog : IWidget
+public class Dialog(T) : IWidget!(T)
 {
     private int iReturnCode = SWT.NONE;
 
@@ -212,7 +212,7 @@ public class Dialog : IWidget
      * Authors: Rocex Wang
      * Date: 2019-6-13 22:16:15
      ****************************************************************************/
-    override public Object getValue()
+    override public T getValue()
     {
         return null;
     }
@@ -303,7 +303,7 @@ public class Dialog : IWidget
      * Authors: Rocex Wang
      * Date: 2019-5-25 22:06:02
      ****************************************************************************/
-    override public void setValue(Object obj)
+    override public void setValue(T obj)
     {
     }
 }

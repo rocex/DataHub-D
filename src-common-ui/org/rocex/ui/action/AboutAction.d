@@ -37,7 +37,7 @@ public class AboutAction : Action
      ****************************************************************************/
     override public void doAction(Event evt)
     {
-        AboutDialog dialog = new AboutDialog(getApplication(), SWT.NONE);
+        AboutDialog!(string) dialog = new AboutDialog!(string)(getApplication(), SWT.NONE);
         dialog.open();
     }
 }
