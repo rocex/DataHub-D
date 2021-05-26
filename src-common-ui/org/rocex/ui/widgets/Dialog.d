@@ -12,9 +12,9 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.rocex.ui.widgets.IWidget;
 import org.rocex.ui.widgets.MessageDialog;
+import org.rocex.ui.utils.UIHelper;
 import org.rocex.utils.Logger;
 import org.rocex.utils.ResHelper;
-import org.rocex.utils.UIHelper;
 
 /***************************************************************************
  * <br>

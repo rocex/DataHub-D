@@ -1,4 +1,4 @@
-module org.rocex.utils.UIHelper;
+module org.rocex.ui.utils.UIHelper;
 
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;

@@ -1,4 +1,4 @@
-module org.rocex.utils.ActionHelper;
+module org.rocex.ui.utils.ActionHelper;
 
 import java.util.StringTokenizer;
 import org.eclipse.swt.SWT;

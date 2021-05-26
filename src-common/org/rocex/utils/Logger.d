@@ -30,12 +30,16 @@ public class Logger
         auto loggerFile = new RollingFileLogger("./logs/access_" ~ (cast(Date) today)
                 .toISOExtString() ~ ".log");
 
-        import std.stdio : console = stdout;
-
-        auto loggerConsole = new FileLogger(console);
-
         multiLogger.insertLogger("loggerFile", loggerFile);
-        multiLogger.insertLogger("loggerConsole", loggerConsole);
+
+        debug
+        {
+            import std.stdio : console = stdout;
+
+            auto loggerConsole = new FileLogger(console);
+
+            multiLogger.insertLogger("loggerConsole", loggerConsole);
+        }
 
         logger = multiLogger;
     }

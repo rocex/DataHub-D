@@ -1,0 +1,80 @@
+module ui.org.rocex.ui.form.DataTimeField;
+
+import java.time.LocalDateTime;
+
+import org.eclipse.swt.widgets.DateTime;
+
+/***************************************************************************
+ * <br>
+ * @author Rocex Wang
+ * @since 2019-6-13 22:20:39
+ ***************************************************************************/
+public class DataTimeField(T) : Field!(LocalDateTime)
+{
+    /***************************************************************************
+     * @param parent
+     * @param iStyle
+     * @author Rocex Wang
+     * @since 2019-6-13 22:20:39
+     ***************************************************************************/
+    public this(Form parent, int iStyle)
+    {
+        super(parent, iStyle);
+
+        DateTime!T control = new DateTime!T(this, iStyle);
+
+        setControl(control);
+    }
+
+    /****************************************************************************
+     * {@inheritDoc}<br>
+     * @see org.rocex.ui.form.Field#getControl()
+     * @author Rocex Wang
+     * @since 2019-6-13 22:22:26
+     ****************************************************************************/
+    override public DateTime getControl()
+    {
+        return cast(DateTime) super.getControl();
+    }
+
+    /****************************************************************************
+     * {@inheritDoc}<br>
+     * @see org.rocex.ui.form.Field#getValue()
+     * @author Rocex Wang
+     * @since 2019-6-13 22:22:26
+     ****************************************************************************/
+    override public LocalDateTime getValue()
+    {
+        LocalDateTime dateTime = LocalDateTime.of(getControl().getYear(),
+                getControl().getMonth(), getControl().getDay(), getControl()
+                .getHours(), getControl().getMinutes(), getControl().getSeconds());
+
+        return dateTime;
+    }
+
+    /****************************************************************************
+     * {@inheritDoc}<br>
+     * @see org.rocex.ui.form.Field#setProp(org.rocex.ui.form.FieldProp)
+     * @author Rocex Wang
+     * @since 2019-6-13 22:46:58
+     ****************************************************************************/
+    override public DataTimeField setProp(FieldProp fieldProp)
+    {
+        return cast(DataTimeField) super.setProp(fieldProp);
+    }
+
+    /****************************************************************************
+     * {@inheritDoc}<br>
+     * @see org.rocex.ui.form.Field#setValue(java.lang.Object)
+     * @author Rocex Wang
+     * @since 2019-6-13 22:22:26
+     ****************************************************************************/
+    override public void setValue(LocalDateTime dateTime)
+    {
+        super.setValue(dateTime);
+
+        getControl().setDate(dateTime.getYear(), dateTime.getMonthValue(),
+                dateTime.getDayOfMonth());
+        getControl().setTime(dateTime.getHour(), dateTime.getMinute(), dateTime.getSecond());
+    }
+}

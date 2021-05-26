@@ -6,7 +6,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.rocex.ui.widgets.CompositeControl;
 import org.rocex.utils.ResHelper;
-import org.rocex.utils.UIHelper;
+import org.rocex.ui.utils.UIHelper;
 
 /***************************************************************************
  * <br>

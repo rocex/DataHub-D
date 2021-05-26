@@ -20,9 +20,9 @@ import org.rocex.ui.action.ActionConst;
 import org.rocex.ui.action.IAction;
 import org.rocex.ui.action.Separator;
 import org.rocex.ui.Context;
-import org.rocex.utils.ActionHelper;
+import org.rocex.ui.utils.ActionHelper;
+import org.rocex.ui.utils.UIHelper;
 import org.rocex.utils.ResHelper;
-import org.rocex.utils.UIHelper;
 
 /***************************************************************************
  * 工具栏<br>

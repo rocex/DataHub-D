@@ -7,7 +7,7 @@ import org.rocex.ui.action.IAction;
 import org.rocex.ui.action.Separator;
 import org.rocex.ui.Context;
 import org.rocex.ui.widgets.MessageDialog;
-import org.rocex.utils.ActionHelper;
+import org.rocex.ui.utils.ActionHelper;
 import org.rocex.utils.Logger;
 
 /***************************************************************************
